@@ -1,0 +1,125 @@
+# Document type catalogue (contract section 8 — IDs are fixed).
+# validityMonths: null = no fixed validity; verifiable: an issuing-authority adapter exists (see /api/sources).
+# Validity periods are illustrative / configurable, not official AICTE values.
+version: "2026.1"
+docTypes:
+  SOCIETY_TRUST_REGISTRATION:
+    label: Society / Trust Registration Certificate
+    issuer: Registrar of Societies / Charity Commissioner
+    validityMonths: null
+    verifiable: true
+  LAND_DOCUMENT:
+    label: Land Ownership / Lease Document
+    issuer: Sub-Registrar / Revenue Department
+    validityMonths: null
+    verifiable: true
+  BUILDING_PLAN_APPROVAL:
+    label: Approved Building Plan
+    issuer: Competent Local Authority (Municipal / Town Planning)
+    validityMonths: null
+    verifiable: false
+  OCCUPANCY_CERTIFICATE:
+    label: Occupancy / Completion Certificate
+    issuer: Competent Local Authority (Municipal / Town Planning)
+    validityMonths: null
+    verifiable: true
+  FIRE_NOC:
+    label: Fire Safety No Objection Certificate
+    issuer: State Fire & Emergency Services
+    validityMonths: 12
+    verifiable: true
+  STRUCTURAL_STABILITY_CERT:
+    label: Structural Stability Certificate
+    issuer: Licensed Structural Engineer / PWD
+    validityMonths: 60
+    verifiable: false
+  AFFIDAVIT_UNDERTAKING:
+    label: Notarised Affidavit / Undertaking (current year)
+    issuer: Notary Public
+    validityMonths: 12
+    verifiable: false
+  UNIVERSITY_AFFILIATION:
+    label: University Affiliation Letter
+    issuer: Affiliating University
+    validityMonths: 12
+    verifiable: true
+  STATE_GOVT_NOC:
+    label: State Government NOC
+    issuer: State Department of Technical Education
+    validityMonths: null
+    verifiable: false
+  PREVIOUS_EOA_LETTER:
+    label: Previous Extension of Approval Letter
+    issuer: AICTE
+    validityMonths: 12
+    verifiable: true
+  NBA_ACCREDITATION:
+    label: NBA Accreditation Certificate
+    issuer: National Board of Accreditation
+    validityMonths: null
+    verifiable: true
+  NAAC_ACCREDITATION:
+    label: NAAC Accreditation Certificate
+    issuer: National Assessment and Accreditation Council
+    validityMonths: null
+    verifiable: true
+  TER_PAYMENT_RECEIPT:
+    label: Total Expenditure Recovery (TER) Payment Receipt
+    issuer: AICTE Payment Gateway
+    validityMonths: 12
+    verifiable: true
+  FACULTY_ROSTER:
+    label: Faculty Roster / Faculty List
+    issuer: Institution (self-declared)
+    validityMonths: null
+    verifiable: false
+  AUDITED_FINANCIAL_STATEMENT:
+    label: Audited Financial Statement
+    issuer: Chartered Accountant
+    validityMonths: 18
+    verifiable: false
+  CORPUS_FUND_FDR:
+    label: Corpus Fund Fixed Deposit Receipt
+    issuer: Scheduled Bank
+    validityMonths: null
+    verifiable: true
+  FLOOR_PLAN:
+    label: Floor Plan / Area Statement
+    issuer: Licensed Architect
+    validityMonths: null
+    verifiable: false
+  INFRA_PHOTO_CLASSROOM:
+    label: Geo-tagged Photo — Classroom
+    issuer: Institution (evidence)
+    validityMonths: null
+    verifiable: false
+    infra: classroom
+  INFRA_PHOTO_COMPUTER_LAB:
+    label: Geo-tagged Photo — Computer Lab
+    issuer: Institution (evidence)
+    validityMonths: null
+    verifiable: false
+    infra: computer_lab
+  INFRA_PHOTO_LIBRARY:
+    label: Geo-tagged Photo — Library
+    issuer: Institution (evidence)
+    validityMonths: null
+    verifiable: false
+    infra: library
+  INFRA_PHOTO_LABORATORY:
+    label: Geo-tagged Photo — Laboratory
+    issuer: Institution (evidence)
+    validityMonths: null
+    verifiable: false
+    infra: laboratory
+  INFRA_PHOTO_ACCESSIBILITY:
+    label: Geo-tagged Photo — Accessibility (ramp / lift)
+    issuer: Institution (evidence)
+    validityMonths: null
+    verifiable: false
+    infra: accessibility
+  OTHER:
+    label: Other / Unclassified Document
+    issuer: Unknown
+    validityMonths: null
+    verifiable: false

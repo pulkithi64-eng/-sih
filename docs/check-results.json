@@ -1,0 +1,44 @@
+﻿[
+    {
+        "directory":  "frontend",
+        "command":  "npm run lint",
+        "status":  "NOT RUN",
+        "reason":  "npm is not installed or on PATH"
+    },
+    {
+        "directory":  "frontend",
+        "command":  "npm run typecheck",
+        "status":  "NOT RUN",
+        "reason":  "npm is not installed or on PATH"
+    },
+    {
+        "directory":  "frontend",
+        "command":  "npm test",
+        "status":  "NOT RUN",
+        "reason":  "npm is not installed or on PATH"
+    },
+    {
+        "directory":  "frontend",
+        "command":  "npm run build",
+        "status":  "NOT RUN",
+        "reason":  "npm is not installed or on PATH"
+    },
+    {
+        "directory":  "backend",
+        "command":  "uv run --frozen pytest",
+        "status":  "NOT RUN",
+        "reason":  "uv is not installed or on PATH"
+    },
+    {
+        "directory":  "frontend",
+        "command":  "npm audit --omit=dev --audit-level=high",
+        "status":  "NOT RUN",
+        "reason":  "npm is not installed or on PATH"
+    },
+    {
+        "directory":  ".",
+        "command":  "docker compose config --quiet",
+        "status":  "NOT RUN",
+        "reason":  "docker is not installed or on PATH"
+    }
+]

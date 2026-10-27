@@ -1,0 +1,13 @@
+# Synthetic staging only. Production/authorised integration readiness is NOT implied.
+services:
+  verisense:
+    environment:
+      VERISENSE_ENVIRONMENT: staging
+      VERISENSE_DEMO_MODE: 'true'
+      VERISENSE_AUTOSEED: 'false'
+      VERISENSE_SECRET: ${VERISENSE_SECRET:?Set a random secret of at least 32 characters}
+      VERISENSE_CORS_ORIGINS: ${VERISENSE_CORS_ORIGINS:-http://localhost:7860}
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL

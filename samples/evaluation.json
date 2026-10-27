@@ -1,0 +1,2385 @@
+{
+  "generatedAt": "2026-10-26T12:33:04.810790+00:00",
+  "revision": "35436bbe9f62a417531672f95cce9ceb5c229d6f",
+  "workingTree": "includes local evaluation/scoring changes",
+  "referenceDate": "2026-10-26",
+  "manifestSha256": "af2dafb7b06dab51229562729b0776869431a35886dd211d33f701c597a8583b",
+  "dataset": {
+    "summary": "56 distinct synthetic documents, 20 forensic fixtures, 12 demo applications. Simulated sources; no real-world accuracy claim."
+  },
+  "results": {
+    "extraction": {
+      "headline": "99.1%",
+      "detail": "225/227 scalar text fields match using the production normaliser (not strict character equality); missing fields count as errors. Classification: 56/56 documents."
+    },
+    "validation": {
+      "headline": "82.1%",
+      "detail": "32/39 scenario expectations detected by kind and target. Coverage proxy only: free-text labels are incomplete; precision/F1 need exhaustive adjudication."
+    },
+    "anomaly": {
+      "headline": "100.0% precision",
+      "detail": "Recall 41.7%; clean false-positive rate 0.0%. TP 5, FP 0, FN 7, TN 8; 20 forensic fixtures."
+    },
+    "verification": {
+      "headline": "76.2%",
+      "detail": "32/42 conclusive simulated-source verdicts; expected-state accuracy 100.0%. EXPIRED: 2, MANUAL_REVIEW_REQUIRED: 7, MISMATCH_DETECTED: 5, SOURCE_UNAVAILABLE: 1, VERIFICATION_PENDING: 2, VERIFIED: 25"
+    },
+    "discrepancy": {
+      "headline": "100.0% precision",
+      "detail": "Source mismatches: TP 5, FP 0, FN 0. Record-mismatch precision still needs independent labels."
+    },
+    "time": {
+      "headline": "6.985s / document",
+      "detail": "Stored ingestion durations, p95 25.646s (56 distinct files); fresh validation mean 0.144s, p95 0.318s (12 applications). Local Windows CPU run."
+    },
+    "alerts": {
+      "headline": "Same transaction",
+      "detail": "Code-confirmed transactional creation alongside findings. End-to-end alert delivery latency has not been measured; no seconds claim is made."
+    },
+    "effort": {
+      "headline": "Estimate only",
+      "detail": "Assuming 12 manual minutes/document + 45 minutes/application: 2.07 manual hours/application before subtracting automated time. No officer time study yet."
+    }
+  },
+  "counts": {
+    "fieldsCorrect": 225,
+    "fields": 227,
+    "classificationCorrect": 56,
+    "verificationCorrect": 42,
+    "verificationTotal": 42,
+    "states": {
+      "MISMATCH_DETECTED": 5,
+      "EXPIRED": 2,
+      "VERIFIED": 25,
+      "MANUAL_REVIEW_REQUIRED": 7,
+      "SOURCE_UNAVAILABLE": 1,
+      "VERIFICATION_PENDING": 2
+    },
+    "anomaly": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 7,
+      "tn": 8
+    },
+    "mismatch": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0
+    }
+  },
+  "timing": {
+    "documents": {
+      "n": 56,
+      "meanSeconds": 6.985,
+      "p95Seconds": 25.646
+    },
+    "applications": {
+      "n": 12,
+      "meanSeconds": 0.144,
+      "p95Seconds": 0.318
+    }
+  },
+  "documents": [
+    {
+      "path": "apex/audited_financial_statement_2025-26.pdf",
+      "sha256": "63809525d207fc0ae4e61e5222a35f978cf80080ca3d2489677c8c632ccfb6f2",
+      "classificationCorrect": true,
+      "expectedVerification": "MISMATCH_DETECTED",
+      "verification": "MISMATCH_DETECTED",
+      "fields": [
+        {
+          "field": "udin",
+          "correct": true,
+          "expected": "26131975BHQZNM5520",
+          "actual": "26131975BHQZNM5520"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Apex Valley Institute of Technology & Management",
+          "actual": "Apex Valley Institute of Technology & Management"
+        },
+        {
+          "field": "financialYear",
+          "correct": true,
+          "expected": "2025-26",
+          "actual": "2025-26"
+        },
+        {
+          "field": "membershipNo",
+          "correct": true,
+          "expected": "131975",
+          "actual": "131975"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/building_plan_approval.pdf",
+      "sha256": "9de062b9827ccaf9c2794be886094c214253ea55d14b2eddd6e9e844c7c145f6",
+      "classificationCorrect": true,
+      "expectedVerification": "MISMATCH_DETECTED",
+      "verification": "MISMATCH_DETECTED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "GNUPB/BP/2010/0566",
+          "actual": "GNUPB/BP/2010/0566"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Apex Valley Institute of Technology & Management",
+          "actual": "Apex Valley Institute of Technology & Management"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2010-01-12",
+          "actual": "2010-01-12"
+        },
+        {
+          "field": "builtUpAreaSqm",
+          "correct": true,
+          "expected": 24600,
+          "actual": 24600
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/eoa_draft/naac_certificate.pdf",
+      "sha256": "27ee5365823b424ab8da9caf7676eb4444f34d9d6222aa37d33d0f357eeb225a",
+      "classificationCorrect": true,
+      "expectedVerification": "EXPIRED",
+      "verification": "EXPIRED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "NIAC/EC/2020/077/B",
+          "actual": "NIAC/EC/2020/077/B"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Apex Valley Institute of Technology & Management",
+          "actual": "Apex Valley Institute of Technology & Management"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2020-03-31",
+          "actual": "2020-03-31"
+        },
+        {
+          "field": "grade",
+          "correct": true,
+          "expected": "B++",
+          "actual": "B++"
+        },
+        {
+          "field": "cgpa",
+          "correct": true,
+          "expected": 2.84,
+          "actual": 2.84
+        },
+        {
+          "field": "validFrom",
+          "correct": true,
+          "expected": "2020-03-31",
+          "actual": "2020-03-31"
+        },
+        {
+          "field": "expiryDate",
+          "correct": true,
+          "expected": "2025-03-30",
+          "actual": "2025-03-30"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/eoa_draft/occupancy_certificate.pdf",
+      "sha256": "5fafeabd166516686b417424106dd787ec13e52da2b6f58717965f649823b077",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "GNUPB/OC/2012/0311",
+          "actual": "GNUPB/OC/2012/0311"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Apex Valley Institute of Technology & Management",
+          "actual": "Apex Valley Institute of Technology & Management"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2012-11-03",
+          "actual": "2012-11-03"
+        },
+        {
+          "field": "builtUpAreaSqm",
+          "correct": true,
+          "expected": 14600,
+          "actual": 14600
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/eoa_letter_2026-27.pdf",
+      "sha256": "395bcb1417ba0fda969dd0c5e62b12954ea9757346c4e4a1428854694f6df0cf",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "NRO/1-8492048217/2026/EOA",
+          "actual": "NRO/1-8492048217/2026/EOA"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Apex Valley Institute of Technology & Management",
+          "actual": "Apex Valley Institute of Technology & Management"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-06-02",
+          "actual": "2026-06-02"
+        },
+        {
+          "field": "permanentId",
+          "correct": true,
+          "expected": "1-8492048217",
+          "actual": "1-8492048217"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2026-27",
+          "actual": "2026-27"
+        },
+        {
+          "field": "totalIntake",
+          "correct": true,
+          "expected": 240,
+          "actual": 240
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/faculty_roster.pdf",
+      "sha256": "53cb4da514e51d52be936c57fcde2cf67efec03a3606f42c5aa7869482fddcd4",
+      "classificationCorrect": true,
+      "expectedVerification": "NOT_APPLICABLE",
+      "verification": "NOT_APPLICABLE",
+      "fields": [
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Apex Valley Institute of Technology & Management",
+          "actual": "Apex Valley Institute of Technology & Management"
+        },
+        {
+          "field": "facultyCount",
+          "correct": true,
+          "expected": 58,
+          "actual": 58
+        },
+        {
+          "field": "declaredTotal",
+          "correct": true,
+          "expected": 58,
+          "actual": 58
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/fire_noc.pdf",
+      "sha256": "65449f4d444f2f7378f180983175d3c18ba0c5f9b4662a3d222880082a06f0f6",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "GNFRS/NOC/2026/0264",
+          "actual": "GNFRS/NOC/2026/0264"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Apex Valley Institute of Technology & Management",
+          "actual": "Apex Valley Institute of Technology & Management"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-04-21",
+          "actual": "2026-04-21"
+        },
+        {
+          "field": "expiryDate",
+          "correct": true,
+          "expected": "2027-04-20",
+          "actual": "2027-04-20"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/floor_plan_area_statement.pdf",
+      "sha256": "e97b75063750e905e8a959d87a129625f5ea2b18f92c58dcccfc08335dd8c6c9",
+      "classificationCorrect": true,
+      "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+      "verification": "MANUAL_REVIEW_REQUIRED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "RSA/AVIT/2026/14",
+          "actual": "RSA/AVIT/2026/14"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Apex Valley Institute of Technology & Management",
+          "actual": "Apex Valley Institute of Technology & Management"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-09-02",
+          "actual": "2026-09-02"
+        },
+        {
+          "field": "builtUpAreaSqm",
+          "correct": false,
+          "expected": 24600,
+          "actual": 14600
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/land_deed.pdf",
+      "sha256": "10e5eac82b2d7177d322ab39be65249860fd1203614662826393bc98de9a6102",
+      "classificationCorrect": true,
+      "expectedVerification": "MISMATCH_DETECTED",
+      "verification": "MISMATCH_DETECTED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "GN/SR/2009/7731",
+          "actual": "GN/SR/2009/7731"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2009-06-16",
+          "actual": "2009-06-16"
+        },
+        {
+          "field": "surveyNo",
+          "correct": true,
+          "expected": "148/2",
+          "actual": "148/2"
+        },
+        {
+          "field": "landAreaAcres",
+          "correct": true,
+          "expected": 12.5,
+          "actual": 12.5
+        },
+        {
+          "field": "ownerName",
+          "correct": true,
+          "expected": "Apex Valley Educational Trust",
+          "actual": "Apex Valley Educational Trust"
+        },
+        {
+          "field": "village",
+          "correct": true,
+          "expected": "Tilapta",
+          "actual": "Tilapta"
+        },
+        {
+          "field": "district",
+          "correct": true,
+          "expected": "Gautam Buddh Nagar",
+          "actual": "Gautam Buddh Nagar"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/land_khatauni_extract_scan.jpg",
+      "sha256": "e0e510d244d3ac2d6e02db0af8ce2365579607b8474811681cded5f47f4f2f89",
+      "classificationCorrect": true,
+      "expectedVerification": "MISMATCH_DETECTED",
+      "verification": "MISMATCH_DETECTED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "MUT/DDR/2010/1182",
+          "actual": "MUT/DDR/2010/1182"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2010-02-04",
+          "actual": "2010-02-04"
+        },
+        {
+          "field": "surveyNo",
+          "correct": true,
+          "expected": "118/2",
+          "actual": "118/2"
+        },
+        {
+          "field": "landAreaAcres",
+          "correct": true,
+          "expected": 12.5,
+          "actual": 12.5
+        },
+        {
+          "field": "village",
+          "correct": true,
+          "expected": "Tilapta",
+          "actual": "Tilapta"
+        },
+        {
+          "field": "district",
+          "correct": true,
+          "expected": "Gautam Buddh Nagar",
+          "actual": "GautamBuddhNagar"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/nba_accreditation_cse.pdf",
+      "sha256": "0bba482a176a68f5554150dbf4b98c3c038651b6c48cc8c1fc56f1ce56d97665",
+      "classificationCorrect": true,
+      "expectedVerification": "MISMATCH_DETECTED",
+      "verification": "MISMATCH_DETECTED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "NBEP/2024/AP/0419",
+          "actual": "NBEP/2024/AP/0419"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Apex Valley Institute of Technology & Management",
+          "actual": "Apex Valley Institute of Technology & Management"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2024-06-18",
+          "actual": "2024-06-18"
+        },
+        {
+          "field": "programme",
+          "correct": true,
+          "expected": "B.Tech Computer Science & Engineering",
+          "actual": "B.Tech Computer Science & Engineering"
+        },
+        {
+          "field": "validFrom",
+          "correct": true,
+          "expected": "2024-07-01",
+          "actual": "2024-07-01"
+        },
+        {
+          "field": "expiryDate",
+          "correct": true,
+          "expected": "2027-06-30",
+          "actual": "2027-06-30"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/photos/classroom_301.jpg",
+      "sha256": "9a6c1fadededfb890e0af5f02eee3faa4e949754c290d1539b5e3c55ef4b8359",
+      "classificationCorrect": true,
+      "expectedVerification": "NOT_APPLICABLE",
+      "verification": "NOT_APPLICABLE",
+      "fields": [],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/photos/computer_lab_3.jpg",
+      "sha256": "cf48bf73576dd90aed740564bfc657d57753ed360eb3feb17d269ae433f13515",
+      "classificationCorrect": true,
+      "expectedVerification": "NOT_APPLICABLE",
+      "verification": "NOT_APPLICABLE",
+      "fields": [],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/photos/electronics_lab.jpg",
+      "sha256": "183ed38ea2c90c2416dcbdb67ae14720a489a3253176316ded28776bf781fa29",
+      "classificationCorrect": true,
+      "expectedVerification": "NOT_APPLICABLE",
+      "verification": "NOT_APPLICABLE",
+      "fields": [],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/ter_receipt_intake.pdf",
+      "sha256": "1a4c0d5361006696ce1b58fdf7e45de8332a2dbf7690d29f34f96dfc1eab90ad",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "TERX2026100800734",
+          "actual": "TERX2026100800734"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Apex Valley Institute of Technology & Management",
+          "actual": "Apex Valley Institute of Technology & Management"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-10-08",
+          "actual": "2026-10-08"
+        },
+        {
+          "field": "amount",
+          "correct": true,
+          "expected": 200000,
+          "actual": 200000
+        },
+        {
+          "field": "applicationNo",
+          "correct": true,
+          "expected": "APP-2027-NR-20871",
+          "actual": "APP-2027-NR-20871"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "apex/university_consent_intake.pdf",
+      "sha256": "985000b1dbdea18becfb88ae38d0565e715aeea713bde0de9590fe6633e1ac5a",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "GANGTU/AFF/2026/0912",
+          "actual": "GANGTU/AFF/2026/0912"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Apex Valley Institute of Technology & Management",
+          "actual": "Apex Valley Institute of Technology & Management"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-08-21",
+          "actual": "2026-08-21"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        },
+        {
+          "field": "totalIntake",
+          "correct": true,
+          "expected": 300,
+          "actual": 300
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/affidavit_eoa_2027-28.pdf",
+      "sha256": "c93c45b7c365058f26365d81c6147d8721ad155461ea2ed9c6017d4d89af9ece",
+      "classificationCorrect": true,
+      "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+      "verification": "MANUAL_REVIEW_REQUIRED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "IN-GJ-SIM-26-0045512",
+          "actual": "IN-GJ-SIM-26-0045512"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "NarmadaValleyInstituteofEngineering"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-09-10",
+          "actual": "2026-09-10"
+        },
+        {
+          "field": "notarisedOn",
+          "correct": true,
+          "expected": "2026-09-11",
+          "actual": "2026-09-11"
+        },
+        {
+          "field": "deponentName",
+          "correct": true,
+          "expected": "Dr. Hemant R. Desai",
+          "actual": "Dr.HemantR.Desai"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/audited_financial_statement_2025-26.pdf",
+      "sha256": "fce553fdd498bb026befe3941093ec54958b866685415bd7ff438bbdfa033419",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "udin",
+          "correct": true,
+          "expected": "26104377BKQXWE7781",
+          "actual": "26104377BKQXWE7781"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "Narmada Valley Institute of Engineering"
+        },
+        {
+          "field": "financialYear",
+          "correct": true,
+          "expected": "2025-26",
+          "actual": "2025-26"
+        },
+        {
+          "field": "membershipNo",
+          "correct": true,
+          "expected": "104377",
+          "actual": "104377"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/building_plan_approval.pdf",
+      "sha256": "9de4727f324bb1a52c2f5fbf96dab3254906dd25a14927c4d9f52f58139fcfc4",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "VMDA/BP/2012/0897",
+          "actual": "VMDA/BP/2012/0897"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "Narmada Valley Institute of Engineering"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2012-09-05",
+          "actual": "2012-09-05"
+        },
+        {
+          "field": "builtUpAreaSqm",
+          "correct": true,
+          "expected": 21450,
+          "actual": 21450
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/eoa_letter_2026-27.pdf",
+      "sha256": "275b5f66fca5ae555f333705d832f6372b7b9e3a808a34e70ad10640ab4c6a7c",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "WRO/1-1029482233/2026/EOA",
+          "actual": "WRO/1-1029482233/2026/EOA"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "Narmada Valley Institute of Engineering"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-05-28",
+          "actual": "2026-05-28"
+        },
+        {
+          "field": "permanentId",
+          "correct": true,
+          "expected": "1-1029482233",
+          "actual": "1-1029482233"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2026-27",
+          "actual": "2026-27"
+        },
+        {
+          "field": "totalIntake",
+          "correct": true,
+          "expected": 240,
+          "actual": 240
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/faculty_roster.csv",
+      "sha256": "bc76fd92981e7f39564028c358d870fa99af73ecfd4812e66eccf65497db17be",
+      "classificationCorrect": true,
+      "expectedVerification": "NOT_APPLICABLE",
+      "verification": "NOT_APPLICABLE",
+      "fields": [
+        {
+          "field": "facultyCount",
+          "correct": true,
+          "expected": 52,
+          "actual": 52
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/fire_noc.pdf",
+      "sha256": "61c390ba354d4f02ce42f6be1549dbd16684f38a4182830158bd8c8bc78c6e0c",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "VUFSD/NOC/2026/0718",
+          "actual": "VUFSD/NOC/2026/0718"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "Narmada Valley Institute of Engineering"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-07-14",
+          "actual": "2026-07-14"
+        },
+        {
+          "field": "expiryDate",
+          "correct": true,
+          "expected": "2027-07-13",
+          "actual": "2027-07-13"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/land_sale_deed.pdf",
+      "sha256": "c034622002c88a4c80dbb81645bfb3240311e0b2073507a207c27b4ba74ba2f5",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "VDR-II/4471/2005",
+          "actual": "VDR-II/4471/2005"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2005-11-21",
+          "actual": "2005-11-21"
+        },
+        {
+          "field": "surveyNo",
+          "correct": true,
+          "expected": "211/2",
+          "actual": "211/2"
+        },
+        {
+          "field": "landAreaAcres",
+          "correct": true,
+          "expected": 15.4,
+          "actual": 15.4
+        },
+        {
+          "field": "ownerName",
+          "correct": true,
+          "expected": "Narmada Vidya Pratishthan",
+          "actual": "Narmada Vidya Pratishthan"
+        },
+        {
+          "field": "village",
+          "correct": true,
+          "expected": "Waghodia",
+          "actual": "Waghodia"
+        },
+        {
+          "field": "district",
+          "correct": true,
+          "expected": "Vadodara",
+          "actual": "Vadodara"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/naac_certificate.pdf",
+      "sha256": "1fa2bdc4e3ed3947d0c9d1d9f59060d6c9298b08c10d10b49f2577b7037656cd",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "NIAC/EC/2024/118/A",
+          "actual": "NIAC/EC/2024/118/A"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "Narmada Valley Institute of Engineering"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2024-02-15",
+          "actual": "2024-02-15"
+        },
+        {
+          "field": "grade",
+          "correct": true,
+          "expected": "A+",
+          "actual": "A+"
+        },
+        {
+          "field": "cgpa",
+          "correct": true,
+          "expected": 3.31,
+          "actual": 3.31
+        },
+        {
+          "field": "validFrom",
+          "correct": true,
+          "expected": "2024-02-15",
+          "actual": "2024-02-15"
+        },
+        {
+          "field": "expiryDate",
+          "correct": true,
+          "expected": "2029-02-14",
+          "actual": "2029-02-14"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/nba_accreditation_cse.pdf",
+      "sha256": "122877433a6cd792d34a16ff3b43433a884519186251cdd049af8d14a391954b",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "NBEP/2025/NV/0233",
+          "actual": "NBEP/2025/NV/0233"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "Narmada Valley Institute of Engineering"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2025-06-20",
+          "actual": "2025-06-20"
+        },
+        {
+          "field": "programme",
+          "correct": true,
+          "expected": "B.Tech Computer Science & Engineering",
+          "actual": "B.Tech Computer Science & Engineering"
+        },
+        {
+          "field": "validFrom",
+          "correct": true,
+          "expected": "2025-07-01",
+          "actual": "2025-07-01"
+        },
+        {
+          "field": "expiryDate",
+          "correct": true,
+          "expected": "2028-06-30",
+          "actual": "2028-06-30"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/new_course/affidavit_new_course.pdf",
+      "sha256": "77e80d052d48aac7bba994472f2054a67b4a1d2c52187a6b9741da5289033d08",
+      "classificationCorrect": true,
+      "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+      "verification": "MANUAL_REVIEW_REQUIRED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "IN-GJ-SIM-26-0047730",
+          "actual": "IN-GJ-SIM-26-0047730"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "Narmada Valley Institute of Engineering"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-10-01",
+          "actual": "2026-10-01"
+        },
+        {
+          "field": "notarisedOn",
+          "correct": true,
+          "expected": "2026-10-03",
+          "actual": "2026-10-03"
+        },
+        {
+          "field": "deponentName",
+          "correct": true,
+          "expected": "Dr. Hemant R. Desai",
+          "actual": "Dr. Hemant R. Desai"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/new_course/ai_ds_lab.jpg",
+      "sha256": "c1cc1cce9ffcf472e98c31d9ab94db6717533ccc9f32a8325e1e0b419fd9b69a",
+      "classificationCorrect": true,
+      "expectedVerification": "NOT_APPLICABLE",
+      "verification": "NOT_APPLICABLE",
+      "fields": [],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/new_course/corpus_fund_fdr.pdf",
+      "sha256": "02e3bfdc21bb4bd272453050b8d86ffb497670341f68daef7d5978089cb9b467",
+      "classificationCorrect": true,
+      "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+      "verification": "MANUAL_REVIEW_REQUIRED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "IVNB/FD/0098812345",
+          "actual": "IVNB/FD/0098812345"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-09-05",
+          "actual": "2026-09-05"
+        },
+        {
+          "field": "expiryDate",
+          "correct": true,
+          "expected": "2031-09-05",
+          "actual": "2031-09-05"
+        },
+        {
+          "field": "amount",
+          "correct": true,
+          "expected": 10000000,
+          "actual": 10000000
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/new_course/floor_plan_ai_ds_block.pdf",
+      "sha256": "b6e3fa870d028493ce0b1fdd9e2ccfda93bdf5505c89edd3d704fda066643e61",
+      "classificationCorrect": true,
+      "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+      "verification": "MANUAL_REVIEW_REQUIRED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "KJA/NVIE/2026/07",
+          "actual": "KJA/NVIE/2026/07"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "Narmada Valley Institute of Engineering"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-08-20",
+          "actual": "2026-08-20"
+        },
+        {
+          "field": "builtUpAreaSqm",
+          "correct": true,
+          "expected": 2640,
+          "actual": 2640
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/new_course/state_noc_ai_ds_scan.pdf",
+      "sha256": "2e349c5e671112ce65697cf820289810225b0b60f5f4a6bc43068e1f23df5358",
+      "classificationCorrect": true,
+      "expectedVerification": "SOURCE_UNAVAILABLE",
+      "verification": "SOURCE_UNAVAILABLE",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "CTE/NOC/2026/3381",
+          "actual": "CTE/NOC/2026/3381"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "NarmadaValleyInstituteofEngineering"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-09-30",
+          "actual": "2026-09-30"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        },
+        {
+          "field": "course",
+          "correct": true,
+          "expected": "B.Tech Artificial Intelligence & Data Science",
+          "actual": "B.TechArtificial Intelligence&DataScience"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/new_course/ter_receipt_new_course.pdf",
+      "sha256": "112fb36519794c8cc65e627e96f5df6df4e2f895287797277efe4e7ab464bc5c",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "TERX2026100200981",
+          "actual": "TERX2026100200981"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "Narmada Valley Institute of Engineering"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-10-02",
+          "actual": "2026-10-02"
+        },
+        {
+          "field": "amount",
+          "correct": true,
+          "expected": 100000,
+          "actual": 100000
+        },
+        {
+          "field": "applicationNo",
+          "correct": true,
+          "expected": "APP-2027-WR-10377",
+          "actual": "APP-2027-WR-10377"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/new_course/university_consent_ai_ds.pdf",
+      "sha256": "5682992d189a9000278f754d1ce09ce46b11097f4bab4a03d8d80315fb96884a",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFICATION_PENDING",
+      "verification": "VERIFICATION_PENDING",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "NTU/AFF/NC/2026/0142",
+          "actual": "NTU/AFF/NC/2026/0142"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "Narmada Valley Institute of Engineering"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-09-25",
+          "actual": "2026-09-25"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        },
+        {
+          "field": "course",
+          "correct": true,
+          "expected": "B.Tech Artificial Intelligence & Data Science",
+          "actual": "B.Tech Artificial Intelligence & Data Science"
+        },
+        {
+          "field": "totalIntake",
+          "correct": true,
+          "expected": 60,
+          "actual": 60
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/occupancy_certificate.pdf",
+      "sha256": "0bb6038fca7d7222c0100092cc7b55f2460e7c56f27e10eb6725f838046a068f",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "VMDA/OC/2014/2231",
+          "actual": "VMDA/OC/2014/2231"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "Narmada Valley Institute of Engineering"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2014-03-12",
+          "actual": "2014-03-12"
+        },
+        {
+          "field": "builtUpAreaSqm",
+          "correct": true,
+          "expected": 21450,
+          "actual": 21450
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/photos/classroom_204.jpg",
+      "sha256": "9a6c1fadededfb890e0af5f02eee3faa4e949754c290d1539b5e3c55ef4b8359",
+      "classificationCorrect": true,
+      "expectedVerification": "NOT_APPLICABLE",
+      "verification": "NOT_APPLICABLE",
+      "fields": [],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/photos/computer_lab_2.jpg",
+      "sha256": "ce8d49e36befa1f619604e1006eb16c4cb3f89fae0e2e8f9bd12967cf0cf1db3",
+      "classificationCorrect": true,
+      "expectedVerification": "NOT_APPLICABLE",
+      "verification": "NOT_APPLICABLE",
+      "fields": [],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/photos/library.jpg",
+      "sha256": "3333cb0df06292e086a3e52d9e0a19175d65b692bb1b6f54b1a1f086f87c63ca",
+      "classificationCorrect": true,
+      "expectedVerification": "NOT_APPLICABLE",
+      "verification": "NOT_APPLICABLE",
+      "fields": [],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/photos/ramp_block_a.jpg",
+      "sha256": "aab310a62e934686c7b7e1b2ddc4bd490472ae17617e5f788cdde59531f5bdbb",
+      "classificationCorrect": true,
+      "expectedVerification": "NOT_APPLICABLE",
+      "verification": "NOT_APPLICABLE",
+      "fields": [],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/ter_receipt_eoa.pdf",
+      "sha256": "87ab1afbcf48e27e66bab8082c76f5a6f3c5b83659d08e7d7d573ccd62c5924a",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "TERX2026091800417",
+          "actual": "TERX2026091800417"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "Narmada Valley Institute of Engineering"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-09-18",
+          "actual": "2026-09-18"
+        },
+        {
+          "field": "amount",
+          "correct": true,
+          "expected": 150000,
+          "actual": 150000
+        },
+        {
+          "field": "applicationNo",
+          "correct": true,
+          "expected": "APP-2027-WR-10294",
+          "actual": "APP-2027-WR-10294"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "nvie/university_affiliation_2027-28.pdf",
+      "sha256": "367bd5623b367bb3c3f320839544be0df09101a63b1d7f29b2e7f3b0915ba05f",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "NTU/AFF/2026/1187",
+          "actual": "NTU/AFF/2026/1187"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Narmada Valley Institute of Engineering",
+          "actual": "Narmada Valley Institute of Engineering"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-08-02",
+          "actual": "2026-08-02"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        },
+        {
+          "field": "totalIntake",
+          "correct": true,
+          "expected": 240,
+          "actual": 240
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/affidavit_eoa_2027-28.pdf",
+      "sha256": "c99d5f69d2929d85ac4112adb9a5467a660618c5d6b1e9776bf319bbfc99fdee",
+      "classificationCorrect": true,
+      "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+      "verification": "MANUAL_REVIEW_REQUIRED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "IN-MH-SIM-26-0193377",
+          "actual": "IN-MH-SIM-26-0193377"
+        },
+        {
+          "field": "institutionName",
+          "correct": false,
+          "expected": "Pragati Institute of Advanced Technology",
+          "actual": null
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-09-22",
+          "actual": "2026-09-22"
+        },
+        {
+          "field": "notarisedOn",
+          "correct": true,
+          "expected": "2026-09-23",
+          "actual": "2026-09-23"
+        },
+        {
+          "field": "deponentName",
+          "correct": true,
+          "expected": "Dr. Sunil V. Gokhale",
+          "actual": "Dr.Sunil V.Gokhale"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/audited_financial_statement_2025-26.pdf",
+      "sha256": "cc0301d0f5562e706822ad8a8258a6b88384495e3ff41470f445028134edabc1",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "udin",
+          "correct": true,
+          "expected": "26112840BMTRQP4410",
+          "actual": "26112840BMTRQP4410"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Pragati Institute of Advanced Technology",
+          "actual": "Pragati Institute of Advanced Technology"
+        },
+        {
+          "field": "financialYear",
+          "correct": true,
+          "expected": "2025-26",
+          "actual": "2025-26"
+        },
+        {
+          "field": "membershipNo",
+          "correct": true,
+          "expected": "112840",
+          "actual": "112840"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/change_of_name/affidavit_name_change.pdf",
+      "sha256": "89d7662c6db34476124852f5e9b043b0714e163c648f54a7989bbc6c0e000ede",
+      "classificationCorrect": true,
+      "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+      "verification": "MANUAL_REVIEW_REQUIRED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "IN-MH-SIM-26-0201145",
+          "actual": "IN-MH-SIM-26-0201145"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Pragati Institute of Advanced Technology",
+          "actual": "Pragati Institute of Advanced Technology"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-09-24",
+          "actual": "2026-09-24"
+        },
+        {
+          "field": "notarisedOn",
+          "correct": true,
+          "expected": "2026-09-25",
+          "actual": "2026-09-25"
+        },
+        {
+          "field": "deponentName",
+          "correct": true,
+          "expected": "Dr. Sunil V. Gokhale",
+          "actual": "Dr. Sunil V. Gokhale"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/change_of_name/society_registration_amended.pdf",
+      "sha256": "7ede46c39867cdbee2e30f521d65cc23a36e5a10b64ca01e54bb777ef70bc3af",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "MH/PUNE/F-18842/2008",
+          "actual": "MH/PUNE/F-18842/2008"
+        },
+        {
+          "field": "trustName",
+          "correct": true,
+          "expected": "Pragati Shikshan Prasarak Mandal",
+          "actual": "Pragati Shikshan Prasarak Mandal"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2008-03-14",
+          "actual": "2008-03-14"
+        },
+        {
+          "field": "newInstitutionName",
+          "correct": true,
+          "expected": "Pragati Institute of Technology & Research",
+          "actual": "Pragati Institute of Technology & Research"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/change_of_name/state_noc_name_change.pdf",
+      "sha256": "413d56c47d0f01019b7ff72172c495296ad61aa74b544777c12a5583d32900c0",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "DTE/MH/NOC/2026/5521",
+          "actual": "DTE/MH/NOC/2026/5521"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Pragati Institute of Advanced Technology",
+          "actual": "Pragati Institute of Advanced Technology"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-09-19",
+          "actual": "2026-09-19"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        },
+        {
+          "field": "proposedName",
+          "correct": true,
+          "expected": "Pragati Institute of Technology & Management",
+          "actual": "Pragati Institute of Technology & Management"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/change_of_name/ter_receipt_name_change.pdf",
+      "sha256": "70932611db88117f670a3be3c1ae1c8ad54d456843935445a31f4f83f7d65630",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "TERX2026092600551",
+          "actual": "TERX2026092600551"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Pragati Institute of Advanced Technology",
+          "actual": "Pragati Institute of Advanced Technology"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-09-26",
+          "actual": "2026-09-26"
+        },
+        {
+          "field": "amount",
+          "correct": true,
+          "expected": 50000,
+          "actual": 50000
+        },
+        {
+          "field": "applicationNo",
+          "correct": true,
+          "expected": "APP-2027-WR-10498",
+          "actual": "APP-2027-WR-10498"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/change_of_name/university_noc_name_change.pdf",
+      "sha256": "7e0549c4458688df7cedf122c68ce66ddd021dca6933b6122256c0da88547b1d",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "STU/AFF/CN/2026/0061",
+          "actual": "STU/AFF/CN/2026/0061"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Pragati Institute of Advanced Technology",
+          "actual": "Pragati Institute of Advanced Technology"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-09-05",
+          "actual": "2026-09-05"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        },
+        {
+          "field": "proposedName",
+          "correct": true,
+          "expected": "Pragati Institute of Technology & Research",
+          "actual": "Pragati Institute of Technology & Research"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/eoa_letter_2026-27.pdf",
+      "sha256": "eabc05528e4489d0daa0081649fcc46061ac906723932a0a426afff65ca605a9",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "WRO/1-3948291012/2026/EOA",
+          "actual": "WRO/1-3948291012/2026/EOA"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Pragati Institute of Advanced Technology",
+          "actual": "Pragati Institute of Advanced Technology"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-05-30",
+          "actual": "2026-05-30"
+        },
+        {
+          "field": "permanentId",
+          "correct": true,
+          "expected": "1-3948291012",
+          "actual": "1-3948291012"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2026-27",
+          "actual": "2026-27"
+        },
+        {
+          "field": "totalIntake",
+          "correct": true,
+          "expected": 300,
+          "actual": 300
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/faculty_roster.pdf",
+      "sha256": "d46c5b2443234c1f6f0a109bd972fcba0b0a835143d2ea9b9bd385ebb00e9f9c",
+      "classificationCorrect": true,
+      "expectedVerification": "NOT_APPLICABLE",
+      "verification": "NOT_APPLICABLE",
+      "fields": [
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Pragati Institute of Advanced Technology",
+          "actual": "Pragati Institute of Advanced Technology"
+        },
+        {
+          "field": "facultyCount",
+          "correct": true,
+          "expected": 47,
+          "actual": 47
+        },
+        {
+          "field": "declaredTotal",
+          "correct": true,
+          "expected": 47,
+          "actual": 47
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/fire_noc.pdf",
+      "sha256": "2904795c227d41f9061e8d2141da598f5febd72084b835eb95ae9090ea391a7a",
+      "classificationCorrect": true,
+      "expectedVerification": "EXPIRED",
+      "verification": "EXPIRED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "PMRFES/NOC/2025/1093",
+          "actual": "PMRFES/NOC/2025/1093"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Pragati Institute of Advanced Technology",
+          "actual": "Pragati Institute of Advanced Technology"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2025-10-11",
+          "actual": "2025-10-11"
+        },
+        {
+          "field": "expiryDate",
+          "correct": true,
+          "expected": "2026-10-10",
+          "actual": "2026-10-10"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/nba_accreditation_ce.pdf",
+      "sha256": "f41c1065441e79748553638655146934c9f37009a70652cc29fd724bc83b9a12",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "NBEP/2024/PI/0377",
+          "actual": "NBEP/2024/PI/0377"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Pragati Institute of Advanced Technology",
+          "actual": "Pragati Institute of Advanced Technology"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2024-06-24",
+          "actual": "2024-06-24"
+        },
+        {
+          "field": "programme",
+          "correct": true,
+          "expected": "B.Tech Computer Engineering",
+          "actual": "B.Tech Computer Engineering"
+        },
+        {
+          "field": "validFrom",
+          "correct": true,
+          "expected": "2024-07-01",
+          "actual": "2024-07-01"
+        },
+        {
+          "field": "expiryDate",
+          "correct": true,
+          "expected": "2027-06-30",
+          "actual": "2027-06-30"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/occupancy_certificate.pdf",
+      "sha256": "31ba49ec4c3a47cb6147e698475972d0bcb09bcf006d1462e77946e427205ed2",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "PMRDA/OC/2011/0457",
+          "actual": "PMRDA/OC/2011/0457"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Pragati Institute of Advanced Technology",
+          "actual": "Pragati Institute of Advanced Technology"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2011-08-18",
+          "actual": "2011-08-18"
+        },
+        {
+          "field": "builtUpAreaSqm",
+          "correct": true,
+          "expected": 26800,
+          "actual": 26800
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/photos/classroom_105.jpg",
+      "sha256": "45d3eb05ac1a5c0ab9f51896fac46f53896cc6a6609e61ab46fff18902c7d69b",
+      "classificationCorrect": true,
+      "expectedVerification": "NOT_APPLICABLE",
+      "verification": "NOT_APPLICABLE",
+      "fields": [],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/photos/computer_lab_1.jpg",
+      "sha256": "7a25fb0dacdce7fc7d8a5553b398fb0abf9c392ef3c8a9d51c4a7ff205c88043",
+      "classificationCorrect": true,
+      "expectedVerification": "NOT_APPLICABLE",
+      "verification": "NOT_APPLICABLE",
+      "fields": [],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/photos/library.jpg",
+      "sha256": "add5993528ee34b884c94c7fcbe193b73d52ea214f0d3a215523a315bea1c17d",
+      "classificationCorrect": true,
+      "expectedVerification": "NOT_APPLICABLE",
+      "verification": "NOT_APPLICABLE",
+      "fields": [],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/ter_receipt_eoa.pdf",
+      "sha256": "57d78b05a7cbb96c3d9170c2d0f85c6a29811ae29a790c439200fcf12b102e6a",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFICATION_PENDING",
+      "verification": "VERIFICATION_PENDING",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "TERX2026101500112",
+          "actual": "TERX2026101500112"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Pragati Institute of Advanced Technology",
+          "actual": "Pragati Institute of Advanced Technology"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-10-15",
+          "actual": "2026-10-15"
+        },
+        {
+          "field": "amount",
+          "correct": true,
+          "expected": 150000,
+          "actual": 150000
+        },
+        {
+          "field": "applicationNo",
+          "correct": true,
+          "expected": "APP-2027-WR-10511",
+          "actual": "APP-2027-WR-10511"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        }
+      ],
+      "pipelineErrors": []
+    },
+    {
+      "path": "piat/university_affiliation_2027-28.pdf",
+      "sha256": "0182d3a562830877310ec93a0c75650b19c24f7684fc743b7583cc9b26a55bfc",
+      "classificationCorrect": true,
+      "expectedVerification": "VERIFIED",
+      "verification": "VERIFIED",
+      "fields": [
+        {
+          "field": "referenceNo",
+          "correct": true,
+          "expected": "STU/AFF/2026/2240",
+          "actual": "STU/AFF/2026/2240"
+        },
+        {
+          "field": "institutionName",
+          "correct": true,
+          "expected": "Pragati Institute of Advanced Technology",
+          "actual": "Pragati Institute of Advanced Technology"
+        },
+        {
+          "field": "issueDate",
+          "correct": true,
+          "expected": "2026-08-08",
+          "actual": "2026-08-08"
+        },
+        {
+          "field": "academicYear",
+          "correct": true,
+          "expected": "2027-28",
+          "actual": "2027-28"
+        },
+        {
+          "field": "totalIntake",
+          "correct": true,
+          "expected": 300,
+          "actual": 300
+        }
+      ],
+      "pipelineErrors": []
+    }
+  ],
+  "forensics": [
+    {
+      "path": "benchmark/clean_scan_01.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q75",
+      "predictedTampered": false,
+      "flags": []
+    },
+    {
+      "path": "benchmark/tampered_scan_01.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value '3.86' then saved q92",
+      "predictedTampered": false,
+      "flags": []
+    },
+    {
+      "path": "benchmark/clean_scan_02.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q70",
+      "predictedTampered": false,
+      "flags": []
+    },
+    {
+      "path": "benchmark/tampered_scan_02.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value 'Rs. 9,40,00,000.00' then saved q92; EXIF Software GIMP 2.10.36",
+      "predictedTampered": true,
+      "flags": [
+        "IMAGE_EDITING_SOFTWARE"
+      ]
+    },
+    {
+      "path": "benchmark/clean_scan_03.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q75",
+      "predictedTampered": false,
+      "flags": []
+    },
+    {
+      "path": "benchmark/tampered_scan_03.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value '31/12/2029' then saved q92",
+      "predictedTampered": false,
+      "flags": []
+    },
+    {
+      "path": "benchmark/clean_scan_04.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q85",
+      "predictedTampered": false,
+      "flags": []
+    },
+    {
+      "path": "benchmark/tampered_scan_04.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value 'Rs. 15,00,000.00' then saved q85 (same quality as original: hard case for ELA)",
+      "predictedTampered": false,
+      "flags": []
+    },
+    {
+      "path": "benchmark/clean_scan_05.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q70",
+      "predictedTampered": false,
+      "flags": []
+    },
+    {
+      "path": "benchmark/tampered_scan_05.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value '3.86' then saved q92",
+      "predictedTampered": false,
+      "flags": []
+    },
+    {
+      "path": "benchmark/clean_scan_06.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q70",
+      "predictedTampered": false,
+      "flags": []
+    },
+    {
+      "path": "benchmark/tampered_scan_06.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value '18.75 Acres' then saved q92; EXIF Software GIMP 2.10.36",
+      "predictedTampered": true,
+      "flags": [
+        "IMAGE_EDITING_SOFTWARE"
+      ]
+    },
+    {
+      "path": "benchmark/clean_scan_07.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q85",
+      "predictedTampered": false,
+      "flags": []
+    },
+    {
+      "path": "benchmark/tampered_scan_07.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value '31/12/2029' then saved q85 (same quality as original: hard case for ELA)",
+      "predictedTampered": false,
+      "flags": []
+    },
+    {
+      "path": "benchmark/clean_scan_08.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q70",
+      "predictedTampered": false,
+      "flags": []
+    },
+    {
+      "path": "benchmark/tampered_scan_08.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value '42,800 sq.m' then saved q95",
+      "predictedTampered": false,
+      "flags": []
+    },
+    {
+      "path": "benchmark/tampered_pdf_01.pdf",
+      "tampered": true,
+      "kind": "pdf",
+      "notes": "Times font + Photoshop producer",
+      "predictedTampered": true,
+      "flags": [
+        "PDF_EDITING_SOFTWARE",
+        "PDF_MODIFIED_AFTER_CREATION",
+        "PDF_INCREMENTAL_UPDATE",
+        "FONT_INCONSISTENCY"
+      ]
+    },
+    {
+      "path": "benchmark/tampered_pdf_02.pdf",
+      "tampered": true,
+      "kind": "pdf",
+      "notes": "Courier font, producer unchanged",
+      "predictedTampered": true,
+      "flags": [
+        "PDF_MODIFIED_AFTER_CREATION",
+        "PDF_INCREMENTAL_UPDATE",
+        "FONT_INCONSISTENCY"
+      ]
+    },
+    {
+      "path": "benchmark/tampered_pdf_03.pdf",
+      "tampered": true,
+      "kind": "pdf",
+      "notes": "same font (Helvetica), producer unchanged - only the incremental update remains",
+      "predictedTampered": true,
+      "flags": [
+        "PDF_MODIFIED_AFTER_CREATION",
+        "PDF_INCREMENTAL_UPDATE"
+      ]
+    },
+    {
+      "path": "benchmark/tampered_pdf_04.pdf",
+      "tampered": true,
+      "kind": "pdf",
+      "notes": "full rewrite with same font and fresh metadata - hard case",
+      "predictedTampered": false,
+      "flags": []
+    }
+  ],
+  "scenarios": [
+    {
+      "key": "nvie-eoa-2027",
+      "documents": 16,
+      "compliance": 100.0,
+      "risk": 5.0,
+      "band": "LOW",
+      "expectations": [
+        {
+          "label": "VERIFICATION:AFFIDAVIT_UNDERTAKING (MANUAL_REVIEW_REQUIRED, info)",
+          "detected": true
+        }
+      ]
+    },
+    {
+      "key": "piat-eoa-2027",
+      "documents": 12,
+      "compliance": 79.7,
+      "risk": 67.8,
+      "band": "HIGH",
+      "expectations": [
+        {
+          "label": "EXPIRED_DOCUMENT:FIRE_NOC",
+          "detected": true
+        },
+        {
+          "label": "INCONSISTENCY:facultyCount (form 52 vs roster 47)",
+          "detected": true
+        },
+        {
+          "label": "RECORD_MISMATCH:facultyCount (form 52 vs records 49)",
+          "detected": false
+        },
+        {
+          "label": "COMPLIANCE_GAP:faculty_student_ratio (25.5 > 20)",
+          "detected": true
+        },
+        {
+          "label": "COMPLIANCE_GAP:TER_PAYMENT (PENDING)",
+          "detected": false
+        },
+        {
+          "label": "VERIFICATION:TER_PAYMENT_RECEIPT (VERIFICATION_PENDING)",
+          "detected": true
+        },
+        {
+          "label": "INFRASTRUCTURE:INFRA_PHOTO_COMPUTER_LAB (38 detected < 40 declared)",
+          "detected": false
+        },
+        {
+          "label": "INFRASTRUCTURE:INFRA_PHOTO_LIBRARY (EXIF_MISSING, minor)",
+          "detected": true
+        },
+        {
+          "label": "VERIFICATION:AFFIDAVIT_UNDERTAKING (MANUAL_REVIEW_REQUIRED, info)",
+          "detected": true
+        }
+      ]
+    },
+    {
+      "key": "apex-intake-2027",
+      "documents": 14,
+      "compliance": 71.0,
+      "risk": 100.0,
+      "band": "HIGH",
+      "expectations": [
+        {
+          "label": "MISSING_DOCUMENT:AFFIDAVIT_UNDERTAKING",
+          "detected": true
+        },
+        {
+          "label": "ANOMALY:LAND_DOCUMENT (PDF_EDITING_SOFTWARE, PDF_INCREMENTAL_UPDATE, FONT_INCONSISTENCY)",
+          "detected": true
+        },
+        {
+          "label": "ANOMALY:LAND_DOCUMENT (ELA_LOCALISED_ANOMALY on scan, IMAGE_EDITING_SOFTWARE)",
+          "detected": true
+        },
+        {
+          "label": "VERIFICATION:LAND_DOCUMENT (MISMATCH_DETECTED: surveyNo, landAreaAcres)",
+          "detected": true
+        },
+        {
+          "label": "RECORD_MISMATCH:landAreaAcres (form 12.5 vs records 5.2)",
+          "detected": true
+        },
+        {
+          "label": "RECORD_MISMATCH:builtUpAreaSqm (form 24600 vs records 14600)",
+          "detected": false
+        },
+        {
+          "label": "VERIFICATION:NBA_ACCREDITATION (MISMATCH_DETECTED via QR_SIGNATURE)",
+          "detected": true
+        },
+        {
+          "label": "VERIFICATION:BUILDING_PLAN_APPROVAL (MISMATCH_DETECTED: QR signature invalid)",
+          "detected": true
+        },
+        {
+          "label": "VERIFICATION:AUDITED_FINANCIAL_STATEMENT (MISMATCH_DETECTED: UDIN not found)",
+          "detected": true
+        },
+        {
+          "label": "DUPLICATE:FACULTY_PAN x3 (shared with piat)",
+          "detected": false
+        },
+        {
+          "label": "DUPLICATE:INFRA_PHOTO_CLASSROOM (same sha256 as nvie)",
+          "detected": true
+        },
+        {
+          "label": "INFRASTRUCTURE:INFRA_PHOTO_CLASSROOM (GPS_FAR_FROM_CAMPUS)",
+          "detected": true
+        },
+        {
+          "label": "INFRASTRUCTURE:INFRA_PHOTO_COMPUTER_LAB (PHOTO_TOO_OLD)",
+          "detected": true
+        },
+        {
+          "label": "INFRASTRUCTURE:INFRA_PHOTO_LABORATORY (LOW_QUALITY_BLUR)",
+          "detected": true
+        },
+        {
+          "label": "COMPLIANCE_GAP:faculty_student_ratio (1200/58 = 20.7 > 20)",
+          "detected": true
+        }
+      ]
+    },
+    {
+      "key": "nvie-newcourse-2027",
+      "documents": 9,
+      "compliance": 88.3,
+      "risk": 42.8,
+      "band": "MEDIUM",
+      "expectations": [
+        {
+          "label": "VERIFICATION:STATE_GOVT_NOC (SOURCE_UNAVAILABLE)",
+          "detected": true
+        },
+        {
+          "label": "VERIFICATION:UNIVERSITY_AFFILIATION (VERIFICATION_PENDING)",
+          "detected": true
+        },
+        {
+          "label": "VERIFICATION:CORPUS_FUND_FDR (MANUAL_REVIEW_REQUIRED)",
+          "detected": true
+        },
+        {
+          "label": "VERIFICATION:FLOOR_PLAN (MANUAL_REVIEW_REQUIRED)",
+          "detected": true
+        },
+        {
+          "label": "COMPLIANCE_GAP:faculty_student_ratio (1200/52 = 23.1 > 20 after new intake)",
+          "detected": true
+        }
+      ]
+    },
+    {
+      "key": "piat-name-change-2027",
+      "documents": 6,
+      "compliance": 93.4,
+      "risk": 20.0,
+      "band": "LOW",
+      "expectations": [
+        {
+          "label": "INCONSISTENCY:STATE_GOVT_NOC.proposedName vs formData.proposedName",
+          "detected": false
+        },
+        {
+          "label": "VERIFICATION:AFFIDAVIT_UNDERTAKING (MANUAL_REVIEW_REQUIRED, info)",
+          "detected": true
+        }
+      ]
+    },
+    {
+      "key": "apex-eoa-2027-draft",
+      "documents": 4,
+      "compliance": 76.1,
+      "risk": 100.0,
+      "band": "HIGH",
+      "expectations": [
+        {
+          "label": "INCONSISTENCY:document type (declared BUILDING_PLAN_APPROVAL, classified OCCUPANCY_CERTIFICATE)",
+          "detected": false
+        },
+        {
+          "label": "EXPIRED_DOCUMENT:NAAC_ACCREDITATION",
+          "detected": true
+        },
+        {
+          "label": "MISSING_DOCUMENT:AFFIDAVIT_UNDERTAKING",
+          "detected": true
+        },
+        {
+          "label": "MISSING_DOCUMENT:TER_PAYMENT_RECEIPT",
+          "detected": true
+        },
+        {
+          "label": "MISSING_DOCUMENT:OCCUPANCY_CERTIFICATE",
+          "detected": true
+        },
+        {
+          "label": "MISSING_DOCUMENT:FACULTY_ROSTER",
+          "detected": true
+        },
+        {
+          "label": "MISSING_DOCUMENT:UNIVERSITY_AFFILIATION",
+          "detected": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# Shared contracts
+
+Roles (wire names): INSTITUTION, SCRUTINY_OFFICER, REGIONAL_DIRECTOR, ADMIN. Institution owns cases through institutionId. Staff require an explicit matching region; a missing region confers no visibility. Admin configures the system and has global read visibility, but does not finalize decisions or review findings.
+
+Application creation -> DRAFT. Institution edit/upload in DRAFT, RECTIFICATION_REQUESTED and existing compatibility state DEFICIENCIES_FLAGGED; form patch and uploads share that policy. Submit -> SUBMITTED; synchronous validation -> DEFICIENCIES_FLAGGED, SOURCE_VERIFICATION_PENDING or UNDER_REVIEW. Officer recommendation -> RECOMMENDED. Director APPROVE_FOR_EOA/REJECT -> DECIDED; ORDER_INSPECTION -> INSPECTION_ORDERED; ISSUE_DEFICIENCY_LETTER -> RECTIFICATION_REQUESTED. DECIDED is final: validation, finding mutations, re-verification and decisions cannot overwrite it. Other guards are distributed across routers; full optimistic concurrency is pending.
+
+Six authority outcomes: VERIFIED, MISMATCH_DETECTED, EXPIRED, VERIFICATION_PENDING, SOURCE_UNAVAILABLE, MANUAL_REVIEW_REQUIRED. Existing NOT_APPLICABLE remains a backwards-compatible applicability marker for institution-generated evidence; it is not a seventh authority verdict or successful external verification. Do not silently replace old stored values. A future migration must separate applicability from the six outcome states.
+
+Finding states: OPEN, ACKNOWLEDGED, ESCALATED are unresolved. RECTIFIED and DISMISSED require a reviewer reason. Institutions can ACKNOWLEDGE/respond, but cannot resolve or overwrite a reviewer resolution. Critical unresolved findings block approval and approval recommendation. ELA/metadata suspicion is advisory, not proof of fraud.
+
+JSON uses camelCase; Python uses snake_case. Keep numeric IDs and existing REST paths. Field evidence preserves raw value, normalized value/confidence where provided, file/document ID, source text and page/bbox when available. Unknown fields/evidence must remain unknown. Authority results include source, method, checkedAt, comparisons, reason; new trustLevel is SIMULATED or UNCONFIGURED. Demo results must be labeled simulated everywhere they are interpreted.
+
+Errors preserve `detail` and `code`, with `timestamp`, optional validation `errors[{field,message}]`, and `requestId`. HTTP status remains authoritative: 401 invalid/expired credentials, 403 role denial, 404 scoped resource unavailable, 409 workflow conflict, 413 oversized upload, 415 unsupported type, 422 input validation, 503 service not ready. Network errors remain transport errors in frontend ApiError (status 0). X-Request-ID is 8-64 ASCII alphanumeric/underscore/hyphen; invalid values are replaced. Never place secrets or document content in IDs.
+
+Existing /api endpoints remain unversioned for compatibility. Breaking changes require a new versioned route and migration plan; rule/checklist version belongs on each validation snapshot. Do not recompute historical decisions as if they used today's norms. Current ConfigOverride history needs strengthening before production.
+
+Ownership proposal: M1 integration/shared contracts/deployment; M2 React/public site/accessibility/localization; M3 auth/routers/models/migrations; M4 OCR/extraction/forensics; M5 adapters/rules/reports/provenance; M6 tests/security/CI/recovery. Branch conventions and human approval are in CONTRIBUTING.md. Actual handles and branch protection must be configured by maintainers.

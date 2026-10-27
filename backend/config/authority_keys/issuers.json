@@ -1,0 +1,67 @@
+{
+  "aicte-approvals-2026": {
+    "issuer": "All India Council for Technical Education (simulated)",
+    "sourceId": "aicte_eoa",
+    "simulated": true
+  },
+  "fire-pmr-2026": {
+    "issuer": "Pune Metropolitan Region Fire & Emergency Services (simulated)",
+    "sourceId": "municipal_fire",
+    "simulated": true
+  },
+  "fire-vuf-2026": {
+    "issuer": "Vadodara Urban Fire Safety Directorate (simulated)",
+    "sourceId": "municipal_fire",
+    "simulated": true
+  },
+  "fire-gn-2026": {
+    "issuer": "Greater Noida Fire & Rescue Services (simulated)",
+    "sourceId": "municipal_fire",
+    "simulated": true
+  },
+  "bpc-pmr-2026": {
+    "issuer": "Pune Metropolitan Region Development Authority (simulated)",
+    "sourceId": "municipal_fire",
+    "simulated": true
+  },
+  "bpc-vmda-2026": {
+    "issuer": "Vadodara Metropolitan Development Authority (simulated)",
+    "sourceId": "municipal_fire",
+    "simulated": true
+  },
+  "bpc-gn-2026": {
+    "issuer": "Greater Noida Urban Planning Board (simulated)",
+    "sourceId": "municipal_fire",
+    "simulated": true
+  },
+  "nbep-2026": {
+    "issuer": "National Accreditation Board for Engineering Programmes (simulated)",
+    "sourceId": "nba",
+    "simulated": true
+  },
+  "niac-2026": {
+    "issuer": "National Institutional Assessment Council (simulated)",
+    "sourceId": "naac",
+    "simulated": true
+  },
+  "univ-stu-2026": {
+    "issuer": "Sahyadri Technological University (simulated)",
+    "sourceId": "digilocker",
+    "simulated": true
+  },
+  "univ-ntu-2026": {
+    "issuer": "Narmada Technological University (simulated)",
+    "sourceId": "digilocker",
+    "simulated": true
+  },
+  "univ-gangtu-2026": {
+    "issuer": "Gangetic Technical University (simulated)",
+    "sourceId": "digilocker",
+    "simulated": true
+  },
+  "dte-mh-2026": {
+    "issuer": "Directorate of Technical Education, Maharashtra (simulated)",
+    "sourceId": "digilocker",
+    "simulated": true
+  }
+}

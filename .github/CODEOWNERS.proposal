@@ -1,0 +1,10 @@
+# Copy to CODEOWNERS only after replacing placeholders with real GitHub handles.
+# This proposal intentionally does not invent team accounts.
+# /frontend/            @M2-frontend
+# /backend/app/routers/ @M3-backend
+# /backend/app/pipeline/ @M4-ai
+# /backend/app/adapters/ @M5-compliance
+# /backend/app/engine/  @M5-compliance
+# /backend/tests/       @M6-quality
+# /.github/             @M1-integration @M6-quality
+# /Dockerfile           @M1-integration @M6-quality

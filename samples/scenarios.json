@@ -1,0 +1,5144 @@
+{
+  "version": "2026.10",
+  "referenceDate": "2026-10-26",
+  "disclaimer": "Synthetic dataset for the VeriSense SIH 2026 prototype. All institutions, authorities, people, PANs, reference numbers and records are fictional; issuers are SIMULATED.",
+  "institutions": [
+    {
+      "key": "nvie",
+      "permanentId": "1-1029482233",
+      "name": "Narmada Valley Institute of Engineering",
+      "type": "Private-Self Financing",
+      "state": "Gujarat",
+      "city": "Vadodara",
+      "region": "WR",
+      "establishedYear": 2006,
+      "trustName": "Narmada Vidya Pratishthan",
+      "address": "Block No. 45, Waghodia Road, Vadodara - 391760",
+      "campusGps": {
+        "lat": 22.299,
+        "lng": 73.357
+      },
+      "records": {
+        "previousApprovals": [
+          {
+            "year": "2024-25",
+            "status": "APPROVED",
+            "letterRef": "WRO/1-1029482233/2024/EOA",
+            "date": "2024-05-24"
+          },
+          {
+            "year": "2025-26",
+            "status": "APPROVED",
+            "letterRef": "WRO/1-1029482233/2025/EOA",
+            "date": "2025-05-27"
+          },
+          {
+            "year": "2026-27",
+            "status": "APPROVED",
+            "letterRef": "WRO/1-1029482233/2026/EOA",
+            "date": "2026-05-28"
+          }
+        ],
+        "approvedProgrammes": [
+          {
+            "level": "UG",
+            "programme": "B.Tech",
+            "course": "Computer Science & Engineering",
+            "shift": "1st",
+            "intake": 120
+          },
+          {
+            "level": "UG",
+            "programme": "B.Tech",
+            "course": "Mechanical Engineering",
+            "shift": "1st",
+            "intake": 60
+          },
+          {
+            "level": "UG",
+            "programme": "B.Tech",
+            "course": "Civil Engineering",
+            "shift": "1st",
+            "intake": 60
+          }
+        ],
+        "faculty": [
+          {
+            "facultyId": "NVIE-1001",
+            "name": "Dr. Varun Chauhan",
+            "panMasked": "QSUPXXXX1F",
+            "panHash": "2e65a044afa3aa55",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2024-08-21"
+          },
+          {
+            "facultyId": "NVIE-1002",
+            "name": "Dr. Kunal Gupta",
+            "panMasked": "KECPXXXX5Y",
+            "panHash": "6cd51fad61d74324",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2009-10-13"
+          },
+          {
+            "facultyId": "NVIE-1003",
+            "name": "Dr. Varun Kale",
+            "panMasked": "SCBPXXXX4G",
+            "panHash": "186a9a740901e36c",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Civil Engineering",
+            "joiningDate": "2015-10-01"
+          },
+          {
+            "facultyId": "NVIE-1004",
+            "name": "Dr. Vinita Saxena",
+            "panMasked": "UGSPXXXX8W",
+            "panHash": "9465a64e8459acd0",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2017-08-01"
+          },
+          {
+            "facultyId": "NVIE-1005",
+            "name": "Dr. Ashwini Yadav",
+            "panMasked": "PTCPXXXX1L",
+            "panHash": "aa3de2e6cd272eed",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2015-09-10"
+          },
+          {
+            "facultyId": "NVIE-1006",
+            "name": "Dr. Ajay Desai",
+            "panMasked": "NDKPXXXX2C",
+            "panHash": "48a7a569b53c9b29",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2008-11-01"
+          },
+          {
+            "facultyId": "NVIE-1007",
+            "name": "Dr. Meera Mishra",
+            "panMasked": "RNYPXXXX1P",
+            "panHash": "a8ab4e47a984c493",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Civil Engineering",
+            "joiningDate": "2010-10-21"
+          },
+          {
+            "facultyId": "NVIE-1008",
+            "name": "Dr. Mahesh Patil",
+            "panMasked": "CKLPXXXX8P",
+            "panHash": "088229e46117cbe2",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2011-03-08"
+          },
+          {
+            "facultyId": "NVIE-1009",
+            "name": "Dr. Chetan Apte",
+            "panMasked": "QRFPXXXX6Q",
+            "panHash": "3a23647af9a9b779",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2024-04-24"
+          },
+          {
+            "facultyId": "NVIE-1010",
+            "name": "Dr. Girish Tiwari",
+            "panMasked": "NDNPXXXX3G",
+            "panHash": "32d52fcd3390e5c4",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2008-05-28"
+          },
+          {
+            "facultyId": "NVIE-1011",
+            "name": "Dr. Pranav Bhatt",
+            "panMasked": "FNVPXXXX3B",
+            "panHash": "0384e740d4d2b6f3",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Civil Engineering",
+            "joiningDate": "2012-04-15"
+          },
+          {
+            "facultyId": "NVIE-1012",
+            "name": "Dr. Omkar Apte",
+            "panMasked": "LKNPXXXX2C",
+            "panHash": "5081f58c27abe772",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2010-04-19"
+          },
+          {
+            "facultyId": "NVIE-1013",
+            "name": "Dr. Nikhil Apte",
+            "panMasked": "MMVPXXXX5E",
+            "panHash": "53710ef04daf8d03",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2023-10-05"
+          },
+          {
+            "facultyId": "NVIE-1014",
+            "name": "Dr. Shilpa Kulkarni",
+            "panMasked": "EKHPXXXX7Z",
+            "panHash": "6bdf0cd8c82a0983",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2014-03-24"
+          },
+          {
+            "facultyId": "NVIE-1015",
+            "name": "Dr. Mahesh Singh",
+            "panMasked": "VCPPXXXX6D",
+            "panHash": "6f974cabae81c0c4",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Civil Engineering",
+            "joiningDate": "2011-01-17"
+          },
+          {
+            "facultyId": "NVIE-1016",
+            "name": "Dr. Nisha Pandey",
+            "panMasked": "YNJPXXXX4V",
+            "panHash": "1261e4dcb3e30ed0",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2023-05-17"
+          },
+          {
+            "facultyId": "NVIE-1017",
+            "name": "Dr. Kiran Desai",
+            "panMasked": "HRTPXXXX4J",
+            "panHash": "ea4607843d994a38",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2014-04-24"
+          },
+          {
+            "facultyId": "NVIE-1018",
+            "name": "Dr. Aditi Desai",
+            "panMasked": "PQHPXXXX0B",
+            "panHash": "b51d5b965211acfa",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2013-05-12"
+          },
+          {
+            "facultyId": "NVIE-1019",
+            "name": "Dr. Harpreet Jadhav",
+            "panMasked": "QLXPXXXX1U",
+            "panHash": "e72e13e47b24e151",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Civil Engineering",
+            "joiningDate": "2012-10-02"
+          },
+          {
+            "facultyId": "NVIE-1020",
+            "name": "Ms. Aditi Qureshi",
+            "panMasked": "AVWPXXXX6R",
+            "panHash": "0b079e57954f53da",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Applied Sciences",
+            "joiningDate": "2010-12-10"
+          },
+          {
+            "facultyId": "NVIE-1021",
+            "name": "Mr. Rahul Jadhav",
+            "panMasked": "ZBZPXXXX2L",
+            "panHash": "5276afa0d438da35",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2019-02-22"
+          },
+          {
+            "facultyId": "NVIE-1022",
+            "name": "Mr. Yogesh Desai",
+            "panMasked": "RUAPXXXX4N",
+            "panHash": "4e5d1ebc33fa38a6",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2008-10-03"
+          },
+          {
+            "facultyId": "NVIE-1023",
+            "name": "Ms. Ashwini Gaikwad",
+            "panMasked": "ZLNPXXXX9Q",
+            "panHash": "0913e3744b8b38bf",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Civil Engineering",
+            "joiningDate": "2022-09-03"
+          },
+          {
+            "facultyId": "NVIE-1024",
+            "name": "Dr. Gurpreet Bose",
+            "panMasked": "RAHPXXXX9R",
+            "panHash": "764e6c9e1bff57ed",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2023-05-01"
+          },
+          {
+            "facultyId": "NVIE-1025",
+            "name": "Dr. Sanjay Rao",
+            "panMasked": "SFLPXXXX0R",
+            "panHash": "fc8a34444db7a5b6",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2015-06-13"
+          },
+          {
+            "facultyId": "NVIE-1026",
+            "name": "Ms. Nisha Mehta",
+            "panMasked": "GNHPXXXX5G",
+            "panHash": "85cb339b111469e0",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2012-03-16"
+          },
+          {
+            "facultyId": "NVIE-1027",
+            "name": "Ms. Ruchi Chavan",
+            "panMasked": "FDQPXXXX2J",
+            "panHash": "9c939f40e55a06dc",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Civil Engineering",
+            "joiningDate": "2014-07-13"
+          },
+          {
+            "facultyId": "NVIE-1028",
+            "name": "Ms. Gurpreet Khan",
+            "panMasked": "LCBPXXXX6V",
+            "panHash": "13ef3f2bd613da6d",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2009-11-23"
+          },
+          {
+            "facultyId": "NVIE-1029",
+            "name": "Ms. Pankaj Sharma",
+            "panMasked": "WENPXXXX1G",
+            "panHash": "f3af8c4f2cd5e698",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2008-05-08"
+          },
+          {
+            "facultyId": "NVIE-1030",
+            "name": "Mr. Hemant Deshmukh",
+            "panMasked": "WTWPXXXX0C",
+            "panHash": "2a9ba80c6a02489f",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2014-04-27"
+          },
+          {
+            "facultyId": "NVIE-1031",
+            "name": "Dr. Yogesh Patel",
+            "panMasked": "RTYPXXXX2F",
+            "panHash": "eb5b8048d93b3b92",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Civil Engineering",
+            "joiningDate": "2015-05-25"
+          },
+          {
+            "facultyId": "NVIE-1032",
+            "name": "Ms. Ruchi Rathod",
+            "panMasked": "NYHPXXXX8P",
+            "panHash": "e69972b995654cb9",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Applied Sciences",
+            "joiningDate": "2020-03-15"
+          },
+          {
+            "facultyId": "NVIE-1033",
+            "name": "Ms. Vijay Mehta",
+            "panMasked": "TUWPXXXX5L",
+            "panHash": "d4936467329d559c",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2022-06-21"
+          },
+          {
+            "facultyId": "NVIE-1034",
+            "name": "Ms. Manisha Gupta",
+            "panMasked": "GHNPXXXX9K",
+            "panHash": "50d6d79502e2867b",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2025-06-09"
+          },
+          {
+            "facultyId": "NVIE-1035",
+            "name": "Mr. Aditi Sharma",
+            "panMasked": "TPJPXXXX6A",
+            "panHash": "48f95e5800c0a8e0",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Civil Engineering",
+            "joiningDate": "2014-02-14"
+          },
+          {
+            "facultyId": "NVIE-1036",
+            "name": "Ms. Amit Kulkarni",
+            "panMasked": "RESPXXXX0X",
+            "panHash": "6e542150709a33ee",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Applied Sciences",
+            "joiningDate": "2022-08-19"
+          },
+          {
+            "facultyId": "NVIE-1037",
+            "name": "Ms. Bhavesh Nair",
+            "panMasked": "SSTPXXXX2K",
+            "panHash": "e7e17b6f4a43fcc3",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2020-10-07"
+          },
+          {
+            "facultyId": "NVIE-1038",
+            "name": "Ms. Pranav Joshi",
+            "panMasked": "GPTPXXXX2S",
+            "panHash": "c14b2b0207bc546b",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2008-10-13"
+          },
+          {
+            "facultyId": "NVIE-1039",
+            "name": "Ms. Ajay Rathod",
+            "panMasked": "TUDPXXXX5C",
+            "panHash": "7a689751454828f7",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Civil Engineering",
+            "joiningDate": "2013-02-18"
+          },
+          {
+            "facultyId": "NVIE-1040",
+            "name": "Ms. Vijay Tiwari",
+            "panMasked": "JHRPXXXX7E",
+            "panHash": "1ccd7dfe8e7d6726",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2018-07-27"
+          },
+          {
+            "facultyId": "NVIE-1041",
+            "name": "Mr. Yogesh Menon",
+            "panMasked": "JEYPXXXX3B",
+            "panHash": "483ec09aade1f085",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2014-03-08"
+          },
+          {
+            "facultyId": "NVIE-1042",
+            "name": "Mr. Abhijit Pawar",
+            "panMasked": "DRZPXXXX1S",
+            "panHash": "e24627f6038ae8b0",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2016-12-07"
+          },
+          {
+            "facultyId": "NVIE-1043",
+            "name": "Dr. Harpreet Trivedi",
+            "panMasked": "SVFPXXXX7G",
+            "panHash": "4c85ced21f04fbf3",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Civil Engineering",
+            "joiningDate": "2025-11-07"
+          },
+          {
+            "facultyId": "NVIE-1044",
+            "name": "Ms. Harpreet Mishra",
+            "panMasked": "HZWPXXXX5F",
+            "panHash": "4c30643b5f26995e",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Applied Sciences",
+            "joiningDate": "2018-10-11"
+          },
+          {
+            "facultyId": "NVIE-1045",
+            "name": "Mr. Lata Mishra",
+            "panMasked": "EHEPXXXX4J",
+            "panHash": "99adcbb1af4a801a",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2020-02-14"
+          },
+          {
+            "facultyId": "NVIE-1046",
+            "name": "Mr. Swati Rathod",
+            "panMasked": "WXAPXXXX3G",
+            "panHash": "8b16863bd1769c7c",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2019-06-04"
+          },
+          {
+            "facultyId": "NVIE-1047",
+            "name": "Ms. Sana Shah",
+            "panMasked": "CRDPXXXX8B",
+            "panHash": "49daf967d8577c86",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Civil Engineering",
+            "joiningDate": "2025-10-17"
+          },
+          {
+            "facultyId": "NVIE-1048",
+            "name": "Dr. Zoya Joshi",
+            "panMasked": "GFFPXXXX8X",
+            "panHash": "13a739687170cfaa",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2011-10-02"
+          },
+          {
+            "facultyId": "NVIE-1049",
+            "name": "Dr. Harsha Yadav",
+            "panMasked": "LNQPXXXX6S",
+            "panHash": "37bbc45a7371fcdd",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2019-07-07"
+          },
+          {
+            "facultyId": "NVIE-1050",
+            "name": "Mr. Sanjay Apte",
+            "panMasked": "FPQPXXXX1Z",
+            "panHash": "be36283b4aac17c7",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2019-07-07"
+          },
+          {
+            "facultyId": "NVIE-1051",
+            "name": "Mr. Kalpana Gupta",
+            "panMasked": "YWNPXXXX8S",
+            "panHash": "186658d7f314bd88",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Civil Engineering",
+            "joiningDate": "2018-05-09"
+          },
+          {
+            "facultyId": "NVIE-1052",
+            "name": "Mr. Dhruv Kale",
+            "panMasked": "TYMPXXXX2F",
+            "panHash": "fd637b40f6bbc260",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Applied Sciences",
+            "joiningDate": "2020-04-24"
+          }
+        ],
+        "accreditations": [
+          {
+            "body": "NBA",
+            "programme": "B.Tech Computer Science & Engineering",
+            "grade": null,
+            "validFrom": "2025-07-01",
+            "validTo": "2028-06-30",
+            "ref": "NBEP/2025/NV/0233"
+          },
+          {
+            "body": "NAAC",
+            "programme": null,
+            "grade": "A+",
+            "validFrom": "2024-02-15",
+            "validTo": "2029-02-14",
+            "ref": "NIAC/EC/2024/118/A"
+          }
+        ],
+        "landAndBuilding": {
+          "landAreaAcres": 15.4,
+          "builtUpAreaSqm": 21450,
+          "ownership": "Owned (freehold)",
+          "registryRef": "VDR-II/4471/2005"
+        },
+        "terPayments": [
+          {
+            "year": "2025-26",
+            "amount": 150000,
+            "txnId": "TERX2025091100231",
+            "status": "PAID",
+            "paidOn": "2025-09-11"
+          },
+          {
+            "year": "2026-27",
+            "amount": 150000,
+            "txnId": "TERX2026021900877",
+            "status": "PAID",
+            "paidOn": "2026-02-19"
+          },
+          {
+            "year": "2027-28",
+            "amount": 150000,
+            "txnId": "TERX2026091800417",
+            "status": "PAID",
+            "paidOn": "2026-09-18"
+          },
+          {
+            "year": "2027-28",
+            "amount": 100000,
+            "txnId": "TERX2026100200981",
+            "status": "PAID",
+            "paidOn": "2026-10-02"
+          }
+        ],
+        "deficiencyHistory": [
+          {
+            "year": "2024-25",
+            "item": "Library e-journal subscription short",
+            "status": "CLOSED"
+          }
+        ],
+        "affidavits": [
+          {
+            "year": "2026-27",
+            "type": "EoA affidavit",
+            "ref": "IN-GJ-SIM-25-0031180",
+            "notarisedOn": "2026-02-10"
+          }
+        ]
+      }
+    },
+    {
+      "key": "piat",
+      "permanentId": "1-3948291012",
+      "name": "Pragati Institute of Advanced Technology",
+      "type": "Private-Self Financing",
+      "state": "Maharashtra",
+      "city": "Pune",
+      "region": "WR",
+      "establishedYear": 2009,
+      "trustName": "Pragati Shikshan Prasarak Mandal",
+      "address": "Survey No. 112/3, Maan-Hinjawadi Road, Mulshi, Pune - 411057",
+      "campusGps": {
+        "lat": 18.5913,
+        "lng": 73.7389
+      },
+      "records": {
+        "previousApprovals": [
+          {
+            "year": "2024-25",
+            "status": "APPROVED",
+            "letterRef": "WRO/1-3948291012/2024/EOA",
+            "date": "2024-05-29"
+          },
+          {
+            "year": "2025-26",
+            "status": "APPROVED_WITH_CONDITIONS",
+            "letterRef": "WRO/1-3948291012/2025/EOA",
+            "date": "2025-06-03"
+          },
+          {
+            "year": "2026-27",
+            "status": "APPROVED",
+            "letterRef": "WRO/1-3948291012/2026/EOA",
+            "date": "2026-05-30"
+          }
+        ],
+        "approvedProgrammes": [
+          {
+            "level": "UG",
+            "programme": "B.Tech",
+            "course": "Computer Engineering",
+            "shift": "1st",
+            "intake": 120
+          },
+          {
+            "level": "UG",
+            "programme": "B.Tech",
+            "course": "Information Technology",
+            "shift": "1st",
+            "intake": 60
+          },
+          {
+            "level": "UG",
+            "programme": "B.Tech",
+            "course": "Electronics & Telecommunication Engineering",
+            "shift": "1st",
+            "intake": 60
+          },
+          {
+            "level": "UG",
+            "programme": "B.Tech",
+            "course": "Mechanical Engineering",
+            "shift": "1st",
+            "intake": 60
+          }
+        ],
+        "faculty": [
+          {
+            "facultyId": "PIAT-1001",
+            "name": "Dr. Harsha Pandey",
+            "panMasked": "VQFPXXXX5Z",
+            "panHash": "0d3809e692efb29b",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Engineering",
+            "joiningDate": "2019-02-08"
+          },
+          {
+            "facultyId": "PIAT-1002",
+            "name": "Dr. Pallavi Deshmukh",
+            "panMasked": "VFTPXXXX5Y",
+            "panHash": "df5489f30cdfe5c0",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Information Technology",
+            "joiningDate": "2009-10-01"
+          },
+          {
+            "facultyId": "PIAT-1003",
+            "name": "Dr. Omkar Rao",
+            "panMasked": "GFDPXXXX7Z",
+            "panHash": "a6410ddb24293cfd",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "E&TC Engineering",
+            "joiningDate": "2009-12-11"
+          },
+          {
+            "facultyId": "PIAT-1004",
+            "name": "Dr. Rashmi Patel",
+            "panMasked": "NKWPXXXX2E",
+            "panHash": "626ff24f63c0926c",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2016-05-22"
+          },
+          {
+            "facultyId": "PIAT-1005",
+            "name": "Dr. Kunal Trivedi",
+            "panMasked": "LTBPXXXX1J",
+            "panHash": "40380921cd3c4846",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2024-05-17"
+          },
+          {
+            "facultyId": "PIAT-1006",
+            "name": "Dr. Sunil Srivastava",
+            "panMasked": "FKUPXXXX3N",
+            "panHash": "1aa9c4363a672dca",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Engineering",
+            "joiningDate": "2008-05-19"
+          },
+          {
+            "facultyId": "PIAT-1007",
+            "name": "Dr. Kavya Menon",
+            "panMasked": "XSPPXXXX3C",
+            "panHash": "ce9b04826c38bdcd",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Information Technology",
+            "joiningDate": "2022-06-04"
+          },
+          {
+            "facultyId": "PIAT-1008",
+            "name": "Dr. Uday Srivastava",
+            "panMasked": "GSHPXXXX4A",
+            "panHash": "0553ee408ddc1e87",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "E&TC Engineering",
+            "joiningDate": "2011-08-07"
+          },
+          {
+            "facultyId": "PIAT-1009",
+            "name": "Dr. Kalpana Bhatt",
+            "panMasked": "NMFPXXXX8M",
+            "panHash": "c6de40bac48e709e",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2014-08-02"
+          },
+          {
+            "facultyId": "PIAT-1010",
+            "name": "Dr. Ankit Rathod",
+            "panMasked": "WZGPXXXX4B",
+            "panHash": "041279c8d7c9486a",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2014-07-04"
+          },
+          {
+            "facultyId": "PIAT-1011",
+            "name": "Dr. Hemant Yadav",
+            "panMasked": "DRYPXXXX4E",
+            "panHash": "973371d7780e3949",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Engineering",
+            "joiningDate": "2017-11-24"
+          },
+          {
+            "facultyId": "PIAT-1012",
+            "name": "Dr. Yogesh Qureshi",
+            "panMasked": "CWYPXXXX6D",
+            "panHash": "348e329c79108998",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Information Technology",
+            "joiningDate": "2016-02-01"
+          },
+          {
+            "facultyId": "PIAT-1013",
+            "name": "Dr. Kunal Bose",
+            "panMasked": "WCLPXXXX3F",
+            "panHash": "e012d332df8144f6",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "E&TC Engineering",
+            "joiningDate": "2021-12-09"
+          },
+          {
+            "facultyId": "PIAT-1014",
+            "name": "Dr. Kiran Chavan",
+            "panMasked": "GMXPXXXX4G",
+            "panHash": "867fee0d76b8f382",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2025-05-16"
+          },
+          {
+            "facultyId": "PIAT-1015",
+            "name": "Dr. Ankit Kulkarni",
+            "panMasked": "JDUPXXXX9V",
+            "panHash": "abb5a4cd2fc2266c",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2014-07-12"
+          },
+          {
+            "facultyId": "PIAT-1016",
+            "name": "Dr. Gauri Menon",
+            "panMasked": "BHNPXXXX0G",
+            "panHash": "80e72a83cf00a7fe",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Engineering",
+            "joiningDate": "2014-08-21"
+          },
+          {
+            "facultyId": "PIAT-1017",
+            "name": "Ms. Shalini Deshmukh",
+            "panMasked": "JHHPXXXX4J",
+            "panHash": "56ed4f09e0ec0fcc",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Information Technology",
+            "joiningDate": "2010-11-19"
+          },
+          {
+            "facultyId": "PIAT-1018",
+            "name": "Ms. Jayesh Kulkarni",
+            "panMasked": "ARFPXXXX7B",
+            "panHash": "48eb33e0b652a9b9",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "E&TC Engineering",
+            "joiningDate": "2023-12-01"
+          },
+          {
+            "facultyId": "PIAT-1019",
+            "name": "Ms. Pankaj Apte",
+            "panMasked": "XHQPXXXX8P",
+            "panHash": "8b69186ceeff0c10",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2012-06-11"
+          },
+          {
+            "facultyId": "PIAT-1020",
+            "name": "Ms. Omkar Apte",
+            "panMasked": "FVTPXXXX2J",
+            "panHash": "184fd051d34ff651",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Applied Sciences",
+            "joiningDate": "2024-05-07"
+          },
+          {
+            "facultyId": "PIAT-1021",
+            "name": "Mr. Omkar Patil",
+            "panMasked": "YREPXXXX0G",
+            "panHash": "b73c208254ace692",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Engineering",
+            "joiningDate": "2023-07-11"
+          },
+          {
+            "facultyId": "PIAT-1022",
+            "name": "Ms. Arvind Singh",
+            "panMasked": "CBNPXXXX2H",
+            "panHash": "e9546ff21766b277",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Information Technology",
+            "joiningDate": "2009-09-17"
+          },
+          {
+            "facultyId": "PIAT-1023",
+            "name": "Ms. Isha Mehta",
+            "panMasked": "SLAPXXXX8S",
+            "panHash": "accee8f5079922db",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "E&TC Engineering",
+            "joiningDate": "2009-11-27"
+          },
+          {
+            "facultyId": "PIAT-1024",
+            "name": "Ms. Ankit Gupta",
+            "panMasked": "SKLPXXXX9U",
+            "panHash": "7b7f53053eae895d",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2024-12-18"
+          },
+          {
+            "facultyId": "PIAT-1025",
+            "name": "Ms. Rashmi Saxena",
+            "panMasked": "HSWPXXXX4X",
+            "panHash": "a18ec22c8309650e",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Applied Sciences",
+            "joiningDate": "2017-01-08"
+          },
+          {
+            "facultyId": "PIAT-1026",
+            "name": "Dr. Nikhil Deshmukh",
+            "panMasked": "KALPXXXX7D",
+            "panHash": "8a7dbd5ba49c8672",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Engineering",
+            "joiningDate": "2022-06-06"
+          },
+          {
+            "facultyId": "PIAT-1027",
+            "name": "Mr. Jayesh Qureshi",
+            "panMasked": "NKHPXXXX7H",
+            "panHash": "07fadc6bf3778d30",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Information Technology",
+            "joiningDate": "2019-01-15"
+          },
+          {
+            "facultyId": "PIAT-1028",
+            "name": "Mr. Pankaj Bose",
+            "panMasked": "KTEPXXXX6B",
+            "panHash": "f0bde8feaa21f73b",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "E&TC Engineering",
+            "joiningDate": "2016-04-27"
+          },
+          {
+            "facultyId": "PIAT-1029",
+            "name": "Mr. Isha Iyer",
+            "panMasked": "SNCPXXXX4G",
+            "panHash": "a36db7478982a350",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2020-03-22"
+          },
+          {
+            "facultyId": "PIAT-1030",
+            "name": "Mr. Vijay Trivedi",
+            "panMasked": "XQMPXXXX9K",
+            "panHash": "fe958f5f88104c8b",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2008-02-04"
+          },
+          {
+            "facultyId": "PIAT-1031",
+            "name": "Mr. Isha Yadav",
+            "panMasked": "WJWPXXXX0A",
+            "panHash": "49135a5484c3ec5e",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Engineering",
+            "joiningDate": "2013-10-26"
+          },
+          {
+            "facultyId": "PIAT-1032",
+            "name": "Ms. Pranav Rathod",
+            "panMasked": "ZNQPXXXX6N",
+            "panHash": "ae63059b252a802f",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Information Technology",
+            "joiningDate": "2022-09-26"
+          },
+          {
+            "facultyId": "PIAT-1033",
+            "name": "Mr. Tejas Patel",
+            "panMasked": "HWSPXXXX1X",
+            "panHash": "1b50ecd935e7f6f0",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "E&TC Engineering",
+            "joiningDate": "2017-10-02"
+          },
+          {
+            "facultyId": "PIAT-1034",
+            "name": "Mr. Neha Chauhan",
+            "panMasked": "DUZPXXXX1M",
+            "panHash": "abe24e8dd9e1569e",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2021-06-05"
+          },
+          {
+            "facultyId": "PIAT-1035",
+            "name": "Ms. Harsha Chavan",
+            "panMasked": "EXSPXXXX9N",
+            "panHash": "2d4d3876573b7c16",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Applied Sciences",
+            "joiningDate": "2012-02-12"
+          },
+          {
+            "facultyId": "PIAT-1036",
+            "name": "Dr. Sana Patel",
+            "panMasked": "QLFPXXXX2F",
+            "panHash": "66ef2c69948c7129",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Engineering",
+            "joiningDate": "2024-10-06"
+          },
+          {
+            "facultyId": "PIAT-1037",
+            "name": "Mr. Chetan Patel",
+            "panMasked": "YCYPXXXX2X",
+            "panHash": "4d64ce2a697fcdfc",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Information Technology",
+            "joiningDate": "2016-11-15"
+          },
+          {
+            "facultyId": "PIAT-1038",
+            "name": "Ms. Arjun Verma",
+            "panMasked": "HFZPXXXX7V",
+            "panHash": "f1fa318817b1e09d",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "E&TC Engineering",
+            "joiningDate": "2011-06-03"
+          },
+          {
+            "facultyId": "PIAT-1039",
+            "name": "Ms. Abhijit Menon",
+            "panMasked": "PZDPXXXX8P",
+            "panHash": "7cbfe027f6c9e28c",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2016-01-19"
+          },
+          {
+            "facultyId": "PIAT-1040",
+            "name": "Ms. Rohit Chauhan",
+            "panMasked": "NSDPXXXX2Y",
+            "panHash": "a7693db55d55c732",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Applied Sciences",
+            "joiningDate": "2019-09-03"
+          },
+          {
+            "facultyId": "PIAT-1041",
+            "name": "Ms. Jayesh Verma",
+            "panMasked": "XNPPXXXX6M",
+            "panHash": "855c95ca86299fc8",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Engineering",
+            "joiningDate": "2008-08-13"
+          },
+          {
+            "facultyId": "PIAT-1042",
+            "name": "Dr. Meera Pawar",
+            "panMasked": "KWDPXXXX7Q",
+            "panHash": "c6eaf4fea1ac9555",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Information Technology",
+            "joiningDate": "2014-06-13"
+          },
+          {
+            "facultyId": "PIAT-1043",
+            "name": "Mr. Kunal Yadav",
+            "panMasked": "GJPPXXXX6W",
+            "panHash": "d00d1282edb398b8",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "E&TC Engineering",
+            "joiningDate": "2016-05-20"
+          },
+          {
+            "facultyId": "PIAT-1044",
+            "name": "Mr. Sachin Patil",
+            "panMasked": "HEGPXXXX4N",
+            "panHash": "3d13406c92f399b7",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2012-02-26"
+          },
+          {
+            "facultyId": "PIAT-1045",
+            "name": "Mr. Pankaj Shinde",
+            "panMasked": "SVSPXXXX7G",
+            "panHash": "dea1891297bce2c3",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2008-04-05"
+          },
+          {
+            "facultyId": "PIAT-1046",
+            "name": "Ms. Priya Chavan",
+            "panMasked": "TMHPXXXX7W",
+            "panHash": "aca894f062803f67",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Computer Engineering",
+            "joiningDate": "2015-06-14"
+          },
+          {
+            "facultyId": "PIAT-1047",
+            "name": "Ms. Kalpana Joshi",
+            "panMasked": "XPDPXXXX1E",
+            "panHash": "56f45153a1fbe187",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Information Technology",
+            "joiningDate": "2016-03-04"
+          },
+          {
+            "facultyId": "PIAT-1048",
+            "name": "Ms. Prakash Pandey",
+            "panMasked": "YJVPXXXX4X",
+            "panHash": "f05d5b4db560e3c5",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "E&TC Engineering",
+            "joiningDate": "2017-11-13"
+          },
+          {
+            "facultyId": "PIAT-1049",
+            "name": "Mr. Milind Mehta",
+            "panMasked": "JECPXXXX8B",
+            "panHash": "17c4c4550b82a997",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2023-10-10"
+          }
+        ],
+        "accreditations": [
+          {
+            "body": "NBA",
+            "programme": "B.Tech Computer Engineering",
+            "grade": null,
+            "validFrom": "2024-07-01",
+            "validTo": "2027-06-30",
+            "ref": "NBEP/2024/PI/0377"
+          }
+        ],
+        "landAndBuilding": {
+          "landAreaAcres": 10.5,
+          "builtUpAreaSqm": 26800,
+          "ownership": "Owned (freehold)",
+          "registryRef": "HVL-III/2231/2008"
+        },
+        "terPayments": [
+          {
+            "year": "2025-26",
+            "amount": 150000,
+            "txnId": "TERX2025090400118",
+            "status": "PAID",
+            "paidOn": "2025-09-04"
+          },
+          {
+            "year": "2026-27",
+            "amount": 150000,
+            "txnId": "TERX2026022700412",
+            "status": "PAID",
+            "paidOn": "2026-02-27"
+          },
+          {
+            "year": "2027-28",
+            "amount": 150000,
+            "txnId": "TERX2026101500112",
+            "status": "PENDING",
+            "paidOn": null
+          }
+        ],
+        "deficiencyHistory": [
+          {
+            "year": "2025-26",
+            "item": "Faculty-student ratio below norm (Computer Engineering)",
+            "status": "OPEN"
+          },
+          {
+            "year": "2024-25",
+            "item": "Fire NOC renewal delayed",
+            "status": "CLOSED"
+          }
+        ],
+        "affidavits": [
+          {
+            "year": "2026-27",
+            "type": "EoA affidavit",
+            "ref": "IN-MH-SIM-25-0170021",
+            "notarisedOn": "2026-02-20"
+          }
+        ]
+      }
+    },
+    {
+      "key": "apex",
+      "permanentId": "1-8492048217",
+      "name": "Apex Valley Institute of Technology & Management",
+      "type": "Private-Self Financing",
+      "state": "Uttar Pradesh",
+      "city": "Greater Noida",
+      "region": "NR",
+      "establishedYear": 2011,
+      "trustName": "Apex Valley Educational Trust",
+      "address": "Plot No. 27, Knowledge Park V, Greater Noida, Gautam Buddh Nagar - 201310",
+      "campusGps": {
+        "lat": 28.4744,
+        "lng": 77.504
+      },
+      "records": {
+        "previousApprovals": [
+          {
+            "year": "2024-25",
+            "status": "APPROVED",
+            "letterRef": "NRO/1-8492048217/2024/EOA",
+            "date": "2024-06-04"
+          },
+          {
+            "year": "2025-26",
+            "status": "APPROVED",
+            "letterRef": "NRO/1-8492048217/2025/EOA",
+            "date": "2025-06-06"
+          },
+          {
+            "year": "2026-27",
+            "status": "APPROVED",
+            "letterRef": "NRO/1-8492048217/2026/EOA",
+            "date": "2026-06-02"
+          }
+        ],
+        "approvedProgrammes": [
+          {
+            "level": "UG",
+            "programme": "B.Tech",
+            "course": "Computer Science & Engineering",
+            "shift": "1st",
+            "intake": 120
+          },
+          {
+            "level": "UG",
+            "programme": "B.Tech",
+            "course": "Electronics & Communication Engineering",
+            "shift": "1st",
+            "intake": 60
+          },
+          {
+            "level": "UG",
+            "programme": "B.Tech",
+            "course": "Mechanical Engineering",
+            "shift": "1st",
+            "intake": 60
+          }
+        ],
+        "faculty": [
+          {
+            "facultyId": "AVIT-1001",
+            "name": "Dr. Kalpana Nair",
+            "panMasked": "RWTPXXXX0F",
+            "panHash": "bb0d464d8eb5f131",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2024-06-22"
+          },
+          {
+            "facultyId": "AVIT-1002",
+            "name": "Dr. Harpreet Qureshi",
+            "panMasked": "KXWPXXXX9K",
+            "panHash": "7d7edf6717e76540",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Electronics & Communication",
+            "joiningDate": "2021-05-17"
+          },
+          {
+            "facultyId": "AVIT-1003",
+            "name": "Dr. Imran Deshmukh",
+            "panMasked": "JLTPXXXX4D",
+            "panHash": "d718511f9daae58a",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2009-06-10"
+          },
+          {
+            "facultyId": "AVIT-1004",
+            "name": "Dr. Meera Desai",
+            "panMasked": "DWLPXXXX6S",
+            "panHash": "640a839798452e70",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2016-06-01"
+          },
+          {
+            "facultyId": "AVIT-1005",
+            "name": "Dr. Sachin Menon",
+            "panMasked": "TNNPXXXX8X",
+            "panHash": "6b9b4476fbdc2ead",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2011-01-12"
+          },
+          {
+            "facultyId": "AVIT-1006",
+            "name": "Dr. Gauri Desai",
+            "panMasked": "CDLPXXXX9B",
+            "panHash": "213eb7e7fea8723d",
+            "designation": "Professor",
+            "qualification": "Ph.D",
+            "department": "Electronics & Communication",
+            "joiningDate": "2021-05-12"
+          },
+          {
+            "facultyId": "AVIT-1007",
+            "name": "Dr. Mahesh Mehta",
+            "panMasked": "WNQPXXXX7M",
+            "panHash": "02a2543403ca4000",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2025-08-26"
+          },
+          {
+            "facultyId": "AVIT-1008",
+            "name": "Dr. Priya Khan",
+            "panMasked": "ARNPXXXX2M",
+            "panHash": "5a47c346e4ec6409",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2011-11-28"
+          },
+          {
+            "facultyId": "AVIT-1009",
+            "name": "Dr. Nikhil Apte",
+            "panMasked": "WQZPXXXX6Y",
+            "panHash": "225792e196a6e015",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2013-08-24"
+          },
+          {
+            "facultyId": "AVIT-1010",
+            "name": "Dr. Zoya Chavan",
+            "panMasked": "CVZPXXXX5Q",
+            "panHash": "0604a1740aeb2f97",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Electronics & Communication",
+            "joiningDate": "2016-07-17"
+          },
+          {
+            "facultyId": "AVIT-1011",
+            "name": "Dr. Sunil Patel",
+            "panMasked": "VRNPXXXX6N",
+            "panHash": "4a294145047b672f",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2018-06-06"
+          },
+          {
+            "facultyId": "AVIT-1012",
+            "name": "Dr. Deepa Kulkarni",
+            "panMasked": "LVKPXXXX5Z",
+            "panHash": "003659659828390f",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2019-07-14"
+          },
+          {
+            "facultyId": "AVIT-1013",
+            "name": "Dr. Rashmi Shinde",
+            "panMasked": "XSBPXXXX0H",
+            "panHash": "80479dde8a14f153",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2023-02-26"
+          },
+          {
+            "facultyId": "AVIT-1014",
+            "name": "Dr. Pallavi Gaikwad",
+            "panMasked": "DGGPXXXX1V",
+            "panHash": "8c062cc3093b7263",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Electronics & Communication",
+            "joiningDate": "2010-02-22"
+          },
+          {
+            "facultyId": "AVIT-1015",
+            "name": "Dr. Abhijit Trivedi",
+            "panMasked": "XMAPXXXX0P",
+            "panHash": "5753da2127f68ce9",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2008-02-27"
+          },
+          {
+            "facultyId": "AVIT-1016",
+            "name": "Dr. Harsha Yadav",
+            "panMasked": "AUGPXXXX5X",
+            "panHash": "cbe1a94a77298f91",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2011-06-12"
+          },
+          {
+            "facultyId": "AVIT-1017",
+            "name": "Dr. Bhavesh Khan",
+            "panMasked": "AXAPXXXX5R",
+            "panHash": "f39953d100038cca",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2017-10-11"
+          },
+          {
+            "facultyId": "AVIT-1018",
+            "name": "Dr. Rajesh Menon",
+            "panMasked": "ZLDPXXXX6N",
+            "panHash": "d4cbff0fbac1d5fb",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D",
+            "department": "Electronics & Communication",
+            "joiningDate": "2023-08-09"
+          },
+          {
+            "facultyId": "AVIT-1019",
+            "name": "Ms. Mahesh Gaikwad",
+            "panMasked": "DFPPXXXX7E",
+            "panHash": "fc15cc676c1f0701",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2012-08-18"
+          },
+          {
+            "facultyId": "AVIT-1020",
+            "name": "Ms. Vinita Yadav",
+            "panMasked": "AACPXXXX3L",
+            "panHash": "08246bc9009aa8c6",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Applied Sciences",
+            "joiningDate": "2013-06-24"
+          },
+          {
+            "facultyId": "AVIT-1021",
+            "name": "Ms. Nisha Pandey",
+            "panMasked": "RQVPXXXX4U",
+            "panHash": "e2e3778529339564",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2017-12-09"
+          },
+          {
+            "facultyId": "AVIT-1022",
+            "name": "Mr. Milind Chavan",
+            "panMasked": "MCDPXXXX6W",
+            "panHash": "0ee520573482f322",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Electronics & Communication",
+            "joiningDate": "2020-06-08"
+          },
+          {
+            "facultyId": "AVIT-1023",
+            "name": "Ms. Shalini Chavan",
+            "panMasked": "SFNPXXXX1V",
+            "panHash": "8e2b878913a0a3d2",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2023-04-25"
+          },
+          {
+            "facultyId": "AVIT-1024",
+            "name": "Ms. Mahesh Trivedi",
+            "panMasked": "ZNKPXXXX6H",
+            "panHash": "6e466830758c429b",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Applied Sciences",
+            "joiningDate": "2020-08-15"
+          },
+          {
+            "facultyId": "AVIT-1025",
+            "name": "Mr. Sneha Gupta",
+            "panMasked": "GBDPXXXX6F",
+            "panHash": "2c0f232158d71660",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2020-06-16"
+          },
+          {
+            "facultyId": "AVIT-1026",
+            "name": "Dr. Kiran Trivedi",
+            "panMasked": "DESPXXXX6E",
+            "panHash": "941ccce2c79ad0fa",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Electronics & Communication",
+            "joiningDate": "2024-02-26"
+          },
+          {
+            "facultyId": "AVIT-1027",
+            "name": "Ms. Shreya Gupta",
+            "panMasked": "AUDPXXXX2R",
+            "panHash": "c9e9e3b3a8b7a693",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2014-09-28"
+          },
+          {
+            "facultyId": "AVIT-1028",
+            "name": "Ms. Priya Kulkarni",
+            "panMasked": "VQXPXXXX5P",
+            "panHash": "127f483c0b335224",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Applied Sciences",
+            "joiningDate": "2016-01-10"
+          },
+          {
+            "facultyId": "AVIT-1029",
+            "name": "Ms. Kalpana Qureshi",
+            "panMasked": "KZGPXXXX2Q",
+            "panHash": "1e323bf116496f93",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2009-04-09"
+          },
+          {
+            "facultyId": "AVIT-1030",
+            "name": "Mr. Uday Bose",
+            "panMasked": "GAPPXXXX7H",
+            "panHash": "8dd0823b50abd012",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Electronics & Communication",
+            "joiningDate": "2025-12-09"
+          },
+          {
+            "facultyId": "AVIT-1031",
+            "name": "Mr. Rashmi Patel",
+            "panMasked": "FSGPXXXX0Y",
+            "panHash": "f72265cb1c9b2482",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2017-01-27"
+          },
+          {
+            "facultyId": "AVIT-1032",
+            "name": "Ms. Swati Menon",
+            "panMasked": "SXMPXXXX2M",
+            "panHash": "4635e477309d346f",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2015-01-20"
+          },
+          {
+            "facultyId": "AVIT-1033",
+            "name": "Ms. Abhijit Rathod",
+            "panMasked": "JQKPXXXX1L",
+            "panHash": "3170741461e4ca0d",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2021-10-11"
+          },
+          {
+            "facultyId": "AVIT-1034",
+            "name": "Ms. Kiran Singh",
+            "panMasked": "YFQPXXXX3M",
+            "panHash": "356748e49032ac63",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Electronics & Communication",
+            "joiningDate": "2017-05-10"
+          },
+          {
+            "facultyId": "AVIT-1035",
+            "name": "Ms. Rajesh Apte",
+            "panMasked": "PTZPXXXX9F",
+            "panHash": "dee81ea69aa156eb",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2012-08-22"
+          },
+          {
+            "facultyId": "AVIT-1036",
+            "name": "Ms. Girish Tiwari",
+            "panMasked": "UFPPXXXX2G",
+            "panHash": "b8834ef1615e35d9",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Applied Sciences",
+            "joiningDate": "2023-02-01"
+          },
+          {
+            "facultyId": "AVIT-1037",
+            "name": "Ms. Lata Kale",
+            "panMasked": "RZMPXXXX4J",
+            "panHash": "1fe07fb8df4c5a2b",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2013-12-22"
+          },
+          {
+            "facultyId": "AVIT-1038",
+            "name": "Ms. Ashwini Iyer",
+            "panMasked": "ETXPXXXX4T",
+            "panHash": "75061bb2ea6437f3",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Electronics & Communication",
+            "joiningDate": "2011-11-16"
+          },
+          {
+            "facultyId": "AVIT-1039",
+            "name": "Ms. Mahesh Bhatt",
+            "panMasked": "NATPXXXX4A",
+            "panHash": "c12454c14533de8b",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2022-02-07"
+          },
+          {
+            "facultyId": "AVIT-1040",
+            "name": "Mr. Isha Joshi",
+            "panMasked": "MZGPXXXX5W",
+            "panHash": "9c1a0ab4d1a6ca93",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Applied Sciences",
+            "joiningDate": "2012-04-19"
+          },
+          {
+            "facultyId": "AVIT-1041",
+            "name": "Dr. Harsha Mishra",
+            "panMasked": "EBDPXXXX7H",
+            "panHash": "1165a71fffdbf940",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2025-07-25"
+          },
+          {
+            "facultyId": "AVIT-1042",
+            "name": "Dr. Vijay Khan",
+            "panMasked": "JNLPXXXX3S",
+            "panHash": "1ac4ba6702dca073",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Electronics & Communication",
+            "joiningDate": "2008-02-07"
+          },
+          {
+            "facultyId": "AVIT-1043",
+            "name": "Mr. Ruchi Joshi",
+            "panMasked": "DDWPXXXX5P",
+            "panHash": "8072a9ef4c5659aa",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2012-09-23"
+          },
+          {
+            "facultyId": "AVIT-1044",
+            "name": "Ms. Anjali Chauhan",
+            "panMasked": "PTNPXXXX7J",
+            "panHash": "cd16c67fda667e94",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Applied Sciences",
+            "joiningDate": "2019-07-12"
+          },
+          {
+            "facultyId": "AVIT-1045",
+            "name": "Dr. Milind Bose",
+            "panMasked": "NFDPXXXX3Y",
+            "panHash": "2802c801f70dcbc2",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2017-09-09"
+          },
+          {
+            "facultyId": "AVIT-1046",
+            "name": "Ms. Ajay Menon",
+            "panMasked": "QNJPXXXX4Y",
+            "panHash": "7f8f48078f40ad0a",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Electronics & Communication",
+            "joiningDate": "2010-04-13"
+          },
+          {
+            "facultyId": "AVIT-1047",
+            "name": "Ms. Harpreet Trivedi",
+            "panMasked": "ZFTPXXXX4L",
+            "panHash": "552be9fec3076b19",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2020-06-20"
+          },
+          {
+            "facultyId": "AVIT-1048",
+            "name": "Mr. Pranav Iyer",
+            "panMasked": "FWKPXXXX7N",
+            "panHash": "dfd823e93724cc6a",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Applied Sciences",
+            "joiningDate": "2024-04-08"
+          },
+          {
+            "facultyId": "AVIT-1049",
+            "name": "Dr. Harpreet Menon",
+            "panMasked": "TFWPXXXX9T",
+            "panHash": "0b42832ffa0ae526",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2024-05-22"
+          },
+          {
+            "facultyId": "AVIT-1050",
+            "name": "Ms. Prakash Nair",
+            "panMasked": "WNUPXXXX5N",
+            "panHash": "509d52f34fa4645d",
+            "designation": "Assistant Professor",
+            "qualification": "M.Tech",
+            "department": "Electronics & Communication",
+            "joiningDate": "2013-10-14"
+          },
+          {
+            "facultyId": "AVIT-1051",
+            "name": "Ms. Sanjay Apte",
+            "panMasked": "MCMPXXXX5X",
+            "panHash": "7cb81f2f90ce7597",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2013-08-19"
+          },
+          {
+            "facultyId": "AVIT-1052",
+            "name": "Mr. Rahul Apte",
+            "panMasked": "LYJPXXXX8J",
+            "panHash": "4b4b4d8d6ba82b68",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Applied Sciences",
+            "joiningDate": "2025-06-23"
+          },
+          {
+            "facultyId": "AVIT-1053",
+            "name": "Ms. Girish Verma",
+            "panMasked": "BRZPXXXX6J",
+            "panHash": "422902382a881788",
+            "designation": "Assistant Professor",
+            "qualification": "M.E",
+            "department": "Computer Science & Engineering",
+            "joiningDate": "2012-06-03"
+          },
+          {
+            "facultyId": "AVIT-1054",
+            "name": "Dr. Zoya Gaikwad",
+            "panMasked": "ZFCPXXXX9R",
+            "panHash": "8d978b0a5f7c5708",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Electronics & Communication",
+            "joiningDate": "2011-12-11"
+          },
+          {
+            "facultyId": "AVIT-1055",
+            "name": "Dr. Kiran Shah",
+            "panMasked": "QVXPXXXX8A",
+            "panHash": "d285a38d883b5861",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D",
+            "department": "Mechanical Engineering",
+            "joiningDate": "2013-10-22"
+          }
+        ],
+        "accreditations": [
+          {
+            "body": "NBA",
+            "programme": "B.Tech Mechanical Engineering",
+            "grade": null,
+            "validFrom": "2021-07-01",
+            "validTo": "2024-06-30",
+            "ref": "NBEP/2021/AP/0127"
+          },
+          {
+            "body": "NAAC",
+            "programme": null,
+            "grade": "B++",
+            "validFrom": "2020-03-31",
+            "validTo": "2025-03-30",
+            "ref": "NIAC/EC/2020/077/B"
+          }
+        ],
+        "landAndBuilding": {
+          "landAreaAcres": 5.2,
+          "builtUpAreaSqm": 14600,
+          "ownership": "Owned (freehold)",
+          "registryRef": "GN/SR/2009/7731"
+        },
+        "terPayments": [
+          {
+            "year": "2025-26",
+            "amount": 150000,
+            "txnId": "TERX2025091500771",
+            "status": "PAID",
+            "paidOn": "2025-09-15"
+          },
+          {
+            "year": "2026-27",
+            "amount": 150000,
+            "txnId": "TERX2026030200160",
+            "status": "PAID",
+            "paidOn": "2026-03-02"
+          }
+        ],
+        "deficiencyHistory": [
+          {
+            "year": "2025-26",
+            "item": "Built-up area deficit for proposed intake",
+            "status": "OPEN"
+          }
+        ],
+        "affidavits": [
+          {
+            "year": "2026-27",
+            "type": "EoA affidavit",
+            "ref": "IN-UP-SIM-25-0088123",
+            "notarisedOn": "2026-02-26"
+          }
+        ]
+      }
+    }
+  ],
+  "applications": [
+    {
+      "key": "nvie-eoa-2027",
+      "institutionKey": "nvie",
+      "category": "EOA",
+      "academicYear": "2027-28",
+      "status": "SUBMITTED",
+      "formData": {
+        "totalIntake": 240,
+        "programmes": [
+          {
+            "course": "Computer Science & Engineering",
+            "intake": 120
+          },
+          {
+            "course": "Mechanical Engineering",
+            "intake": 60
+          },
+          {
+            "course": "Civil Engineering",
+            "intake": 60
+          }
+        ],
+        "facultyCount": 52,
+        "landAreaAcres": 15.4,
+        "builtUpAreaSqm": 21450,
+        "terTxnId": "TERX2026091800417",
+        "terAmount": 150000,
+        "nbaAccredited": true,
+        "naacAccredited": true,
+        "computerLabTerminals": 30,
+        "classroomSeats": 60,
+        "fireNocRef": "VUFSD/NOC/2026/0718"
+      },
+      "scenario": "Clean Extension of Approval: every document present, issuer-signed QR codes valid, all authority records match; faculty roster consistent with AICTE records and FSR within 1:20. Expect high compliance and LOW risk. The notarised affidavit (no issuing-authority source) is routed to MANUAL_REVIEW_REQUIRED.",
+      "expectedFindings": [
+        "VERIFICATION:AFFIDAVIT_UNDERTAKING (MANUAL_REVIEW_REQUIRED, info)"
+      ],
+      "documents": [
+        {
+          "path": "nvie/eoa_letter_2026-27.pdf",
+          "docType": "PREVIOUS_EOA_LETTER",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "PREVIOUS_EOA_LETTER",
+            "fields": {
+              "referenceNo": "WRO/1-1029482233/2026/EOA",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2026-05-28",
+              "permanentId": "1-1029482233",
+              "academicYear": "2026-27",
+              "totalIntake": 240
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "nvie/affidavit_eoa_2027-28.pdf",
+          "docType": "AFFIDAVIT_UNDERTAKING",
+          "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+          "groundTruth": {
+            "docType": "AFFIDAVIT_UNDERTAKING",
+            "fields": {
+              "referenceNo": "IN-GJ-SIM-26-0045512",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2026-09-10",
+              "notarisedOn": "2026-09-11",
+              "deponentName": "Dr. Hemant R. Desai",
+              "academicYear": "2027-28"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/ter_receipt_eoa.pdf",
+          "docType": "TER_PAYMENT_RECEIPT",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "TER_PAYMENT_RECEIPT",
+            "fields": {
+              "referenceNo": "TERX2026091800417",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2026-09-18",
+              "amount": 150000,
+              "applicationNo": "APP-2027-WR-10294",
+              "academicYear": "2027-28"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/fire_noc.pdf",
+          "docType": "FIRE_NOC",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "FIRE_NOC",
+            "fields": {
+              "referenceNo": "VUFSD/NOC/2026/0718",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2026-07-14",
+              "expiryDate": "2027-07-13"
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "nvie/occupancy_certificate.pdf",
+          "docType": "OCCUPANCY_CERTIFICATE",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "OCCUPANCY_CERTIFICATE",
+            "fields": {
+              "referenceNo": "VMDA/OC/2014/2231",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2014-03-12",
+              "builtUpAreaSqm": 21450
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "nvie/faculty_roster.csv",
+          "docType": "FACULTY_ROSTER",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "FACULTY_ROSTER",
+            "fields": {
+              "facultyCount": 52,
+              "pans": [
+                "QSUPC4111F",
+                "KECPG9825Y",
+                "SCBPK1584G",
+                "UGSPS4828W",
+                "PTCPY5161L",
+                "NDKPD7332C",
+                "RNYPM7511P",
+                "CKLPP1248P",
+                "QRFPA4086Q",
+                "NDNPT7893G",
+                "FNVPB2643B",
+                "LKNPA2202C",
+                "MMVPA8425E",
+                "EKHPK5087Z",
+                "VCPPS1776D",
+                "YNJPP7894V",
+                "HRTPD2214J",
+                "PQHPD1990B",
+                "QLXPJ9551U",
+                "AVWPQ2226R",
+                "ZBZPJ3122L",
+                "RUAPD7264N",
+                "ZLNPG8499Q",
+                "RAHPB2849R",
+                "SFLPR8240R",
+                "GNHPM6185G",
+                "FDQPC8722J",
+                "LCBPK5556V",
+                "WENPS8451G",
+                "WTWPD7040C",
+                "RTYPP1592F",
+                "NYHPR2428P",
+                "TUWPM9235L",
+                "GHNPG2439K",
+                "TPJPS8986A",
+                "RESPK9490X",
+                "SSTPN5202K",
+                "GPTPJ2872S",
+                "TUDPR9045C",
+                "JHRPT9077E",
+                "JEYPM1373B",
+                "DRZPP3011S",
+                "SVFPT9817G",
+                "HZWPM6695F",
+                "EHEPM2444J",
+                "WXAPR2573G",
+                "CRDPS1398B",
+                "GFFPJ5638X",
+                "LNQPY7986S",
+                "FPQPA6891Z",
+                "YWNPG4128S",
+                "TYMPK8072F"
+              ],
+              "cadre": {
+                "professor": 6,
+                "associateProfessor": 12,
+                "assistantProfessor": 34
+              }
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/university_affiliation_2027-28.pdf",
+          "docType": "UNIVERSITY_AFFILIATION",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "UNIVERSITY_AFFILIATION",
+            "fields": {
+              "referenceNo": "NTU/AFF/2026/1187",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2026-08-02",
+              "academicYear": "2027-28",
+              "totalIntake": 240
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "nvie/audited_financial_statement_2025-26.pdf",
+          "docType": "AUDITED_FINANCIAL_STATEMENT",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "AUDITED_FINANCIAL_STATEMENT",
+            "fields": {
+              "udin": "26104377BKQXWE7781",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "financialYear": "2025-26",
+              "membershipNo": "104377"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/nba_accreditation_cse.pdf",
+          "docType": "NBA_ACCREDITATION",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "NBA_ACCREDITATION",
+            "fields": {
+              "referenceNo": "NBEP/2025/NV/0233",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2025-06-20",
+              "programme": "B.Tech Computer Science & Engineering",
+              "validFrom": "2025-07-01",
+              "expiryDate": "2028-06-30"
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "nvie/naac_certificate.pdf",
+          "docType": "NAAC_ACCREDITATION",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "NAAC_ACCREDITATION",
+            "fields": {
+              "referenceNo": "NIAC/EC/2024/118/A",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2024-02-15",
+              "grade": "A+",
+              "cgpa": 3.31,
+              "validFrom": "2024-02-15",
+              "expiryDate": "2029-02-14"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/building_plan_approval.pdf",
+          "docType": "BUILDING_PLAN_APPROVAL",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "BUILDING_PLAN_APPROVAL",
+            "fields": {
+              "referenceNo": "VMDA/BP/2012/0897",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2012-09-05",
+              "builtUpAreaSqm": 21450
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "nvie/land_sale_deed.pdf",
+          "docType": "LAND_DOCUMENT",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "LAND_DOCUMENT",
+            "fields": {
+              "referenceNo": "VDR-II/4471/2005",
+              "issueDate": "2005-11-21",
+              "surveyNo": "211/2",
+              "landAreaAcres": 15.4,
+              "ownerName": "Narmada Vidya Pratishthan",
+              "village": "Waghodia",
+              "district": "Vadodara"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/photos/computer_lab_2.jpg",
+          "docType": "INFRA_PHOTO_COMPUTER_LAB",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "INFRA_PHOTO_COMPUTER_LAB",
+            "fields": {
+              "counts": {
+                "monitors": 30
+              },
+              "takenAt": "2026-09-12T11:05:00",
+              "gps": {
+                "lat": 22.299009,
+                "lng": 73.357288
+              }
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/photos/classroom_204.jpg",
+          "docType": "INFRA_PHOTO_CLASSROOM",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "INFRA_PHOTO_CLASSROOM",
+            "fields": {
+              "counts": {
+                "desks": 30,
+                "seatsEstimated": 60
+              },
+              "takenAt": "2026-09-12T10:41:00",
+              "gps": {
+                "lat": 22.298695,
+                "lng": 73.357002
+              }
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/photos/library.jpg",
+          "docType": "INFRA_PHOTO_LIBRARY",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "INFRA_PHOTO_LIBRARY",
+            "fields": {
+              "counts": {
+                "bookcases": 5
+              },
+              "takenAt": "2026-09-12T11:30:00",
+              "gps": {
+                "lat": 22.298682,
+                "lng": 73.356779
+              }
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/photos/ramp_block_a.jpg",
+          "docType": "INFRA_PHOTO_ACCESSIBILITY",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "INFRA_PHOTO_ACCESSIBILITY",
+            "fields": {
+              "counts": {
+                "rampHandrails": 2
+              },
+              "takenAt": "2026-09-12T12:02:00",
+              "gps": {
+                "lat": 22.299081,
+                "lng": 73.357045
+              }
+            },
+            "tampered": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "piat-eoa-2027",
+      "institutionKey": "piat",
+      "category": "EOA",
+      "academicYear": "2027-28",
+      "status": "SUBMITTED",
+      "formData": {
+        "totalIntake": 300,
+        "programmes": [
+          {
+            "course": "Computer Engineering",
+            "intake": 120
+          },
+          {
+            "course": "Information Technology",
+            "intake": 60
+          },
+          {
+            "course": "Electronics & Telecommunication Engineering",
+            "intake": 60
+          },
+          {
+            "course": "Mechanical Engineering",
+            "intake": 60
+          }
+        ],
+        "facultyCount": 52,
+        "landAreaAcres": 10.5,
+        "builtUpAreaSqm": 26800,
+        "terTxnId": "TERX2026101500112",
+        "terAmount": 150000,
+        "nbaAccredited": true,
+        "naacAccredited": false,
+        "computerLabTerminals": 40,
+        "classroomSeats": 60,
+        "fireNocRef": "PMRFES/NOC/2025/1093"
+      },
+      "scenario": "EoA with deficiencies: Fire NOC expired on 10 Oct 2026 (16 days before the reference date); faculty count declared 52 vs 47 on the roster vs 49 in AICTE records; FSR 1200 students / 47 faculty = 25.5 > 20; TER payment still pending settlement; computer-lab photo shows 38 terminals against 40 declared; library photo has no EXIF.",
+      "expectedFindings": [
+        "EXPIRED_DOCUMENT:FIRE_NOC",
+        "INCONSISTENCY:facultyCount (form 52 vs roster 47)",
+        "RECORD_MISMATCH:facultyCount (form 52 vs records 49)",
+        "COMPLIANCE_GAP:faculty_student_ratio (25.5 > 20)",
+        "COMPLIANCE_GAP:TER_PAYMENT (PENDING)",
+        "VERIFICATION:TER_PAYMENT_RECEIPT (VERIFICATION_PENDING)",
+        "INFRASTRUCTURE:INFRA_PHOTO_COMPUTER_LAB (38 detected < 40 declared)",
+        "INFRASTRUCTURE:INFRA_PHOTO_LIBRARY (EXIF_MISSING, minor)",
+        "VERIFICATION:AFFIDAVIT_UNDERTAKING (MANUAL_REVIEW_REQUIRED, info)"
+      ],
+      "documents": [
+        {
+          "path": "piat/eoa_letter_2026-27.pdf",
+          "docType": "PREVIOUS_EOA_LETTER",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "PREVIOUS_EOA_LETTER",
+            "fields": {
+              "referenceNo": "WRO/1-3948291012/2026/EOA",
+              "institutionName": "Pragati Institute of Advanced Technology",
+              "issueDate": "2026-05-30",
+              "permanentId": "1-3948291012",
+              "academicYear": "2026-27",
+              "totalIntake": 300
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "piat/affidavit_eoa_2027-28.pdf",
+          "docType": "AFFIDAVIT_UNDERTAKING",
+          "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+          "groundTruth": {
+            "docType": "AFFIDAVIT_UNDERTAKING",
+            "fields": {
+              "referenceNo": "IN-MH-SIM-26-0193377",
+              "institutionName": "Pragati Institute of Advanced Technology",
+              "issueDate": "2026-09-22",
+              "notarisedOn": "2026-09-23",
+              "deponentName": "Dr. Sunil V. Gokhale",
+              "academicYear": "2027-28"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "piat/ter_receipt_eoa.pdf",
+          "docType": "TER_PAYMENT_RECEIPT",
+          "expectedVerification": "VERIFICATION_PENDING",
+          "groundTruth": {
+            "docType": "TER_PAYMENT_RECEIPT",
+            "fields": {
+              "referenceNo": "TERX2026101500112",
+              "institutionName": "Pragati Institute of Advanced Technology",
+              "issueDate": "2026-10-15",
+              "amount": 150000,
+              "applicationNo": "APP-2027-WR-10511",
+              "academicYear": "2027-28"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "piat/fire_noc.pdf",
+          "docType": "FIRE_NOC",
+          "expectedVerification": "EXPIRED",
+          "groundTruth": {
+            "docType": "FIRE_NOC",
+            "fields": {
+              "referenceNo": "PMRFES/NOC/2025/1093",
+              "institutionName": "Pragati Institute of Advanced Technology",
+              "issueDate": "2025-10-11",
+              "expiryDate": "2026-10-10"
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "piat/occupancy_certificate.pdf",
+          "docType": "OCCUPANCY_CERTIFICATE",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "OCCUPANCY_CERTIFICATE",
+            "fields": {
+              "referenceNo": "PMRDA/OC/2011/0457",
+              "institutionName": "Pragati Institute of Advanced Technology",
+              "issueDate": "2011-08-18",
+              "builtUpAreaSqm": 26800
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "piat/faculty_roster.pdf",
+          "docType": "FACULTY_ROSTER",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "FACULTY_ROSTER",
+            "fields": {
+              "institutionName": "Pragati Institute of Advanced Technology",
+              "facultyCount": 47,
+              "declaredTotal": 47,
+              "pans": [
+                "VQFPP2975Z",
+                "VFTPD8045Y",
+                "GFDPR9697Z",
+                "NKWPP9442E",
+                "LTBPT7871J",
+                "FKUPS7123N",
+                "XSPPM2443C",
+                "GSHPS7564A",
+                "NMFPB6378M",
+                "WZGPR2654B",
+                "DRYPY9584E",
+                "CWYPQ6796D",
+                "WCLPB2593F",
+                "GMXPC2934G",
+                "JDUPK8699V",
+                "BHNPM1540G",
+                "JHHPD2844J",
+                "ARFPK5587B",
+                "XHQPA9758P",
+                "FVTPA6932J",
+                "YREPP9830G",
+                "CBNPS6542H",
+                "SLAPM2858S",
+                "SKLPG7749U",
+                "HSWPS6264X",
+                "KALPD2847D",
+                "NKHPQ9867H",
+                "KTEPB8286B",
+                "SNCPI6564G",
+                "XQMPT4419K",
+                "WJWPY3050A",
+                "ZNQPR3866N",
+                "HWSPP5431X",
+                "DUZPC4731M",
+                "EXSPC4819N",
+                "QLFPP8922F",
+                "YCYPP9212X",
+                "HFZPV1827V",
+                "PZDPM4788P",
+                "NSDPC1492Y",
+                "XNPPV2206M",
+                "KWDPP1677Q",
+                "GJPPY8986W",
+                "HEGPP7914N",
+                "SVSPS8837G",
+                "TMHPC2827W",
+                "XPDPJ6651E"
+              ],
+              "cadre": {
+                "professor": 5,
+                "associateProfessor": 11,
+                "assistantProfessor": 31
+              }
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "piat/university_affiliation_2027-28.pdf",
+          "docType": "UNIVERSITY_AFFILIATION",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "UNIVERSITY_AFFILIATION",
+            "fields": {
+              "referenceNo": "STU/AFF/2026/2240",
+              "institutionName": "Pragati Institute of Advanced Technology",
+              "issueDate": "2026-08-08",
+              "academicYear": "2027-28",
+              "totalIntake": 300
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "piat/audited_financial_statement_2025-26.pdf",
+          "docType": "AUDITED_FINANCIAL_STATEMENT",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "AUDITED_FINANCIAL_STATEMENT",
+            "fields": {
+              "udin": "26112840BMTRQP4410",
+              "institutionName": "Pragati Institute of Advanced Technology",
+              "financialYear": "2025-26",
+              "membershipNo": "112840"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "piat/nba_accreditation_ce.pdf",
+          "docType": "NBA_ACCREDITATION",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "NBA_ACCREDITATION",
+            "fields": {
+              "referenceNo": "NBEP/2024/PI/0377",
+              "institutionName": "Pragati Institute of Advanced Technology",
+              "issueDate": "2024-06-24",
+              "programme": "B.Tech Computer Engineering",
+              "validFrom": "2024-07-01",
+              "expiryDate": "2027-06-30"
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "piat/photos/computer_lab_1.jpg",
+          "docType": "INFRA_PHOTO_COMPUTER_LAB",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "INFRA_PHOTO_COMPUTER_LAB",
+            "fields": {
+              "counts": {
+                "monitors": 38
+              },
+              "takenAt": "2026-09-18T12:15:00",
+              "gps": {
+                "lat": 18.591484,
+                "lng": 73.739114
+              }
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "piat/photos/classroom_105.jpg",
+          "docType": "INFRA_PHOTO_CLASSROOM",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "INFRA_PHOTO_CLASSROOM",
+            "fields": {
+              "counts": {
+                "desks": 30,
+                "seatsEstimated": 60
+              },
+              "takenAt": "2026-09-18T12:40:00",
+              "gps": {
+                "lat": 18.591501,
+                "lng": 73.738969
+              }
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "piat/photos/library.jpg",
+          "docType": "INFRA_PHOTO_LIBRARY",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "INFRA_PHOTO_LIBRARY",
+            "fields": {
+              "counts": {
+                "bookcases": 6
+              },
+              "takenAt": null,
+              "gps": null
+            },
+            "tampered": false,
+            "tamperNotes": "EXIF stripped (WhatsApp-forwarded image)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "apex-intake-2027",
+      "institutionKey": "apex",
+      "category": "INTAKE_INCREASE",
+      "academicYear": "2027-28",
+      "status": "SUBMITTED",
+      "formData": {
+        "currentIntake": 240,
+        "proposedIntake": 300,
+        "totalIntake": 300,
+        "intakeChanges": [
+          {
+            "course": "Computer Science & Engineering",
+            "from": 120,
+            "to": 180
+          }
+        ],
+        "facultyCount": 58,
+        "landAreaAcres": 12.5,
+        "builtUpAreaSqm": 24600,
+        "terTxnId": "TERX2026100800734",
+        "terAmount": 200000,
+        "nbaAccredited": true,
+        "naacAccredited": false,
+        "computerLabTerminals": 36,
+        "classroomSeats": 60
+      },
+      "scenario": "High-risk intake increase: land deed edited (survey 118/2 -> 148/2, area 5.20 -> 12.50 acres) in an editor (Photoshop producer, incremental update, different font) and a scanned khatauni extract with a pasted area value (ELA); NBA certificate whose issuer-signed QR is for a different, expired programme; building-plan QR whose signature fails; UDIN not found at the registry; 3 faculty PANs also on PIAT's roster; classroom photo identical to NVIE's and geo-tagged ~900 km away; computer-lab photo from 2023; blurred lab photo; affidavit missing.",
+      "expectedFindings": [
+        "MISSING_DOCUMENT:AFFIDAVIT_UNDERTAKING",
+        "ANOMALY:LAND_DOCUMENT (PDF_EDITING_SOFTWARE, PDF_INCREMENTAL_UPDATE, FONT_INCONSISTENCY)",
+        "ANOMALY:LAND_DOCUMENT (ELA_LOCALISED_ANOMALY on scan, IMAGE_EDITING_SOFTWARE)",
+        "VERIFICATION:LAND_DOCUMENT (MISMATCH_DETECTED: surveyNo, landAreaAcres)",
+        "RECORD_MISMATCH:landAreaAcres (form 12.5 vs records 5.2)",
+        "RECORD_MISMATCH:builtUpAreaSqm (form 24600 vs records 14600)",
+        "VERIFICATION:NBA_ACCREDITATION (MISMATCH_DETECTED via QR_SIGNATURE)",
+        "VERIFICATION:BUILDING_PLAN_APPROVAL (MISMATCH_DETECTED: QR signature invalid)",
+        "VERIFICATION:AUDITED_FINANCIAL_STATEMENT (MISMATCH_DETECTED: UDIN not found)",
+        "DUPLICATE:FACULTY_PAN x3 (shared with piat)",
+        "DUPLICATE:INFRA_PHOTO_CLASSROOM (same sha256 as nvie)",
+        "INFRASTRUCTURE:INFRA_PHOTO_CLASSROOM (GPS_FAR_FROM_CAMPUS)",
+        "INFRASTRUCTURE:INFRA_PHOTO_COMPUTER_LAB (PHOTO_TOO_OLD)",
+        "INFRASTRUCTURE:INFRA_PHOTO_LABORATORY (LOW_QUALITY_BLUR)",
+        "COMPLIANCE_GAP:faculty_student_ratio (1200/58 = 20.7 > 20)"
+      ],
+      "documents": [
+        {
+          "path": "apex/eoa_letter_2026-27.pdf",
+          "docType": "PREVIOUS_EOA_LETTER",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "PREVIOUS_EOA_LETTER",
+            "fields": {
+              "referenceNo": "NRO/1-8492048217/2026/EOA",
+              "institutionName": "Apex Valley Institute of Technology & Management",
+              "issueDate": "2026-06-02",
+              "permanentId": "1-8492048217",
+              "academicYear": "2026-27",
+              "totalIntake": 240
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "apex/ter_receipt_intake.pdf",
+          "docType": "TER_PAYMENT_RECEIPT",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "TER_PAYMENT_RECEIPT",
+            "fields": {
+              "referenceNo": "TERX2026100800734",
+              "institutionName": "Apex Valley Institute of Technology & Management",
+              "issueDate": "2026-10-08",
+              "amount": 200000,
+              "applicationNo": "APP-2027-NR-20871",
+              "academicYear": "2027-28"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "apex/faculty_roster.pdf",
+          "docType": "FACULTY_ROSTER",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "FACULTY_ROSTER",
+            "fields": {
+              "institutionName": "Apex Valley Institute of Technology & Management",
+              "facultyCount": 58,
+              "declaredTotal": 58,
+              "pans": [
+                "RWTPN9640F",
+                "KXWPQ2159K",
+                "JLTPD5024D",
+                "DWLPD4976S",
+                "TNNPM4038X",
+                "CDLPD1049B",
+                "WNQPM8757M",
+                "ARNPK7212M",
+                "WQZPA6166Y",
+                "CVZPC5615Q",
+                "VRNPP1336N",
+                "LVKPK3825Z",
+                "XSBPS1210H",
+                "DGGPG4261V",
+                "XMAPT3550P",
+                "AUGPY4735X",
+                "AXAPK1105R",
+                "ZLDPM6556N",
+                "DFPPG9677E",
+                "AACPY3443L",
+                "RQVPP7274U",
+                "MCDPC4076W",
+                "SFNPC2271V",
+                "ZNKPT8126H",
+                "GBDPG3686F",
+                "DESPT7786E",
+                "AUDPG8232R",
+                "VQXPK4865P",
+                "KZGPQ6012Q",
+                "GAPPB6187H",
+                "FSGPP1510Y",
+                "SXMPM5172M",
+                "JQKPR2291L",
+                "YFQPS7103M",
+                "PTZPA6239F",
+                "UFPPT9722G",
+                "RZMPK3814J",
+                "ETXPI7554T",
+                "NATPB6984A",
+                "MZGPJ9475W",
+                "EBDPM4427H",
+                "JNLPK9533S",
+                "DDWPJ7015P",
+                "PTNPC6567J",
+                "NFDPB1383Y",
+                "QNJPM9074Y",
+                "ZFTPT6574L",
+                "FWKPI1937N",
+                "TFWPM9459T",
+                "WNUPN6655N",
+                "MCMPA4375X",
+                "LYJPA3278J",
+                "BRZPV1346J",
+                "ZFCPG2779R",
+                "QVXPS1968A",
+                "DRYPY9584E",
+                "CWYPQ6796D",
+                "WCLPB2593F"
+              ],
+              "cadre": {
+                "professor": 6,
+                "associateProfessor": 15,
+                "assistantProfessor": 37
+              }
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "apex/floor_plan_area_statement.pdf",
+          "docType": "FLOOR_PLAN",
+          "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+          "groundTruth": {
+            "docType": "FLOOR_PLAN",
+            "fields": {
+              "referenceNo": "RSA/AVIT/2026/14",
+              "institutionName": "Apex Valley Institute of Technology & Management",
+              "issueDate": "2026-09-02",
+              "builtUpAreaSqm": 24600
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "apex/fire_noc.pdf",
+          "docType": "FIRE_NOC",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "FIRE_NOC",
+            "fields": {
+              "referenceNo": "GNFRS/NOC/2026/0264",
+              "institutionName": "Apex Valley Institute of Technology & Management",
+              "issueDate": "2026-04-21",
+              "expiryDate": "2027-04-20"
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "apex/university_consent_intake.pdf",
+          "docType": "UNIVERSITY_AFFILIATION",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "UNIVERSITY_AFFILIATION",
+            "fields": {
+              "referenceNo": "GANGTU/AFF/2026/0912",
+              "institutionName": "Apex Valley Institute of Technology & Management",
+              "issueDate": "2026-08-21",
+              "academicYear": "2027-28",
+              "totalIntake": 300
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "apex/nba_accreditation_cse.pdf",
+          "docType": "NBA_ACCREDITATION",
+          "expectedVerification": "MISMATCH_DETECTED",
+          "groundTruth": {
+            "docType": "NBA_ACCREDITATION",
+            "fields": {
+              "referenceNo": "NBEP/2024/AP/0419",
+              "institutionName": "Apex Valley Institute of Technology & Management",
+              "issueDate": "2024-06-18",
+              "programme": "B.Tech Computer Science & Engineering",
+              "validFrom": "2024-07-01",
+              "expiryDate": "2027-06-30"
+            },
+            "tampered": true,
+            "tamperNotes": "Printed programme/validity altered; issuer-signed QR (transplanted from an older certificate) shows the original values",
+            "qr": "mismatch"
+          }
+        },
+        {
+          "path": "apex/land_deed.pdf",
+          "docType": "LAND_DOCUMENT",
+          "expectedVerification": "MISMATCH_DETECTED",
+          "groundTruth": {
+            "docType": "LAND_DOCUMENT",
+            "fields": {
+              "referenceNo": "GN/SR/2009/7731",
+              "issueDate": "2009-06-16",
+              "surveyNo": "148/2",
+              "landAreaAcres": 12.5,
+              "ownerName": "Apex Valley Educational Trust",
+              "village": "Tilapta",
+              "district": "Gautam Buddh Nagar"
+            },
+            "tampered": true,
+            "tamperNotes": "Survey No. 118/2 -> 148/2 and area 5.20 -> 12.50 Acres re-typed in a different font (Times) over redacted originals; Producer 'Adobe Photoshop'; saved as an incremental update",
+            "expectedForensicFlags": [
+              "PDF_EDITING_SOFTWARE",
+              "PDF_INCREMENTAL_UPDATE",
+              "FONT_INCONSISTENCY",
+              "PDF_MODIFIED_AFTER_CREATION"
+            ]
+          }
+        },
+        {
+          "path": "apex/land_khatauni_extract_scan.jpg",
+          "docType": "LAND_DOCUMENT",
+          "expectedVerification": "MISMATCH_DETECTED",
+          "groundTruth": {
+            "docType": "LAND_DOCUMENT",
+            "fields": {
+              "referenceNo": "MUT/DDR/2010/1182",
+              "issueDate": "2010-02-04",
+              "surveyNo": "118/2",
+              "landAreaAcres": 12.5,
+              "village": "Tilapta",
+              "district": "Gautam Buddh Nagar"
+            },
+            "tampered": true,
+            "tamperNotes": "Area value pasted as fresh pixels into a q72 scan and re-saved at q95 in Photoshop (EXIF Software)",
+            "expectedForensicFlags": [
+              "ELA_LOCALISED_ANOMALY",
+              "IMAGE_EDITING_SOFTWARE"
+            ],
+            "tamperBbox": [
+              530,
+              548,
+              665,
+              583
+            ]
+          }
+        },
+        {
+          "path": "apex/building_plan_approval.pdf",
+          "docType": "BUILDING_PLAN_APPROVAL",
+          "expectedVerification": "MISMATCH_DETECTED",
+          "groundTruth": {
+            "docType": "BUILDING_PLAN_APPROVAL",
+            "fields": {
+              "referenceNo": "GNUPB/BP/2010/0566",
+              "institutionName": "Apex Valley Institute of Technology & Management",
+              "issueDate": "2010-01-12",
+              "builtUpAreaSqm": 24600
+            },
+            "tampered": true,
+            "tamperNotes": "QR claims edited after signing (signature invalid); printed built-up area inflated",
+            "qr": "forged"
+          }
+        },
+        {
+          "path": "apex/audited_financial_statement_2025-26.pdf",
+          "docType": "AUDITED_FINANCIAL_STATEMENT",
+          "expectedVerification": "MISMATCH_DETECTED",
+          "groundTruth": {
+            "docType": "AUDITED_FINANCIAL_STATEMENT",
+            "fields": {
+              "udin": "26131975BHQZNM5520",
+              "institutionName": "Apex Valley Institute of Technology & Management",
+              "financialYear": "2025-26",
+              "membershipNo": "131975"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "apex/photos/computer_lab_3.jpg",
+          "docType": "INFRA_PHOTO_COMPUTER_LAB",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "INFRA_PHOTO_COMPUTER_LAB",
+            "fields": {
+              "counts": {
+                "monitors": 36
+              },
+              "takenAt": "2023-02-14T10:20:00",
+              "gps": {
+                "lat": 28.474192,
+                "lng": 77.504091
+              }
+            },
+            "tampered": false,
+            "tamperNotes": "Photo taken Feb 2023 (older than 12 months)"
+          }
+        },
+        {
+          "path": "apex/photos/electronics_lab.jpg",
+          "docType": "INFRA_PHOTO_LABORATORY",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "INFRA_PHOTO_LABORATORY",
+            "fields": {
+              "counts": {
+                "workbenches": 3,
+                "fireExtinguishers": 1
+              },
+              "takenAt": "2026-09-27T16:45:00",
+              "gps": {
+                "lat": 28.474089,
+                "lng": 77.504253
+              }
+            },
+            "tampered": false,
+            "tamperNotes": "Heavily blurred"
+          }
+        },
+        {
+          "path": "apex/photos/classroom_301.jpg",
+          "docType": "INFRA_PHOTO_CLASSROOM",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "INFRA_PHOTO_CLASSROOM",
+            "fields": {
+              "counts": {
+                "desks": 30,
+                "seatsEstimated": 60
+              },
+              "takenAt": "2026-09-12T10:41:00",
+              "gps": {
+                "lat": 22.298695,
+                "lng": 73.357002
+              }
+            },
+            "tampered": true,
+            "tamperNotes": "Byte-identical copy of another institution's photo (nvie/photos/classroom_204.jpg); geo-tag ~900 km from campus"
+          }
+        }
+      ]
+    },
+    {
+      "key": "nvie-newcourse-2027",
+      "institutionKey": "nvie",
+      "category": "NEW_COURSE",
+      "academicYear": "2027-28",
+      "status": "SUBMITTED",
+      "formData": {
+        "newCourse": "B.Tech Artificial Intelligence & Data Science",
+        "newCourseIntake": 60,
+        "currentIntake": 240,
+        "totalIntake": 300,
+        "facultyCount": 52,
+        "builtUpAreaSqm": 24090,
+        "additionalBuiltUpAreaSqm": 2640,
+        "terTxnId": "TERX2026100200981",
+        "terAmount": 100000,
+        "corpusFundAmount": 10000000
+      },
+      "scenario": "New course with issuing-authority edge cases: the State NOC issuer endpoint is down (SOURCE_UNAVAILABLE), the university consent is queued at DigiLocker (VERIFICATION_PENDING), and the corpus-fund FDR / floor plan / affidavit have no verifiable source (MANUAL_REVIEW_REQUIRED). Application should move to SOURCE_VERIFICATION_PENDING rather than fail.",
+      "expectedFindings": [
+        "VERIFICATION:STATE_GOVT_NOC (SOURCE_UNAVAILABLE)",
+        "VERIFICATION:UNIVERSITY_AFFILIATION (VERIFICATION_PENDING)",
+        "VERIFICATION:CORPUS_FUND_FDR (MANUAL_REVIEW_REQUIRED)",
+        "VERIFICATION:FLOOR_PLAN (MANUAL_REVIEW_REQUIRED)",
+        "COMPLIANCE_GAP:faculty_student_ratio (1200/52 = 23.1 > 20 after new intake)"
+      ],
+      "documents": [
+        {
+          "path": "nvie/eoa_letter_2026-27.pdf",
+          "docType": "PREVIOUS_EOA_LETTER",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "PREVIOUS_EOA_LETTER",
+            "fields": {
+              "referenceNo": "WRO/1-1029482233/2026/EOA",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2026-05-28",
+              "permanentId": "1-1029482233",
+              "academicYear": "2026-27",
+              "totalIntake": 240
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "nvie/new_course/university_consent_ai_ds.pdf",
+          "docType": "UNIVERSITY_AFFILIATION",
+          "expectedVerification": "VERIFICATION_PENDING",
+          "groundTruth": {
+            "docType": "UNIVERSITY_AFFILIATION",
+            "fields": {
+              "referenceNo": "NTU/AFF/NC/2026/0142",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2026-09-25",
+              "academicYear": "2027-28",
+              "course": "B.Tech Artificial Intelligence & Data Science",
+              "totalIntake": 60
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/faculty_roster.csv",
+          "docType": "FACULTY_ROSTER",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "FACULTY_ROSTER",
+            "fields": {
+              "facultyCount": 52,
+              "pans": [
+                "QSUPC4111F",
+                "KECPG9825Y",
+                "SCBPK1584G",
+                "UGSPS4828W",
+                "PTCPY5161L",
+                "NDKPD7332C",
+                "RNYPM7511P",
+                "CKLPP1248P",
+                "QRFPA4086Q",
+                "NDNPT7893G",
+                "FNVPB2643B",
+                "LKNPA2202C",
+                "MMVPA8425E",
+                "EKHPK5087Z",
+                "VCPPS1776D",
+                "YNJPP7894V",
+                "HRTPD2214J",
+                "PQHPD1990B",
+                "QLXPJ9551U",
+                "AVWPQ2226R",
+                "ZBZPJ3122L",
+                "RUAPD7264N",
+                "ZLNPG8499Q",
+                "RAHPB2849R",
+                "SFLPR8240R",
+                "GNHPM6185G",
+                "FDQPC8722J",
+                "LCBPK5556V",
+                "WENPS8451G",
+                "WTWPD7040C",
+                "RTYPP1592F",
+                "NYHPR2428P",
+                "TUWPM9235L",
+                "GHNPG2439K",
+                "TPJPS8986A",
+                "RESPK9490X",
+                "SSTPN5202K",
+                "GPTPJ2872S",
+                "TUDPR9045C",
+                "JHRPT9077E",
+                "JEYPM1373B",
+                "DRZPP3011S",
+                "SVFPT9817G",
+                "HZWPM6695F",
+                "EHEPM2444J",
+                "WXAPR2573G",
+                "CRDPS1398B",
+                "GFFPJ5638X",
+                "LNQPY7986S",
+                "FPQPA6891Z",
+                "YWNPG4128S",
+                "TYMPK8072F"
+              ],
+              "cadre": {
+                "professor": 6,
+                "associateProfessor": 12,
+                "assistantProfessor": 34
+              }
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/new_course/affidavit_new_course.pdf",
+          "docType": "AFFIDAVIT_UNDERTAKING",
+          "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+          "groundTruth": {
+            "docType": "AFFIDAVIT_UNDERTAKING",
+            "fields": {
+              "referenceNo": "IN-GJ-SIM-26-0047730",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2026-10-01",
+              "notarisedOn": "2026-10-03",
+              "deponentName": "Dr. Hemant R. Desai",
+              "academicYear": "2027-28"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/new_course/ter_receipt_new_course.pdf",
+          "docType": "TER_PAYMENT_RECEIPT",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "TER_PAYMENT_RECEIPT",
+            "fields": {
+              "referenceNo": "TERX2026100200981",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2026-10-02",
+              "amount": 100000,
+              "applicationNo": "APP-2027-WR-10377",
+              "academicYear": "2027-28"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/new_course/floor_plan_ai_ds_block.pdf",
+          "docType": "FLOOR_PLAN",
+          "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+          "groundTruth": {
+            "docType": "FLOOR_PLAN",
+            "fields": {
+              "referenceNo": "KJA/NVIE/2026/07",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2026-08-20",
+              "builtUpAreaSqm": 2640
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/new_course/ai_ds_lab.jpg",
+          "docType": "INFRA_PHOTO_LABORATORY",
+          "expectedVerification": "NOT_APPLICABLE",
+          "groundTruth": {
+            "docType": "INFRA_PHOTO_LABORATORY",
+            "fields": {
+              "counts": {
+                "workbenches": 3,
+                "fireExtinguishers": 2
+              },
+              "takenAt": "2026-09-26T15:12:00",
+              "gps": {
+                "lat": 22.299227,
+                "lng": 73.357038
+              }
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/new_course/state_noc_ai_ds_scan.pdf",
+          "docType": "STATE_GOVT_NOC",
+          "expectedVerification": "SOURCE_UNAVAILABLE",
+          "groundTruth": {
+            "docType": "STATE_GOVT_NOC",
+            "fields": {
+              "referenceNo": "CTE/NOC/2026/3381",
+              "institutionName": "Narmada Valley Institute of Engineering",
+              "issueDate": "2026-09-30",
+              "academicYear": "2027-28",
+              "course": "B.Tech Artificial Intelligence & Data Science"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "nvie/new_course/corpus_fund_fdr.pdf",
+          "docType": "CORPUS_FUND_FDR",
+          "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+          "groundTruth": {
+            "docType": "CORPUS_FUND_FDR",
+            "fields": {
+              "referenceNo": "IVNB/FD/0098812345",
+              "issueDate": "2026-09-05",
+              "expiryDate": "2031-09-05",
+              "amount": 10000000
+            },
+            "tampered": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "piat-name-change-2027",
+      "institutionKey": "piat",
+      "category": "CHANGE_OF_NAME",
+      "academicYear": "2027-28",
+      "status": "SUBMITTED",
+      "formData": {
+        "currentName": "Pragati Institute of Advanced Technology",
+        "proposedName": "Pragati Institute of Technology & Research",
+        "reason": "Re-branding approved by the governing body (resolution dated 12/07/2026)",
+        "terTxnId": "TERX2026092600551",
+        "terAmount": 50000
+      },
+      "scenario": "Change of name: society amendment, university NOC and TER verify cleanly, but the State Government NOC (genuinely issued, QR valid) names 'Pragati Institute of Technology & Management' instead of the proposed '... & Research' - a cross-document inconsistency for the officer.",
+      "expectedFindings": [
+        "INCONSISTENCY:STATE_GOVT_NOC.proposedName vs formData.proposedName",
+        "VERIFICATION:AFFIDAVIT_UNDERTAKING (MANUAL_REVIEW_REQUIRED, info)"
+      ],
+      "documents": [
+        {
+          "path": "piat/eoa_letter_2026-27.pdf",
+          "docType": "PREVIOUS_EOA_LETTER",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "PREVIOUS_EOA_LETTER",
+            "fields": {
+              "referenceNo": "WRO/1-3948291012/2026/EOA",
+              "institutionName": "Pragati Institute of Advanced Technology",
+              "issueDate": "2026-05-30",
+              "permanentId": "1-3948291012",
+              "academicYear": "2026-27",
+              "totalIntake": 300
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "piat/change_of_name/society_registration_amended.pdf",
+          "docType": "SOCIETY_TRUST_REGISTRATION",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "SOCIETY_TRUST_REGISTRATION",
+            "fields": {
+              "referenceNo": "MH/PUNE/F-18842/2008",
+              "trustName": "Pragati Shikshan Prasarak Mandal",
+              "issueDate": "2008-03-14",
+              "newInstitutionName": "Pragati Institute of Technology & Research"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "piat/change_of_name/university_noc_name_change.pdf",
+          "docType": "UNIVERSITY_AFFILIATION",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "UNIVERSITY_AFFILIATION",
+            "fields": {
+              "referenceNo": "STU/AFF/CN/2026/0061",
+              "institutionName": "Pragati Institute of Advanced Technology",
+              "issueDate": "2026-09-05",
+              "academicYear": "2027-28",
+              "proposedName": "Pragati Institute of Technology & Research"
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "piat/change_of_name/state_noc_name_change.pdf",
+          "docType": "STATE_GOVT_NOC",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "STATE_GOVT_NOC",
+            "fields": {
+              "referenceNo": "DTE/MH/NOC/2026/5521",
+              "institutionName": "Pragati Institute of Advanced Technology",
+              "issueDate": "2026-09-19",
+              "academicYear": "2027-28",
+              "proposedName": "Pragati Institute of Technology & Management"
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "piat/change_of_name/affidavit_name_change.pdf",
+          "docType": "AFFIDAVIT_UNDERTAKING",
+          "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+          "groundTruth": {
+            "docType": "AFFIDAVIT_UNDERTAKING",
+            "fields": {
+              "referenceNo": "IN-MH-SIM-26-0201145",
+              "institutionName": "Pragati Institute of Advanced Technology",
+              "issueDate": "2026-09-24",
+              "notarisedOn": "2026-09-25",
+              "deponentName": "Dr. Sunil V. Gokhale",
+              "academicYear": "2027-28"
+            },
+            "tampered": false
+          }
+        },
+        {
+          "path": "piat/change_of_name/ter_receipt_name_change.pdf",
+          "docType": "TER_PAYMENT_RECEIPT",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "TER_PAYMENT_RECEIPT",
+            "fields": {
+              "referenceNo": "TERX2026092600551",
+              "institutionName": "Pragati Institute of Advanced Technology",
+              "issueDate": "2026-09-26",
+              "amount": 50000,
+              "applicationNo": "APP-2027-WR-10498",
+              "academicYear": "2027-28"
+            },
+            "tampered": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "apex-eoa-2027-draft",
+      "institutionKey": "apex",
+      "category": "EOA",
+      "academicYear": "2027-28",
+      "status": "DRAFT",
+      "formData": {
+        "totalIntake": 240,
+        "facultyCount": 55,
+        "landAreaAcres": 5.2,
+        "builtUpAreaSqm": 14600,
+        "nbaAccredited": false,
+        "naacAccredited": true
+      },
+      "scenario": "Draft EoA (pre-submission compliance meter): only 4 documents uploaded; the occupancy certificate was uploaded declared as BUILDING_PLAN_APPROVAL (classifier disagrees); NAAC accreditation expired in March 2025.",
+      "expectedFindings": [
+        "INCONSISTENCY:document type (declared BUILDING_PLAN_APPROVAL, classified OCCUPANCY_CERTIFICATE)",
+        "EXPIRED_DOCUMENT:NAAC_ACCREDITATION",
+        "MISSING_DOCUMENT:AFFIDAVIT_UNDERTAKING",
+        "MISSING_DOCUMENT:TER_PAYMENT_RECEIPT",
+        "MISSING_DOCUMENT:OCCUPANCY_CERTIFICATE",
+        "MISSING_DOCUMENT:FACULTY_ROSTER",
+        "MISSING_DOCUMENT:UNIVERSITY_AFFILIATION"
+      ],
+      "documents": [
+        {
+          "path": "apex/eoa_letter_2026-27.pdf",
+          "docType": "PREVIOUS_EOA_LETTER",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "PREVIOUS_EOA_LETTER",
+            "fields": {
+              "referenceNo": "NRO/1-8492048217/2026/EOA",
+              "institutionName": "Apex Valley Institute of Technology & Management",
+              "issueDate": "2026-06-02",
+              "permanentId": "1-8492048217",
+              "academicYear": "2026-27",
+              "totalIntake": 240
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "apex/fire_noc.pdf",
+          "docType": "FIRE_NOC",
+          "expectedVerification": "VERIFIED",
+          "groundTruth": {
+            "docType": "FIRE_NOC",
+            "fields": {
+              "referenceNo": "GNFRS/NOC/2026/0264",
+              "institutionName": "Apex Valley Institute of Technology & Management",
+              "issueDate": "2026-04-21",
+              "expiryDate": "2027-04-20"
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "apex/eoa_draft/occupancy_certificate.pdf",
+          "docType": "BUILDING_PLAN_APPROVAL",
+          "expectedVerification": "MISMATCH_DETECTED",
+          "groundTruth": {
+            "docType": "OCCUPANCY_CERTIFICATE",
+            "fields": {
+              "referenceNo": "GNUPB/OC/2012/0311",
+              "institutionName": "Apex Valley Institute of Technology & Management",
+              "issueDate": "2012-11-03",
+              "builtUpAreaSqm": 14600
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        },
+        {
+          "path": "apex/eoa_draft/naac_certificate.pdf",
+          "docType": "NAAC_ACCREDITATION",
+          "expectedVerification": "EXPIRED",
+          "groundTruth": {
+            "docType": "NAAC_ACCREDITATION",
+            "fields": {
+              "referenceNo": "NIAC/EC/2020/077/B",
+              "institutionName": "Apex Valley Institute of Technology & Management",
+              "issueDate": "2020-03-31",
+              "grade": "B++",
+              "cgpa": 2.84,
+              "validFrom": "2020-03-31",
+              "expiryDate": "2025-03-30"
+            },
+            "tampered": false,
+            "qr": "valid"
+          }
+        }
+      ]
+    }
+  ],
+  "authorityRecords": {
+    "digilocker": [
+      {
+        "referenceNo": "NTU/AFF/2026/1187",
+        "docType": "UNIVERSITY_AFFILIATION",
+        "fields": {
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "academicYear": "2027-28",
+          "university": "Narmada Technological University",
+          "totalIntake": 240
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "NTU/AFF/NC/2026/0142",
+        "docType": "UNIVERSITY_AFFILIATION",
+        "fields": {
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "academicYear": "2027-28",
+          "university": "Narmada Technological University",
+          "course": "B.Tech Artificial Intelligence & Data Science",
+          "totalIntake": 60
+        },
+        "status": "VALID",
+        "simulate": "PENDING",
+        "message": "Issuer (Narmada Technological University) has not yet pushed this document to DigiLocker; request queued for issuer consent"
+      },
+      {
+        "referenceNo": "CTE/NOC/2026/3381",
+        "docType": "STATE_GOVT_NOC",
+        "fields": {
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "academicYear": "2027-28",
+          "course": "B.Tech Artificial Intelligence & Data Science"
+        },
+        "status": "VALID",
+        "simulate": "OUTAGE",
+        "message": "Issuer endpoint of the Commissionerate of Technical Education (Gujarat) is not responding (simulated outage)"
+      },
+      {
+        "referenceNo": "STU/AFF/2026/2240",
+        "docType": "UNIVERSITY_AFFILIATION",
+        "fields": {
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "academicYear": "2027-28",
+          "university": "Sahyadri Technological University",
+          "totalIntake": 300
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "MH/PUNE/F-18842/2008",
+        "docType": "SOCIETY_TRUST_REGISTRATION",
+        "fields": {
+          "trustName": "Pragati Shikshan Prasarak Mandal",
+          "newInstitutionName": "Pragati Institute of Technology & Research",
+          "issueDate": "2008-03-14"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "STU/AFF/CN/2026/0061",
+        "docType": "UNIVERSITY_AFFILIATION",
+        "fields": {
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "academicYear": "2027-28",
+          "university": "Sahyadri Technological University",
+          "proposedName": "Pragati Institute of Technology & Research"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "DTE/MH/NOC/2026/5521",
+        "docType": "STATE_GOVT_NOC",
+        "fields": {
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "academicYear": "2027-28",
+          "proposedName": "Pragati Institute of Technology & Management"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "GANGTU/AFF/2026/0912",
+        "docType": "UNIVERSITY_AFFILIATION",
+        "fields": {
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "academicYear": "2027-28",
+          "university": "Gangetic Technical University",
+          "totalIntake": 300
+        },
+        "status": "VALID"
+      }
+    ],
+    "nba": [
+      {
+        "referenceNo": "NBEP/2025/NV/0233",
+        "docType": "NBA_ACCREDITATION",
+        "fields": {
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "programme": "B.Tech Computer Science & Engineering",
+          "validFrom": "2025-07-01",
+          "expiryDate": "2028-06-30"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "NBEP/2024/PI/0377",
+        "docType": "NBA_ACCREDITATION",
+        "fields": {
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "programme": "B.Tech Computer Engineering",
+          "validFrom": "2024-07-01",
+          "expiryDate": "2027-06-30"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "NBEP/2021/AP/0127",
+        "docType": "NBA_ACCREDITATION",
+        "fields": {
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "programme": "B.Tech Mechanical Engineering",
+          "validFrom": "2021-07-01",
+          "expiryDate": "2024-06-30"
+        },
+        "status": "EXPIRED"
+      }
+    ],
+    "naac": [
+      {
+        "referenceNo": "NIAC/EC/2024/118/A",
+        "docType": "NAAC_ACCREDITATION",
+        "fields": {
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "grade": "A+",
+          "cgpa": 3.31,
+          "validFrom": "2024-02-15",
+          "expiryDate": "2029-02-14"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "NIAC/EC/2020/077/B",
+        "docType": "NAAC_ACCREDITATION",
+        "fields": {
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "grade": "B++",
+          "cgpa": 2.84,
+          "validFrom": "2020-03-31",
+          "expiryDate": "2025-03-30"
+        },
+        "status": "EXPIRED"
+      }
+    ],
+    "municipal_fire": [
+      {
+        "referenceNo": "VUFSD/NOC/2026/0718",
+        "docType": "FIRE_NOC",
+        "fields": {
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2026-07-14",
+          "expiryDate": "2027-07-13"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "VMDA/OC/2014/2231",
+        "docType": "OCCUPANCY_CERTIFICATE",
+        "fields": {
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2014-03-12",
+          "builtUpAreaSqm": 21450
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "VMDA/BP/2012/0897",
+        "docType": "BUILDING_PLAN_APPROVAL",
+        "fields": {
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2012-09-05",
+          "builtUpAreaSqm": 21450
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "PMRFES/NOC/2025/1093",
+        "docType": "FIRE_NOC",
+        "fields": {
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "issueDate": "2025-10-11",
+          "expiryDate": "2026-10-10"
+        },
+        "status": "EXPIRED"
+      },
+      {
+        "referenceNo": "PMRDA/OC/2011/0457",
+        "docType": "OCCUPANCY_CERTIFICATE",
+        "fields": {
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "issueDate": "2011-08-18",
+          "builtUpAreaSqm": 26800
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "GNFRS/NOC/2026/0264",
+        "docType": "FIRE_NOC",
+        "fields": {
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "issueDate": "2026-04-21",
+          "expiryDate": "2027-04-20"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "GNUPB/BP/2010/0566",
+        "docType": "BUILDING_PLAN_APPROVAL",
+        "fields": {
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "issueDate": "2010-01-12",
+          "builtUpAreaSqm": 14600
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "GNUPB/OC/2012/0311",
+        "docType": "OCCUPANCY_CERTIFICATE",
+        "fields": {
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "issueDate": "2012-11-03",
+          "builtUpAreaSqm": 14600
+        },
+        "status": "VALID"
+      }
+    ],
+    "land_records": [
+      {
+        "referenceNo": "VDR-II/4471/2005",
+        "docType": "LAND_DOCUMENT",
+        "fields": {
+          "ownerName": "Narmada Vidya Pratishthan",
+          "surveyNo": "211/2",
+          "landAreaAcres": 15.4,
+          "village": "Waghodia",
+          "district": "Vadodara",
+          "issueDate": "2005-11-21"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "GN/SR/2009/7731",
+        "docType": "LAND_DOCUMENT",
+        "fields": {
+          "ownerName": "Apex Valley Educational Trust",
+          "surveyNo": "118/2",
+          "landAreaAcres": 5.2,
+          "village": "Tilapta",
+          "district": "Gautam Buddh Nagar",
+          "issueDate": "2009-06-16"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "MUT/DDR/2010/1182",
+        "docType": "LAND_DOCUMENT",
+        "fields": {
+          "ownerName": "Apex Valley Educational Trust",
+          "surveyNo": "118/2",
+          "landAreaAcres": 5.2,
+          "village": "Tilapta",
+          "district": "Gautam Buddh Nagar",
+          "issueDate": "2010-02-04"
+        },
+        "status": "VALID"
+      }
+    ],
+    "ter_payments": [
+      {
+        "referenceNo": "TERX2026091800417",
+        "docType": "TER_PAYMENT_RECEIPT",
+        "fields": {
+          "amount": 150000,
+          "applicationNo": "APP-2027-WR-10294",
+          "issueDate": "2026-09-18",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "paymentStatus": "SUCCESS"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "TERX2026100200981",
+        "docType": "TER_PAYMENT_RECEIPT",
+        "fields": {
+          "amount": 100000,
+          "applicationNo": "APP-2027-WR-10377",
+          "issueDate": "2026-10-02",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "paymentStatus": "SUCCESS"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "TERX2026101500112",
+        "docType": "TER_PAYMENT_RECEIPT",
+        "fields": {
+          "amount": 150000,
+          "applicationNo": "APP-2027-WR-10511",
+          "issueDate": "2026-10-15",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "paymentStatus": "PENDING"
+        },
+        "status": "VALID",
+        "simulate": "PENDING",
+        "message": "Gateway reports the transaction as initiated; settlement confirmation from the bank is awaited"
+      },
+      {
+        "referenceNo": "TERX2026092600551",
+        "docType": "TER_PAYMENT_RECEIPT",
+        "fields": {
+          "amount": 50000,
+          "applicationNo": "APP-2027-WR-10498",
+          "issueDate": "2026-09-26",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "paymentStatus": "SUCCESS"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "TERX2026100800734",
+        "docType": "TER_PAYMENT_RECEIPT",
+        "fields": {
+          "amount": 200000,
+          "applicationNo": "APP-2027-NR-20871",
+          "issueDate": "2026-10-08",
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "paymentStatus": "SUCCESS"
+        },
+        "status": "VALID"
+      }
+    ],
+    "aicte_eoa": [
+      {
+        "referenceNo": "WRO/1-1029482233/2026/EOA",
+        "docType": "PREVIOUS_EOA_LETTER",
+        "fields": {
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "permanentId": "1-1029482233",
+          "academicYear": "2026-27",
+          "totalIntake": 240,
+          "issueDate": "2026-05-28"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "WRO/1-3948291012/2026/EOA",
+        "docType": "PREVIOUS_EOA_LETTER",
+        "fields": {
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "permanentId": "1-3948291012",
+          "academicYear": "2026-27",
+          "totalIntake": 300,
+          "issueDate": "2026-05-30"
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "NRO/1-8492048217/2026/EOA",
+        "docType": "PREVIOUS_EOA_LETTER",
+        "fields": {
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "permanentId": "1-8492048217",
+          "academicYear": "2026-27",
+          "totalIntake": 240,
+          "issueDate": "2026-06-02"
+        },
+        "status": "VALID"
+      }
+    ],
+    "ca_udin": [
+      {
+        "referenceNo": "26104377BKQXWE7781",
+        "docType": "AUDITED_FINANCIAL_STATEMENT",
+        "fields": {
+          "financialYear": "2025-26",
+          "membershipNo": "104377",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "firm": "M/s Shah Mehta & Co."
+        },
+        "status": "VALID"
+      },
+      {
+        "referenceNo": "26112840BMTRQP4410",
+        "docType": "AUDITED_FINANCIAL_STATEMENT",
+        "fields": {
+          "financialYear": "2025-26",
+          "membershipNo": "112840",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "firm": "M/s Deshpande Kulkarni & Associates"
+        },
+        "status": "VALID"
+      }
+    ]
+  },
+  "documents": [
+    {
+      "path": "apex/audited_financial_statement_2025-26.pdf",
+      "docType": "AUDITED_FINANCIAL_STATEMENT",
+      "expectedVerification": "MISMATCH_DETECTED",
+      "groundTruth": {
+        "docType": "AUDITED_FINANCIAL_STATEMENT",
+        "fields": {
+          "udin": "26131975BHQZNM5520",
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "financialYear": "2025-26",
+          "membershipNo": "131975"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "apex/building_plan_approval.pdf",
+      "docType": "BUILDING_PLAN_APPROVAL",
+      "expectedVerification": "MISMATCH_DETECTED",
+      "groundTruth": {
+        "docType": "BUILDING_PLAN_APPROVAL",
+        "fields": {
+          "referenceNo": "GNUPB/BP/2010/0566",
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "issueDate": "2010-01-12",
+          "builtUpAreaSqm": 24600
+        },
+        "tampered": true,
+        "tamperNotes": "QR claims edited after signing (signature invalid); printed built-up area inflated",
+        "qr": "forged"
+      }
+    },
+    {
+      "path": "apex/eoa_draft/naac_certificate.pdf",
+      "docType": "NAAC_ACCREDITATION",
+      "expectedVerification": "EXPIRED",
+      "groundTruth": {
+        "docType": "NAAC_ACCREDITATION",
+        "fields": {
+          "referenceNo": "NIAC/EC/2020/077/B",
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "issueDate": "2020-03-31",
+          "grade": "B++",
+          "cgpa": 2.84,
+          "validFrom": "2020-03-31",
+          "expiryDate": "2025-03-30"
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "apex/eoa_draft/occupancy_certificate.pdf",
+      "docType": "OCCUPANCY_CERTIFICATE",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "OCCUPANCY_CERTIFICATE",
+        "fields": {
+          "referenceNo": "GNUPB/OC/2012/0311",
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "issueDate": "2012-11-03",
+          "builtUpAreaSqm": 14600
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "apex/eoa_letter_2026-27.pdf",
+      "docType": "PREVIOUS_EOA_LETTER",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "PREVIOUS_EOA_LETTER",
+        "fields": {
+          "referenceNo": "NRO/1-8492048217/2026/EOA",
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "issueDate": "2026-06-02",
+          "permanentId": "1-8492048217",
+          "academicYear": "2026-27",
+          "totalIntake": 240
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "apex/faculty_roster.pdf",
+      "docType": "FACULTY_ROSTER",
+      "expectedVerification": "NOT_APPLICABLE",
+      "groundTruth": {
+        "docType": "FACULTY_ROSTER",
+        "fields": {
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "facultyCount": 58,
+          "declaredTotal": 58,
+          "pans": [
+            "RWTPN9640F",
+            "KXWPQ2159K",
+            "JLTPD5024D",
+            "DWLPD4976S",
+            "TNNPM4038X",
+            "CDLPD1049B",
+            "WNQPM8757M",
+            "ARNPK7212M",
+            "WQZPA6166Y",
+            "CVZPC5615Q",
+            "VRNPP1336N",
+            "LVKPK3825Z",
+            "XSBPS1210H",
+            "DGGPG4261V",
+            "XMAPT3550P",
+            "AUGPY4735X",
+            "AXAPK1105R",
+            "ZLDPM6556N",
+            "DFPPG9677E",
+            "AACPY3443L",
+            "RQVPP7274U",
+            "MCDPC4076W",
+            "SFNPC2271V",
+            "ZNKPT8126H",
+            "GBDPG3686F",
+            "DESPT7786E",
+            "AUDPG8232R",
+            "VQXPK4865P",
+            "KZGPQ6012Q",
+            "GAPPB6187H",
+            "FSGPP1510Y",
+            "SXMPM5172M",
+            "JQKPR2291L",
+            "YFQPS7103M",
+            "PTZPA6239F",
+            "UFPPT9722G",
+            "RZMPK3814J",
+            "ETXPI7554T",
+            "NATPB6984A",
+            "MZGPJ9475W",
+            "EBDPM4427H",
+            "JNLPK9533S",
+            "DDWPJ7015P",
+            "PTNPC6567J",
+            "NFDPB1383Y",
+            "QNJPM9074Y",
+            "ZFTPT6574L",
+            "FWKPI1937N",
+            "TFWPM9459T",
+            "WNUPN6655N",
+            "MCMPA4375X",
+            "LYJPA3278J",
+            "BRZPV1346J",
+            "ZFCPG2779R",
+            "QVXPS1968A",
+            "DRYPY9584E",
+            "CWYPQ6796D",
+            "WCLPB2593F"
+          ],
+          "cadre": {
+            "professor": 6,
+            "associateProfessor": 15,
+            "assistantProfessor": 37
+          }
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "apex/fire_noc.pdf",
+      "docType": "FIRE_NOC",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "FIRE_NOC",
+        "fields": {
+          "referenceNo": "GNFRS/NOC/2026/0264",
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "issueDate": "2026-04-21",
+          "expiryDate": "2027-04-20"
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "apex/floor_plan_area_statement.pdf",
+      "docType": "FLOOR_PLAN",
+      "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+      "groundTruth": {
+        "docType": "FLOOR_PLAN",
+        "fields": {
+          "referenceNo": "RSA/AVIT/2026/14",
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "issueDate": "2026-09-02",
+          "builtUpAreaSqm": 24600
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "apex/land_deed.pdf",
+      "docType": "LAND_DOCUMENT",
+      "expectedVerification": "MISMATCH_DETECTED",
+      "groundTruth": {
+        "docType": "LAND_DOCUMENT",
+        "fields": {
+          "referenceNo": "GN/SR/2009/7731",
+          "issueDate": "2009-06-16",
+          "surveyNo": "148/2",
+          "landAreaAcres": 12.5,
+          "ownerName": "Apex Valley Educational Trust",
+          "village": "Tilapta",
+          "district": "Gautam Buddh Nagar"
+        },
+        "tampered": true,
+        "tamperNotes": "Survey No. 118/2 -> 148/2 and area 5.20 -> 12.50 Acres re-typed in a different font (Times) over redacted originals; Producer 'Adobe Photoshop'; saved as an incremental update",
+        "expectedForensicFlags": [
+          "PDF_EDITING_SOFTWARE",
+          "PDF_INCREMENTAL_UPDATE",
+          "FONT_INCONSISTENCY",
+          "PDF_MODIFIED_AFTER_CREATION"
+        ]
+      }
+    },
+    {
+      "path": "apex/land_khatauni_extract_scan.jpg",
+      "docType": "LAND_DOCUMENT",
+      "expectedVerification": "MISMATCH_DETECTED",
+      "groundTruth": {
+        "docType": "LAND_DOCUMENT",
+        "fields": {
+          "referenceNo": "MUT/DDR/2010/1182",
+          "issueDate": "2010-02-04",
+          "surveyNo": "118/2",
+          "landAreaAcres": 12.5,
+          "village": "Tilapta",
+          "district": "Gautam Buddh Nagar"
+        },
+        "tampered": true,
+        "tamperNotes": "Area value pasted as fresh pixels into a q72 scan and re-saved at q95 in Photoshop (EXIF Software)",
+        "expectedForensicFlags": [
+          "ELA_LOCALISED_ANOMALY",
+          "IMAGE_EDITING_SOFTWARE"
+        ],
+        "tamperBbox": [
+          530,
+          548,
+          665,
+          583
+        ]
+      }
+    },
+    {
+      "path": "apex/nba_accreditation_cse.pdf",
+      "docType": "NBA_ACCREDITATION",
+      "expectedVerification": "MISMATCH_DETECTED",
+      "groundTruth": {
+        "docType": "NBA_ACCREDITATION",
+        "fields": {
+          "referenceNo": "NBEP/2024/AP/0419",
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "issueDate": "2024-06-18",
+          "programme": "B.Tech Computer Science & Engineering",
+          "validFrom": "2024-07-01",
+          "expiryDate": "2027-06-30"
+        },
+        "tampered": true,
+        "tamperNotes": "Printed programme/validity altered; issuer-signed QR (transplanted from an older certificate) shows the original values",
+        "qr": "mismatch"
+      }
+    },
+    {
+      "path": "apex/photos/classroom_301.jpg",
+      "docType": "INFRA_PHOTO_CLASSROOM",
+      "expectedVerification": "NOT_APPLICABLE",
+      "groundTruth": {
+        "docType": "INFRA_PHOTO_CLASSROOM",
+        "fields": {
+          "counts": {
+            "desks": 30,
+            "seatsEstimated": 60
+          },
+          "takenAt": "2026-09-12T10:41:00",
+          "gps": {
+            "lat": 22.298695,
+            "lng": 73.357002
+          }
+        },
+        "tampered": true,
+        "tamperNotes": "Byte-identical copy of another institution's photo (nvie/photos/classroom_204.jpg); geo-tag ~900 km from campus"
+      }
+    },
+    {
+      "path": "apex/photos/computer_lab_3.jpg",
+      "docType": "INFRA_PHOTO_COMPUTER_LAB",
+      "expectedVerification": "NOT_APPLICABLE",
+      "groundTruth": {
+        "docType": "INFRA_PHOTO_COMPUTER_LAB",
+        "fields": {
+          "counts": {
+            "monitors": 36
+          },
+          "takenAt": "2023-02-14T10:20:00",
+          "gps": {
+            "lat": 28.474192,
+            "lng": 77.504091
+          }
+        },
+        "tampered": false,
+        "tamperNotes": "Photo taken Feb 2023 (older than 12 months)"
+      }
+    },
+    {
+      "path": "apex/photos/electronics_lab.jpg",
+      "docType": "INFRA_PHOTO_LABORATORY",
+      "expectedVerification": "NOT_APPLICABLE",
+      "groundTruth": {
+        "docType": "INFRA_PHOTO_LABORATORY",
+        "fields": {
+          "counts": {
+            "workbenches": 3,
+            "fireExtinguishers": 1
+          },
+          "takenAt": "2026-09-27T16:45:00",
+          "gps": {
+            "lat": 28.474089,
+            "lng": 77.504253
+          }
+        },
+        "tampered": false,
+        "tamperNotes": "Heavily blurred"
+      }
+    },
+    {
+      "path": "apex/ter_receipt_intake.pdf",
+      "docType": "TER_PAYMENT_RECEIPT",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "TER_PAYMENT_RECEIPT",
+        "fields": {
+          "referenceNo": "TERX2026100800734",
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "issueDate": "2026-10-08",
+          "amount": 200000,
+          "applicationNo": "APP-2027-NR-20871",
+          "academicYear": "2027-28"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "apex/university_consent_intake.pdf",
+      "docType": "UNIVERSITY_AFFILIATION",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "UNIVERSITY_AFFILIATION",
+        "fields": {
+          "referenceNo": "GANGTU/AFF/2026/0912",
+          "institutionName": "Apex Valley Institute of Technology & Management",
+          "issueDate": "2026-08-21",
+          "academicYear": "2027-28",
+          "totalIntake": 300
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "nvie/affidavit_eoa_2027-28.pdf",
+      "docType": "AFFIDAVIT_UNDERTAKING",
+      "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+      "groundTruth": {
+        "docType": "AFFIDAVIT_UNDERTAKING",
+        "fields": {
+          "referenceNo": "IN-GJ-SIM-26-0045512",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2026-09-10",
+          "notarisedOn": "2026-09-11",
+          "deponentName": "Dr. Hemant R. Desai",
+          "academicYear": "2027-28"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/audited_financial_statement_2025-26.pdf",
+      "docType": "AUDITED_FINANCIAL_STATEMENT",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "AUDITED_FINANCIAL_STATEMENT",
+        "fields": {
+          "udin": "26104377BKQXWE7781",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "financialYear": "2025-26",
+          "membershipNo": "104377"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/building_plan_approval.pdf",
+      "docType": "BUILDING_PLAN_APPROVAL",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "BUILDING_PLAN_APPROVAL",
+        "fields": {
+          "referenceNo": "VMDA/BP/2012/0897",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2012-09-05",
+          "builtUpAreaSqm": 21450
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "nvie/eoa_letter_2026-27.pdf",
+      "docType": "PREVIOUS_EOA_LETTER",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "PREVIOUS_EOA_LETTER",
+        "fields": {
+          "referenceNo": "WRO/1-1029482233/2026/EOA",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2026-05-28",
+          "permanentId": "1-1029482233",
+          "academicYear": "2026-27",
+          "totalIntake": 240
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "nvie/faculty_roster.csv",
+      "docType": "FACULTY_ROSTER",
+      "expectedVerification": "NOT_APPLICABLE",
+      "groundTruth": {
+        "docType": "FACULTY_ROSTER",
+        "fields": {
+          "facultyCount": 52,
+          "pans": [
+            "QSUPC4111F",
+            "KECPG9825Y",
+            "SCBPK1584G",
+            "UGSPS4828W",
+            "PTCPY5161L",
+            "NDKPD7332C",
+            "RNYPM7511P",
+            "CKLPP1248P",
+            "QRFPA4086Q",
+            "NDNPT7893G",
+            "FNVPB2643B",
+            "LKNPA2202C",
+            "MMVPA8425E",
+            "EKHPK5087Z",
+            "VCPPS1776D",
+            "YNJPP7894V",
+            "HRTPD2214J",
+            "PQHPD1990B",
+            "QLXPJ9551U",
+            "AVWPQ2226R",
+            "ZBZPJ3122L",
+            "RUAPD7264N",
+            "ZLNPG8499Q",
+            "RAHPB2849R",
+            "SFLPR8240R",
+            "GNHPM6185G",
+            "FDQPC8722J",
+            "LCBPK5556V",
+            "WENPS8451G",
+            "WTWPD7040C",
+            "RTYPP1592F",
+            "NYHPR2428P",
+            "TUWPM9235L",
+            "GHNPG2439K",
+            "TPJPS8986A",
+            "RESPK9490X",
+            "SSTPN5202K",
+            "GPTPJ2872S",
+            "TUDPR9045C",
+            "JHRPT9077E",
+            "JEYPM1373B",
+            "DRZPP3011S",
+            "SVFPT9817G",
+            "HZWPM6695F",
+            "EHEPM2444J",
+            "WXAPR2573G",
+            "CRDPS1398B",
+            "GFFPJ5638X",
+            "LNQPY7986S",
+            "FPQPA6891Z",
+            "YWNPG4128S",
+            "TYMPK8072F"
+          ],
+          "cadre": {
+            "professor": 6,
+            "associateProfessor": 12,
+            "assistantProfessor": 34
+          }
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/fire_noc.pdf",
+      "docType": "FIRE_NOC",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "FIRE_NOC",
+        "fields": {
+          "referenceNo": "VUFSD/NOC/2026/0718",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2026-07-14",
+          "expiryDate": "2027-07-13"
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "nvie/land_sale_deed.pdf",
+      "docType": "LAND_DOCUMENT",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "LAND_DOCUMENT",
+        "fields": {
+          "referenceNo": "VDR-II/4471/2005",
+          "issueDate": "2005-11-21",
+          "surveyNo": "211/2",
+          "landAreaAcres": 15.4,
+          "ownerName": "Narmada Vidya Pratishthan",
+          "village": "Waghodia",
+          "district": "Vadodara"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/naac_certificate.pdf",
+      "docType": "NAAC_ACCREDITATION",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "NAAC_ACCREDITATION",
+        "fields": {
+          "referenceNo": "NIAC/EC/2024/118/A",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2024-02-15",
+          "grade": "A+",
+          "cgpa": 3.31,
+          "validFrom": "2024-02-15",
+          "expiryDate": "2029-02-14"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/nba_accreditation_cse.pdf",
+      "docType": "NBA_ACCREDITATION",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "NBA_ACCREDITATION",
+        "fields": {
+          "referenceNo": "NBEP/2025/NV/0233",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2025-06-20",
+          "programme": "B.Tech Computer Science & Engineering",
+          "validFrom": "2025-07-01",
+          "expiryDate": "2028-06-30"
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "nvie/new_course/affidavit_new_course.pdf",
+      "docType": "AFFIDAVIT_UNDERTAKING",
+      "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+      "groundTruth": {
+        "docType": "AFFIDAVIT_UNDERTAKING",
+        "fields": {
+          "referenceNo": "IN-GJ-SIM-26-0047730",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2026-10-01",
+          "notarisedOn": "2026-10-03",
+          "deponentName": "Dr. Hemant R. Desai",
+          "academicYear": "2027-28"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/new_course/ai_ds_lab.jpg",
+      "docType": "INFRA_PHOTO_LABORATORY",
+      "expectedVerification": "NOT_APPLICABLE",
+      "groundTruth": {
+        "docType": "INFRA_PHOTO_LABORATORY",
+        "fields": {
+          "counts": {
+            "workbenches": 3,
+            "fireExtinguishers": 2
+          },
+          "takenAt": "2026-09-26T15:12:00",
+          "gps": {
+            "lat": 22.299227,
+            "lng": 73.357038
+          }
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/new_course/corpus_fund_fdr.pdf",
+      "docType": "CORPUS_FUND_FDR",
+      "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+      "groundTruth": {
+        "docType": "CORPUS_FUND_FDR",
+        "fields": {
+          "referenceNo": "IVNB/FD/0098812345",
+          "issueDate": "2026-09-05",
+          "expiryDate": "2031-09-05",
+          "amount": 10000000
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/new_course/floor_plan_ai_ds_block.pdf",
+      "docType": "FLOOR_PLAN",
+      "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+      "groundTruth": {
+        "docType": "FLOOR_PLAN",
+        "fields": {
+          "referenceNo": "KJA/NVIE/2026/07",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2026-08-20",
+          "builtUpAreaSqm": 2640
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/new_course/state_noc_ai_ds_scan.pdf",
+      "docType": "STATE_GOVT_NOC",
+      "expectedVerification": "SOURCE_UNAVAILABLE",
+      "groundTruth": {
+        "docType": "STATE_GOVT_NOC",
+        "fields": {
+          "referenceNo": "CTE/NOC/2026/3381",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2026-09-30",
+          "academicYear": "2027-28",
+          "course": "B.Tech Artificial Intelligence & Data Science"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/new_course/ter_receipt_new_course.pdf",
+      "docType": "TER_PAYMENT_RECEIPT",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "TER_PAYMENT_RECEIPT",
+        "fields": {
+          "referenceNo": "TERX2026100200981",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2026-10-02",
+          "amount": 100000,
+          "applicationNo": "APP-2027-WR-10377",
+          "academicYear": "2027-28"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/new_course/university_consent_ai_ds.pdf",
+      "docType": "UNIVERSITY_AFFILIATION",
+      "expectedVerification": "VERIFICATION_PENDING",
+      "groundTruth": {
+        "docType": "UNIVERSITY_AFFILIATION",
+        "fields": {
+          "referenceNo": "NTU/AFF/NC/2026/0142",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2026-09-25",
+          "academicYear": "2027-28",
+          "course": "B.Tech Artificial Intelligence & Data Science",
+          "totalIntake": 60
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/occupancy_certificate.pdf",
+      "docType": "OCCUPANCY_CERTIFICATE",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "OCCUPANCY_CERTIFICATE",
+        "fields": {
+          "referenceNo": "VMDA/OC/2014/2231",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2014-03-12",
+          "builtUpAreaSqm": 21450
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "nvie/photos/classroom_204.jpg",
+      "docType": "INFRA_PHOTO_CLASSROOM",
+      "expectedVerification": "NOT_APPLICABLE",
+      "groundTruth": {
+        "docType": "INFRA_PHOTO_CLASSROOM",
+        "fields": {
+          "counts": {
+            "desks": 30,
+            "seatsEstimated": 60
+          },
+          "takenAt": "2026-09-12T10:41:00",
+          "gps": {
+            "lat": 22.298695,
+            "lng": 73.357002
+          }
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/photos/computer_lab_2.jpg",
+      "docType": "INFRA_PHOTO_COMPUTER_LAB",
+      "expectedVerification": "NOT_APPLICABLE",
+      "groundTruth": {
+        "docType": "INFRA_PHOTO_COMPUTER_LAB",
+        "fields": {
+          "counts": {
+            "monitors": 30
+          },
+          "takenAt": "2026-09-12T11:05:00",
+          "gps": {
+            "lat": 22.299009,
+            "lng": 73.357288
+          }
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/photos/library.jpg",
+      "docType": "INFRA_PHOTO_LIBRARY",
+      "expectedVerification": "NOT_APPLICABLE",
+      "groundTruth": {
+        "docType": "INFRA_PHOTO_LIBRARY",
+        "fields": {
+          "counts": {
+            "bookcases": 5
+          },
+          "takenAt": "2026-09-12T11:30:00",
+          "gps": {
+            "lat": 22.298682,
+            "lng": 73.356779
+          }
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/photos/ramp_block_a.jpg",
+      "docType": "INFRA_PHOTO_ACCESSIBILITY",
+      "expectedVerification": "NOT_APPLICABLE",
+      "groundTruth": {
+        "docType": "INFRA_PHOTO_ACCESSIBILITY",
+        "fields": {
+          "counts": {
+            "rampHandrails": 2
+          },
+          "takenAt": "2026-09-12T12:02:00",
+          "gps": {
+            "lat": 22.299081,
+            "lng": 73.357045
+          }
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/ter_receipt_eoa.pdf",
+      "docType": "TER_PAYMENT_RECEIPT",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "TER_PAYMENT_RECEIPT",
+        "fields": {
+          "referenceNo": "TERX2026091800417",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2026-09-18",
+          "amount": 150000,
+          "applicationNo": "APP-2027-WR-10294",
+          "academicYear": "2027-28"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "nvie/university_affiliation_2027-28.pdf",
+      "docType": "UNIVERSITY_AFFILIATION",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "UNIVERSITY_AFFILIATION",
+        "fields": {
+          "referenceNo": "NTU/AFF/2026/1187",
+          "institutionName": "Narmada Valley Institute of Engineering",
+          "issueDate": "2026-08-02",
+          "academicYear": "2027-28",
+          "totalIntake": 240
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "piat/affidavit_eoa_2027-28.pdf",
+      "docType": "AFFIDAVIT_UNDERTAKING",
+      "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+      "groundTruth": {
+        "docType": "AFFIDAVIT_UNDERTAKING",
+        "fields": {
+          "referenceNo": "IN-MH-SIM-26-0193377",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "issueDate": "2026-09-22",
+          "notarisedOn": "2026-09-23",
+          "deponentName": "Dr. Sunil V. Gokhale",
+          "academicYear": "2027-28"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "piat/audited_financial_statement_2025-26.pdf",
+      "docType": "AUDITED_FINANCIAL_STATEMENT",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "AUDITED_FINANCIAL_STATEMENT",
+        "fields": {
+          "udin": "26112840BMTRQP4410",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "financialYear": "2025-26",
+          "membershipNo": "112840"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "piat/change_of_name/affidavit_name_change.pdf",
+      "docType": "AFFIDAVIT_UNDERTAKING",
+      "expectedVerification": "MANUAL_REVIEW_REQUIRED",
+      "groundTruth": {
+        "docType": "AFFIDAVIT_UNDERTAKING",
+        "fields": {
+          "referenceNo": "IN-MH-SIM-26-0201145",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "issueDate": "2026-09-24",
+          "notarisedOn": "2026-09-25",
+          "deponentName": "Dr. Sunil V. Gokhale",
+          "academicYear": "2027-28"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "piat/change_of_name/society_registration_amended.pdf",
+      "docType": "SOCIETY_TRUST_REGISTRATION",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "SOCIETY_TRUST_REGISTRATION",
+        "fields": {
+          "referenceNo": "MH/PUNE/F-18842/2008",
+          "trustName": "Pragati Shikshan Prasarak Mandal",
+          "issueDate": "2008-03-14",
+          "newInstitutionName": "Pragati Institute of Technology & Research"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "piat/change_of_name/state_noc_name_change.pdf",
+      "docType": "STATE_GOVT_NOC",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "STATE_GOVT_NOC",
+        "fields": {
+          "referenceNo": "DTE/MH/NOC/2026/5521",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "issueDate": "2026-09-19",
+          "academicYear": "2027-28",
+          "proposedName": "Pragati Institute of Technology & Management"
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "piat/change_of_name/ter_receipt_name_change.pdf",
+      "docType": "TER_PAYMENT_RECEIPT",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "TER_PAYMENT_RECEIPT",
+        "fields": {
+          "referenceNo": "TERX2026092600551",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "issueDate": "2026-09-26",
+          "amount": 50000,
+          "applicationNo": "APP-2027-WR-10498",
+          "academicYear": "2027-28"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "piat/change_of_name/university_noc_name_change.pdf",
+      "docType": "UNIVERSITY_AFFILIATION",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "UNIVERSITY_AFFILIATION",
+        "fields": {
+          "referenceNo": "STU/AFF/CN/2026/0061",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "issueDate": "2026-09-05",
+          "academicYear": "2027-28",
+          "proposedName": "Pragati Institute of Technology & Research"
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "piat/eoa_letter_2026-27.pdf",
+      "docType": "PREVIOUS_EOA_LETTER",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "PREVIOUS_EOA_LETTER",
+        "fields": {
+          "referenceNo": "WRO/1-3948291012/2026/EOA",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "issueDate": "2026-05-30",
+          "permanentId": "1-3948291012",
+          "academicYear": "2026-27",
+          "totalIntake": 300
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "piat/faculty_roster.pdf",
+      "docType": "FACULTY_ROSTER",
+      "expectedVerification": "NOT_APPLICABLE",
+      "groundTruth": {
+        "docType": "FACULTY_ROSTER",
+        "fields": {
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "facultyCount": 47,
+          "declaredTotal": 47,
+          "pans": [
+            "VQFPP2975Z",
+            "VFTPD8045Y",
+            "GFDPR9697Z",
+            "NKWPP9442E",
+            "LTBPT7871J",
+            "FKUPS7123N",
+            "XSPPM2443C",
+            "GSHPS7564A",
+            "NMFPB6378M",
+            "WZGPR2654B",
+            "DRYPY9584E",
+            "CWYPQ6796D",
+            "WCLPB2593F",
+            "GMXPC2934G",
+            "JDUPK8699V",
+            "BHNPM1540G",
+            "JHHPD2844J",
+            "ARFPK5587B",
+            "XHQPA9758P",
+            "FVTPA6932J",
+            "YREPP9830G",
+            "CBNPS6542H",
+            "SLAPM2858S",
+            "SKLPG7749U",
+            "HSWPS6264X",
+            "KALPD2847D",
+            "NKHPQ9867H",
+            "KTEPB8286B",
+            "SNCPI6564G",
+            "XQMPT4419K",
+            "WJWPY3050A",
+            "ZNQPR3866N",
+            "HWSPP5431X",
+            "DUZPC4731M",
+            "EXSPC4819N",
+            "QLFPP8922F",
+            "YCYPP9212X",
+            "HFZPV1827V",
+            "PZDPM4788P",
+            "NSDPC1492Y",
+            "XNPPV2206M",
+            "KWDPP1677Q",
+            "GJPPY8986W",
+            "HEGPP7914N",
+            "SVSPS8837G",
+            "TMHPC2827W",
+            "XPDPJ6651E"
+          ],
+          "cadre": {
+            "professor": 5,
+            "associateProfessor": 11,
+            "assistantProfessor": 31
+          }
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "piat/fire_noc.pdf",
+      "docType": "FIRE_NOC",
+      "expectedVerification": "EXPIRED",
+      "groundTruth": {
+        "docType": "FIRE_NOC",
+        "fields": {
+          "referenceNo": "PMRFES/NOC/2025/1093",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "issueDate": "2025-10-11",
+          "expiryDate": "2026-10-10"
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "piat/nba_accreditation_ce.pdf",
+      "docType": "NBA_ACCREDITATION",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "NBA_ACCREDITATION",
+        "fields": {
+          "referenceNo": "NBEP/2024/PI/0377",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "issueDate": "2024-06-24",
+          "programme": "B.Tech Computer Engineering",
+          "validFrom": "2024-07-01",
+          "expiryDate": "2027-06-30"
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "piat/occupancy_certificate.pdf",
+      "docType": "OCCUPANCY_CERTIFICATE",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "OCCUPANCY_CERTIFICATE",
+        "fields": {
+          "referenceNo": "PMRDA/OC/2011/0457",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "issueDate": "2011-08-18",
+          "builtUpAreaSqm": 26800
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    },
+    {
+      "path": "piat/photos/classroom_105.jpg",
+      "docType": "INFRA_PHOTO_CLASSROOM",
+      "expectedVerification": "NOT_APPLICABLE",
+      "groundTruth": {
+        "docType": "INFRA_PHOTO_CLASSROOM",
+        "fields": {
+          "counts": {
+            "desks": 30,
+            "seatsEstimated": 60
+          },
+          "takenAt": "2026-09-18T12:40:00",
+          "gps": {
+            "lat": 18.591501,
+            "lng": 73.738969
+          }
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "piat/photos/computer_lab_1.jpg",
+      "docType": "INFRA_PHOTO_COMPUTER_LAB",
+      "expectedVerification": "NOT_APPLICABLE",
+      "groundTruth": {
+        "docType": "INFRA_PHOTO_COMPUTER_LAB",
+        "fields": {
+          "counts": {
+            "monitors": 38
+          },
+          "takenAt": "2026-09-18T12:15:00",
+          "gps": {
+            "lat": 18.591484,
+            "lng": 73.739114
+          }
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "piat/photos/library.jpg",
+      "docType": "INFRA_PHOTO_LIBRARY",
+      "expectedVerification": "NOT_APPLICABLE",
+      "groundTruth": {
+        "docType": "INFRA_PHOTO_LIBRARY",
+        "fields": {
+          "counts": {
+            "bookcases": 6
+          },
+          "takenAt": null,
+          "gps": null
+        },
+        "tampered": false,
+        "tamperNotes": "EXIF stripped (WhatsApp-forwarded image)"
+      }
+    },
+    {
+      "path": "piat/ter_receipt_eoa.pdf",
+      "docType": "TER_PAYMENT_RECEIPT",
+      "expectedVerification": "VERIFICATION_PENDING",
+      "groundTruth": {
+        "docType": "TER_PAYMENT_RECEIPT",
+        "fields": {
+          "referenceNo": "TERX2026101500112",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "issueDate": "2026-10-15",
+          "amount": 150000,
+          "applicationNo": "APP-2027-WR-10511",
+          "academicYear": "2027-28"
+        },
+        "tampered": false
+      }
+    },
+    {
+      "path": "piat/university_affiliation_2027-28.pdf",
+      "docType": "UNIVERSITY_AFFILIATION",
+      "expectedVerification": "VERIFIED",
+      "groundTruth": {
+        "docType": "UNIVERSITY_AFFILIATION",
+        "fields": {
+          "referenceNo": "STU/AFF/2026/2240",
+          "institutionName": "Pragati Institute of Advanced Technology",
+          "issueDate": "2026-08-08",
+          "academicYear": "2027-28",
+          "totalIntake": 300
+        },
+        "tampered": false,
+        "qr": "valid"
+      }
+    }
+  ],
+  "benchmark": [
+    {
+      "path": "benchmark/clean_scan_01.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q75"
+    },
+    {
+      "path": "benchmark/tampered_scan_01.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value '3.86' then saved q92"
+    },
+    {
+      "path": "benchmark/clean_scan_02.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q70"
+    },
+    {
+      "path": "benchmark/tampered_scan_02.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value 'Rs. 9,40,00,000.00' then saved q92; EXIF Software GIMP 2.10.36"
+    },
+    {
+      "path": "benchmark/clean_scan_03.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q75"
+    },
+    {
+      "path": "benchmark/tampered_scan_03.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value '31/12/2029' then saved q92"
+    },
+    {
+      "path": "benchmark/clean_scan_04.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q85"
+    },
+    {
+      "path": "benchmark/tampered_scan_04.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value 'Rs. 15,00,000.00' then saved q85 (same quality as original: hard case for ELA)"
+    },
+    {
+      "path": "benchmark/clean_scan_05.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q70"
+    },
+    {
+      "path": "benchmark/tampered_scan_05.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value '3.86' then saved q92"
+    },
+    {
+      "path": "benchmark/clean_scan_06.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q70"
+    },
+    {
+      "path": "benchmark/tampered_scan_06.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value '18.75 Acres' then saved q92; EXIF Software GIMP 2.10.36"
+    },
+    {
+      "path": "benchmark/clean_scan_07.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q85"
+    },
+    {
+      "path": "benchmark/tampered_scan_07.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value '31/12/2029' then saved q85 (same quality as original: hard case for ELA)"
+    },
+    {
+      "path": "benchmark/clean_scan_08.jpg",
+      "tampered": false,
+      "kind": "scan",
+      "notes": "single save q70"
+    },
+    {
+      "path": "benchmark/tampered_scan_08.jpg",
+      "tampered": true,
+      "kind": "scan",
+      "notes": "pasted value '42,800 sq.m' then saved q95"
+    },
+    {
+      "path": "benchmark/tampered_pdf_01.pdf",
+      "tampered": true,
+      "kind": "pdf",
+      "notes": "Times font + Photoshop producer"
+    },
+    {
+      "path": "benchmark/tampered_pdf_02.pdf",
+      "tampered": true,
+      "kind": "pdf",
+      "notes": "Courier font, producer unchanged"
+    },
+    {
+      "path": "benchmark/tampered_pdf_03.pdf",
+      "tampered": true,
+      "kind": "pdf",
+      "notes": "same font (Helvetica), producer unchanged - only the incremental update remains"
+    },
+    {
+      "path": "benchmark/tampered_pdf_04.pdf",
+      "tampered": true,
+      "kind": "pdf",
+      "notes": "full rewrite with same font and fresh metadata - hard case"
+    }
+  ]
+}

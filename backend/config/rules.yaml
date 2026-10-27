@@ -1,0 +1,404 @@
+# VeriSense rule set (contract section 5).
+#
+# IMPORTANT: norms and clause references below are ILLUSTRATIVE, modelled on the structure of the
+# AICTE Approval Process Handbook (APH 2024-27). They are configurable parameters for a prototype and
+# do not reproduce official text or numbering. Admins can change enabled/params/severity through
+# PUT /api/rules/{id}; every change bumps the ruleset version and is written to the audit chain.
+#
+# Common keys: id, name, description, categories (list or [ALL]), type, params, severity, clause,
+#              enabled, version (per-rule revision), kind (Finding kind produced on failure)
+#
+# formData fields referenced (declared by the institution):
+#   totalIntake, programmes[{level, programme, course, shift, intake}], facultyCount, studentCount,
+#   landAreaAcres, builtUpAreaSqm, locationType (RURAL|URBAN|METRO|HILLY), terTxnId,
+#   nbaAccredited, naacAccredited, cadre{professor, associateProfessor, assistantProfessor},
+#   faculty[{name, pan, designation}], proposedIntake
+version: "2026.1"
+severityWeights: {CRITICAL: 5, MAJOR: 3, MINOR: 1, INFO: 0}
+rules:
+  # ---------------------------------------------------------------- completeness
+  - id: R-CHK-001
+    name: Mandatory documents present
+    description: Every mandatory (and applicable conditional) document in the category checklist must be uploaded.
+    categories: [ALL]
+    type: REQUIRED_DOCUMENT
+    kind: MISSING_DOCUMENT
+    params: {}
+    severity: CRITICAL
+    clause: "APH 2024-27 (illustrative) — Ch. I, Documents to be uploaded with the application"
+    enabled: true
+    version: 1
+
+  - id: R-FLD-001
+    name: Core declared fields present
+    description: The application form must declare intake, faculty, land and built-up area.
+    categories: [EOA, NEW_INSTITUTION, INTAKE_INCREASE, NEW_COURSE, CHANGE_OF_SITE]
+    type: FIELD_PRESENT
+    kind: MISSING_FIELD
+    params:
+      fields: [totalIntake, facultyCount, landAreaAcres, builtUpAreaSqm]
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. I, Online application: mandatory particulars"
+    enabled: true
+    version: 1
+
+  - id: R-FLD-002
+    name: Key reference fields readable on verifiable documents
+    description: Verifiable documents must carry a readable reference / certificate number so they can be checked at source.
+    categories: [ALL]
+    type: FIELD_PRESENT
+    kind: MISSING_FIELD
+    params:
+      documentFields:
+        FIRE_NOC: [referenceNo]
+        TER_PAYMENT_RECEIPT: [referenceNo]
+        PREVIOUS_EOA_LETTER: [referenceNo]
+        NBA_ACCREDITATION: [referenceNo]
+        NAAC_ACCREDITATION: [referenceNo]
+        OCCUPANCY_CERTIFICATE: [referenceNo]
+        LAND_DOCUMENT: [referenceNo]
+    severity: MINOR
+    clause: "APH 2024-27 (illustrative) — Ch. I, Authenticity of uploaded documents"
+    enabled: true
+    version: 1
+
+  # ---------------------------------------------------------------- validity / expiry
+  - id: R-EXP-001
+    name: Fire NOC valid
+    description: Fire safety NOC must be valid on the date of scrutiny (warn when expiring within warnDays).
+    categories: [ALL]
+    type: DOCUMENT_EXPIRY
+    kind: EXPIRED_DOCUMENT
+    params: {docTypes: [FIRE_NOC], graceDays: 0, warnDays: 60}
+    severity: CRITICAL
+    clause: "APH 2024-27 (illustrative) — Ch. III, Safety norms: valid Fire NOC"
+    enabled: true
+    version: 1
+
+  - id: R-EXP-002
+    name: Accreditation valid (NBA / NAAC)
+    description: Claimed NBA/NAAC accreditation must be valid per certificate and per AICTE records.
+    categories: [EOA, INTAKE_INCREASE, NEW_COURSE]
+    type: DOCUMENT_EXPIRY
+    kind: EXPIRED_DOCUMENT
+    params: {docTypes: [NBA_ACCREDITATION, NAAC_ACCREDITATION], graceDays: 0, warnDays: 90, checkRecords: true}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Accreditation status of programmes"
+    enabled: true
+    version: 1
+
+  - id: R-EXP-003
+    name: Affidavit for the current year
+    description: Affidavit / undertaking must be notarised within maxAgeDays (i.e. for the current approval cycle).
+    categories: [ALL]
+    type: DOCUMENT_EXPIRY
+    kind: EXPIRED_DOCUMENT
+    params: {docTypes: [AFFIDAVIT_UNDERTAKING], maxAgeDays: 365, graceDays: 0, checkRecords: true}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Appendix: Affidavit to be submitted every year"
+    enabled: true
+    version: 1
+
+  - id: R-EXP-004
+    name: Other dated documents within validity
+    description: Any other document with an expiry date (explicit or derived from doc-type validity) must be current.
+    categories: [ALL]
+    type: DOCUMENT_EXPIRY
+    kind: EXPIRED_DOCUMENT
+    params: {docTypes: [ALL], excludeDocTypes: [FIRE_NOC, NBA_ACCREDITATION, NAAC_ACCREDITATION, AFFIDAVIT_UNDERTAKING, PREVIOUS_EOA_LETTER, TER_PAYMENT_RECEIPT], graceDays: 0, warnDays: 30}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. I, Validity of statutory certificates"
+    enabled: true
+    version: 1
+
+  # ---------------------------------------------------------------- record cross-checks
+  - id: R-REC-001
+    name: Previous Extension of Approval on record
+    description: For an existing institution the previous academic year's approval must exist in AICTE records and not be withdrawn.
+    categories: [EOA, INTAKE_INCREASE, NEW_COURSE, CHANGE_OF_NAME, CHANGE_OF_SITE, CLOSURE]
+    type: FIELD_MATCH_RECORD
+    kind: RECORD_MISMATCH
+    params:
+      recordPath: latest(previousApprovals).status
+      expectedIn: [APPROVED, APPROVED_WITH_CONDITIONS]
+      requirePreviousYear: true
+    severity: CRITICAL
+    clause: "APH 2024-27 (illustrative) — Ch. I, EoA eligibility: approval for the preceding year"
+    enabled: true
+    version: 1
+
+  - id: R-REC-002
+    name: Declared intake within approved intake
+    description: Declared intake per programme must not exceed AICTE-approved intake, except for an Increase-in-Intake / New-Course application.
+    categories: [EOA, INTAKE_INCREASE, NEW_COURSE, CHANGE_OF_NAME, CHANGE_OF_SITE]
+    type: FIELD_MATCH_RECORD
+    kind: RECORD_MISMATCH
+    params:
+      formField: totalIntake
+      recordPath: sum(approvedProgrammes.intake)
+      comparison: lte
+      perProgramme: true
+      allowIncreaseCategories: [INTAKE_INCREASE, NEW_COURSE]
+    severity: CRITICAL
+    clause: "APH 2024-27 (illustrative) — Ch. I, Approved intake; increase only through the prescribed process"
+    enabled: true
+    version: 1
+
+  - id: R-REC-003
+    name: Declared faculty count matches AICTE faculty records
+    description: Faculty declared in the form vs faculty registered against the institution in AICTE records.
+    categories: [EOA, INTAKE_INCREASE, NEW_COURSE]
+    type: FIELD_MATCH_RECORD
+    kind: RECORD_MISMATCH
+    params: {formField: facultyCount, recordPath: count(faculty), tolerance: 0.10}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. II, Faculty details on the AICTE portal"
+    enabled: true
+    version: 1
+
+  - id: R-REC-004
+    name: Declared land area matches records
+    description: Land area declared vs land area on record (relative tolerance).
+    categories: [EOA, INTAKE_INCREASE, NEW_COURSE, CHANGE_OF_NAME]
+    type: FIELD_MATCH_RECORD
+    kind: RECORD_MISMATCH
+    params: {formField: landAreaAcres, recordPath: landAndBuilding.landAreaAcres, tolerance: 0.02}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. III, Land details"
+    enabled: true
+    version: 1
+
+  - id: R-REC-005
+    name: Declared built-up area matches records
+    description: Built-up area declared vs built-up area on record (relative tolerance; increase allowed only with new floor plan).
+    categories: [EOA, CHANGE_OF_NAME]
+    type: FIELD_MATCH_RECORD
+    kind: RECORD_MISMATCH
+    params: {formField: builtUpAreaSqm, recordPath: landAndBuilding.builtUpAreaSqm, tolerance: 0.05}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. III, Built-up area"
+    enabled: true
+    version: 1
+
+  - id: R-REC-006
+    name: No open deficiencies from previous cycles
+    description: Deficiencies recorded in earlier approval cycles must be closed.
+    categories: [EOA, INTAKE_INCREASE, NEW_COURSE]
+    type: FIELD_MATCH_RECORD
+    kind: COMPLIANCE_GAP
+    params: {recordPath: "count(deficiencyHistory[status=OPEN])", expectedMax: 0}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. I, Compliance of earlier deficiencies"
+    enabled: true
+    version: 1
+
+  # ---------------------------------------------------------------- form vs document
+  - id: R-DOC-001
+    name: Faculty count consistent with roster
+    description: Declared faculty count vs number of faculty listed in the uploaded roster.
+    categories: [EOA, INTAKE_INCREASE, NEW_COURSE]
+    type: FIELD_MATCH_DOCUMENT
+    kind: INCONSISTENCY
+    params: {formField: facultyCount, docType: FACULTY_ROSTER, extractedField: facultyCount, tolerance: 0.0}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. II, Faculty list"
+    enabled: true
+    version: 1
+
+  - id: R-DOC-002
+    name: Land area consistent with land document
+    description: Declared land area vs area stated in the registered land document.
+    categories: [NEW_INSTITUTION, CHANGE_OF_SITE, EOA]
+    type: FIELD_MATCH_DOCUMENT
+    kind: INCONSISTENCY
+    params: {formField: landAreaAcres, docType: LAND_DOCUMENT, extractedField: landAreaAcres, tolerance: 0.02}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. III, Land documents"
+    enabled: true
+    version: 1
+
+  - id: R-DOC-003
+    name: Built-up area consistent with occupancy certificate / floor plan
+    description: Declared built-up area vs the area certified in the occupancy certificate or floor plan.
+    categories: [ALL]
+    type: FIELD_MATCH_DOCUMENT
+    kind: INCONSISTENCY
+    params: {formField: builtUpAreaSqm, docType: [OCCUPANCY_CERTIFICATE, FLOOR_PLAN], extractedField: builtUpAreaSqm, tolerance: 0.05}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. III, Built-up area statement"
+    enabled: true
+    version: 1
+
+  - id: R-DOC-004
+    name: Institution name consistent across documents
+    description: Institution name on statutory documents must match the registered institution name (fuzzy match).
+    categories: [ALL]
+    type: FIELD_MATCH_DOCUMENT
+    kind: INCONSISTENCY
+    params: {formField: "@institution.name", docType: [FIRE_NOC, OCCUPANCY_CERTIFICATE, PREVIOUS_EOA_LETTER, UNIVERSITY_AFFILIATION, NBA_ACCREDITATION, NAAC_ACCREDITATION, TER_PAYMENT_RECEIPT], extractedField: institutionName, minSimilarity: 0.80}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. I, Consistency of applicant particulars"
+    enabled: true
+    version: 1
+
+  - id: R-XDOC-001
+    name: Multi-document cross-verification
+    description: Comprehensive cross-validation of institution identity, land area, built-up area, and academic year across all submitted certificates and deeds.
+    categories: [ALL]
+    type: FIELD_MATCH_DOCUMENT
+    kind: INCONSISTENCY
+    params: {minConsistency: 0.85}
+    severity: CRITICAL
+    clause: "APH 2024-27 (illustrative) — Ch. I, Multi-document authenticity & cross-consistency"
+    enabled: true
+    version: 1
+
+  # ---------------------------------------------------------------- norms
+  - id: R-THR-001
+    name: Faculty-student ratio
+    description: Students per faculty must not exceed the norm (illustrative 1:20).
+    categories: [EOA, NEW_INSTITUTION, INTAKE_INCREASE, NEW_COURSE]
+    type: THRESHOLD
+    kind: COMPLIANCE_GAP
+    params: {metric: faculty_student_ratio, max: 20, programmeDurationYears: 4}
+    severity: CRITICAL
+    clause: "APH 2024-27 (illustrative) — Ch. II, Faculty-student ratio"
+    enabled: true
+    version: 1
+
+  - id: R-THR-002
+    name: Minimum land area by location
+    description: Land must meet the minimum for the location type (illustrative acres).
+    categories: [NEW_INSTITUTION, CHANGE_OF_SITE, EOA]
+    type: THRESHOLD
+    kind: COMPLIANCE_GAP
+    params:
+      metric: land_area_acres
+      minByLocation: {RURAL: 10.0, HILLY: 5.0, URBAN: 2.5, METRO: 1.5}
+      defaultMin: 2.5
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. III, Land requirement by location"
+    enabled: true
+    version: 1
+
+  - id: R-THR-003
+    name: Built-up area per sanctioned intake
+    description: Built-up area per student of annual intake must meet the norm (illustrative sqm).
+    categories: [EOA, NEW_INSTITUTION, INTAKE_INCREASE, NEW_COURSE]
+    type: THRESHOLD
+    kind: COMPLIANCE_GAP
+    params: {metric: builtup_area_per_intake, min: 25.0}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. III, Instructional / built-up area norms"
+    enabled: true
+    version: 1
+
+  - id: R-CAD-001
+    name: Faculty cadre ratio
+    description: "Professor : Associate Professor : Assistant Professor should be close to the norm (illustrative 1:2:6)."
+    categories: [EOA, INTAKE_INCREASE, NEW_COURSE]
+    type: CADRE_RATIO
+    kind: COMPLIANCE_GAP
+    params: {ratio: [1, 2, 6], tolerance: 0.5}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. II, Cadre ratio"
+    enabled: true
+    version: 1
+
+  - id: R-TER-001
+    name: TER paid for the current academic year
+    description: Total Expenditure Recovery must be PAID in AICTE records for the academic year, and the receipt must match the declared transaction.
+    categories: [ALL]
+    type: TER_PAYMENT
+    kind: COMPLIANCE_GAP
+    params: {formField: terTxnId, docType: TER_PAYMENT_RECEIPT, extractedField: txnId}
+    severity: CRITICAL
+    clause: "APH 2024-27 (illustrative) — Ch. I, Processing fee / TER"
+    enabled: true
+    version: 1
+
+  # ---------------------------------------------------------------- integrity
+  - id: R-DUP-001
+    name: Document reused across institutions
+    description: Identical (SHA-256) or near-identical (perceptual hash plus matching reference/text) documents claimed by another institution. Identifiable original owners are not penalised.
+    categories: [ALL]
+    type: DUPLICATE_DOCUMENT
+    kind: DUPLICATE
+    params: {maxHamming: 6, ignoreDocTypes: [OTHER]}
+    severity: CRITICAL
+    clause: "APH 2024-27 (illustrative) — Ch. I, Submission of false / fabricated information"
+    enabled: true
+    version: 1
+
+  - id: R-DUP-002
+    name: Faculty shown at more than one institution
+    description: The same faculty PAN appears in the records / roster of another institution.
+    categories: [EOA, NEW_INSTITUTION, INTAKE_INCREASE, NEW_COURSE]
+    type: DUPLICATE_FACULTY
+    kind: DUPLICATE
+    params: {}
+    severity: CRITICAL
+    clause: "APH 2024-27 (illustrative) — Ch. II, Faculty may be counted at one institution only"
+    enabled: true
+    version: 1
+
+  - id: R-FOR-001
+    name: Document forensic anomalies
+    description: Tampering indicators from forensic analysis (ELA, metadata, editing software, incremental updates).
+    categories: [ALL]
+    type: FORENSIC_FLAG
+    kind: ANOMALY
+    params: {minSeverity: MINOR}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. I, Authenticity of uploaded documents"
+    enabled: true
+    version: 1
+
+  - id: R-SRC-001
+    name: Verification with issuing authority
+    description: Verifiable documents are checked against the issuing authority (API / signed QR). Mismatch or revocation is a critical finding; unavailable sources keep the application pending.
+    categories: [ALL]
+    type: SOURCE_VERIFICATION
+    kind: VERIFICATION
+    params: {mismatchSeverity: CRITICAL, manualReviewSeverity: MINOR}
+    severity: CRITICAL
+    clause: "APH 2024-27 (illustrative) — Ch. I, Verification of documents with issuing authorities"
+    enabled: true
+    version: 1
+
+  # ---------------------------------------------------------------- infrastructure evidence
+  - id: R-INF-001
+    name: Computer lab evidence
+    description: Computer lab photograph must show workstations (illustrative minimum per lab batch, 1 computer per 2 students of a 30-student batch).
+    categories: [EOA, NEW_INSTITUTION, INTAKE_INCREASE]
+    type: INFRA_EVIDENCE
+    kind: INFRASTRUCTURE
+    params: {evidenceType: computer_lab, docType: INFRA_PHOTO_COMPUTER_LAB, label: [computer, monitor, laptop], minCount: 6}
+    severity: MAJOR
+    clause: "APH 2024-27 (illustrative) — Ch. III, Computing facilities"
+    enabled: true
+    version: 1
+
+  - id: R-INF-002
+    name: Classroom evidence
+    description: Classroom photograph must show seating.
+    categories: [EOA, NEW_INSTITUTION, CHANGE_OF_SITE]
+    type: INFRA_EVIDENCE
+    kind: INFRASTRUCTURE
+    params: {evidenceType: classroom, docType: INFRA_PHOTO_CLASSROOM, label: [seatsEstimated, chair, bench, desk], minCount: 4}
+    severity: MINOR
+    clause: "APH 2024-27 (illustrative) — Ch. III, Instructional area"
+    enabled: true
+    version: 1
+
+  - id: R-INF-003
+    name: Infrastructure photo authenticity
+    description: Evidence photos must be recent (EXIF date within maxAgeDays), geo-tagged near the registered campus (maxDistanceKm), unedited and usable (not blurred / dark). Evaluated from image-analysis flags.
+    categories: [ALL]
+    type: INFRA_EVIDENCE
+    kind: INFRASTRUCTURE
+    params: {evidenceType: ANY, maxAgeDays: 365, maxDistanceKm: 2.0}
+    severity: MINOR
+    clause: "APH 2024-27 (illustrative) — Ch. III, Geo-tagged photographs"
+    enabled: true
+    version: 1

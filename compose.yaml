@@ -1,0 +1,11 @@
+services:
+  verisense:
+    build: .
+    ports:
+      - "7860:7860"
+    volumes:
+      - verisense-data:/data
+    restart: unless-stopped
+
+volumes:
+  verisense-data:

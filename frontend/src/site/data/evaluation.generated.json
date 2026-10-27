@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-10-26T12:33:04.810790+00:00",
+  "dataset": {
+    "summary": "56 distinct synthetic documents, 20 forensic fixtures, 12 demo applications. Simulated sources; no real-world accuracy claim."
+  },
+  "results": {
+    "extraction": {
+      "headline": "99.1%",
+      "detail": "225/227 scalar text fields match using the production normaliser (not strict character equality); missing fields count as errors. Classification: 56/56 documents."
+    },
+    "validation": {
+      "headline": "82.1%",
+      "detail": "32/39 scenario expectations detected by kind and target. Coverage proxy only: free-text labels are incomplete; precision/F1 need exhaustive adjudication."
+    },
+    "anomaly": {
+      "headline": "100.0% precision",
+      "detail": "Recall 41.7%; clean false-positive rate 0.0%. TP 5, FP 0, FN 7, TN 8; 20 forensic fixtures."
+    },
+    "verification": {
+      "headline": "76.2%",
+      "detail": "32/42 conclusive simulated-source verdicts; expected-state accuracy 100.0%. EXPIRED: 2, MANUAL_REVIEW_REQUIRED: 7, MISMATCH_DETECTED: 5, SOURCE_UNAVAILABLE: 1, VERIFICATION_PENDING: 2, VERIFIED: 25"
+    },
+    "discrepancy": {
+      "headline": "100.0% precision",
+      "detail": "Source mismatches: TP 5, FP 0, FN 0. Record-mismatch precision still needs independent labels."
+    },
+    "time": {
+      "headline": "6.985s / document",
+      "detail": "Stored ingestion durations, p95 25.646s (56 distinct files); fresh validation mean 0.144s, p95 0.318s (12 applications). Local Windows CPU run."
+    },
+    "alerts": {
+      "headline": "Same transaction",
+      "detail": "Code-confirmed transactional creation alongside findings. End-to-end alert delivery latency has not been measured; no seconds claim is made."
+    },
+    "effort": {
+      "headline": "Estimate only",
+      "detail": "Assuming 12 manual minutes/document + 45 minutes/application: 2.07 manual hours/application before subtracting automated time. No officer time study yet."
+    }
+  }
+}

@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: verisense-api
+    runtime: docker
+    plan: free
+    region: singapore
+    branch: wip/verisense-v2
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health/ready
+    envVars:
+      - key: VERISENSE_SECRET
+        generateValue: true
+      - key: VERISENSE_CORS_ORIGINS
+        value: https://verisense-zaid.prettytrout65.chatgpt.site

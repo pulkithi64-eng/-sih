@@ -1,0 +1,99 @@
+# Category -> required documents.
+# Clause references are ILLUSTRATIVE pointers to the AICTE Approval Process Handbook (APH) structure
+# and are fully configurable; they do not reproduce official text or numbering.
+#
+# Item keys:
+#   docType   one of config/doc_types.yaml
+#   mandatory true = required for every application in this category
+#   when      optional condition that makes the item required (conditional document). Supported:
+#               {field: formData.<name>, equals|in|gt|gte|lt|exists|truthy: ...}
+#   clause    illustrative APH pointer
+version: "2026.1"
+categories:
+  EOA:
+    label: Extension of Approval (EoA)
+    items:
+      - {docType: PREVIOUS_EOA_LETTER, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, EoA eligibility: previous year approval"}
+      - {docType: AFFIDAVIT_UNDERTAKING, mandatory: true, clause: "APH 2024-27 (illustrative) — Appendix: Affidavit/Undertaking for the current year"}
+      - {docType: TER_PAYMENT_RECEIPT, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Processing / TER fee"}
+      - {docType: FIRE_NOC, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Safety: valid Fire NOC"}
+      - {docType: OCCUPANCY_CERTIFICATE, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Building completion / occupancy"}
+      - {docType: FACULTY_ROSTER, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. II, Faculty requirement"}
+      - {docType: UNIVERSITY_AFFILIATION, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Affiliation with university/board"}
+      - {docType: AUDITED_FINANCIAL_STATEMENT, mandatory: false, clause: "APH 2024-27 (illustrative) — Ch. I, Financial viability"}
+      - {docType: NBA_ACCREDITATION, mandatory: false, when: {field: formData.nbaAccredited, truthy: true}, clause: "APH 2024-27 (illustrative) — Accreditation status (if claimed)"}
+      - {docType: NAAC_ACCREDITATION, mandatory: false, when: {field: formData.naacAccredited, truthy: true}, clause: "APH 2024-27 (illustrative) — Accreditation status (if claimed)"}
+      - {docType: INFRA_PHOTO_COMPUTER_LAB, mandatory: false, clause: "APH 2024-27 (illustrative) — Ch. III, Computing facilities evidence"}
+      - {docType: INFRA_PHOTO_CLASSROOM, mandatory: false, clause: "APH 2024-27 (illustrative) — Ch. III, Instructional area evidence"}
+  NEW_INSTITUTION:
+    label: Setting up of a New Institution
+    items:
+      - {docType: SOCIETY_TRUST_REGISTRATION, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Applicant eligibility: registered Society/Trust/Company"}
+      - {docType: LAND_DOCUMENT, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Land requirement"}
+      - {docType: BUILDING_PLAN_APPROVAL, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Approved building plan"}
+      - {docType: OCCUPANCY_CERTIFICATE, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Building completion / occupancy"}
+      - {docType: FIRE_NOC, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Safety: valid Fire NOC"}
+      - {docType: STRUCTURAL_STABILITY_CERT, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Structural stability"}
+      - {docType: STATE_GOVT_NOC, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, State Government NOC"}
+      - {docType: UNIVERSITY_AFFILIATION, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Affiliation consent"}
+      - {docType: CORPUS_FUND_FDR, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Corpus fund / financial assurance"}
+      - {docType: AFFIDAVIT_UNDERTAKING, mandatory: true, clause: "APH 2024-27 (illustrative) — Appendix: Affidavit/Undertaking"}
+      - {docType: TER_PAYMENT_RECEIPT, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Processing fee"}
+      - {docType: FLOOR_PLAN, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Built-up area statement"}
+      - {docType: INFRA_PHOTO_CLASSROOM, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Instructional area evidence"}
+      - {docType: INFRA_PHOTO_COMPUTER_LAB, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Computing facilities evidence"}
+      - {docType: INFRA_PHOTO_LIBRARY, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Library evidence"}
+      - {docType: INFRA_PHOTO_ACCESSIBILITY, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Barrier-free access"}
+  INTAKE_INCREASE:
+    label: Increase in Intake
+    items:
+      - {docType: PREVIOUS_EOA_LETTER, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Existing approval"}
+      - {docType: AFFIDAVIT_UNDERTAKING, mandatory: true, clause: "APH 2024-27 (illustrative) — Appendix: Affidavit/Undertaking"}
+      - {docType: TER_PAYMENT_RECEIPT, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Processing fee"}
+      - {docType: FACULTY_ROSTER, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. II, Faculty for enhanced intake"}
+      - {docType: FLOOR_PLAN, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Additional built-up area"}
+      - {docType: FIRE_NOC, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Safety: valid Fire NOC"}
+      - {docType: UNIVERSITY_AFFILIATION, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, University consent for increased intake"}
+      - {docType: NBA_ACCREDITATION, mandatory: false, when: {field: formData.nbaAccredited, truthy: true}, clause: "APH 2024-27 (illustrative) — Accreditation linked intake (if claimed)"}
+      - {docType: INFRA_PHOTO_COMPUTER_LAB, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Computing facilities evidence"}
+      - {docType: INFRA_PHOTO_LABORATORY, mandatory: false, clause: "APH 2024-27 (illustrative) — Ch. III, Laboratory evidence"}
+  NEW_COURSE:
+    label: Introduction of New Course / Programme
+    items:
+      - {docType: PREVIOUS_EOA_LETTER, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Existing approval"}
+      - {docType: UNIVERSITY_AFFILIATION, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, University consent for the new course"}
+      - {docType: FACULTY_ROSTER, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. II, Faculty for the new course"}
+      - {docType: AFFIDAVIT_UNDERTAKING, mandatory: true, clause: "APH 2024-27 (illustrative) — Appendix: Affidavit/Undertaking"}
+      - {docType: TER_PAYMENT_RECEIPT, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Processing fee"}
+      - {docType: FLOOR_PLAN, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Additional built-up area"}
+      - {docType: INFRA_PHOTO_LABORATORY, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Course laboratories"}
+  CHANGE_OF_NAME:
+    label: Change in Name of Institution
+    items:
+      - {docType: PREVIOUS_EOA_LETTER, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Existing approval"}
+      - {docType: SOCIETY_TRUST_REGISTRATION, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Resolution of Society/Trust"}
+      - {docType: UNIVERSITY_AFFILIATION, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, University NOC for change of name"}
+      - {docType: STATE_GOVT_NOC, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, State Government NOC"}
+      - {docType: AFFIDAVIT_UNDERTAKING, mandatory: true, clause: "APH 2024-27 (illustrative) — Appendix: Affidavit/Undertaking"}
+      - {docType: TER_PAYMENT_RECEIPT, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Processing fee"}
+  CHANGE_OF_SITE:
+    label: Change of Site / Location
+    items:
+      - {docType: PREVIOUS_EOA_LETTER, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Existing approval"}
+      - {docType: LAND_DOCUMENT, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Land at new site"}
+      - {docType: BUILDING_PLAN_APPROVAL, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Approved building plan (new site)"}
+      - {docType: OCCUPANCY_CERTIFICATE, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Occupancy (new site)"}
+      - {docType: FIRE_NOC, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Fire NOC (new site)"}
+      - {docType: STATE_GOVT_NOC, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, State Government NOC"}
+      - {docType: UNIVERSITY_AFFILIATION, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, University NOC"}
+      - {docType: AFFIDAVIT_UNDERTAKING, mandatory: true, clause: "APH 2024-27 (illustrative) — Appendix: Affidavit/Undertaking"}
+      - {docType: TER_PAYMENT_RECEIPT, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Processing fee"}
+      - {docType: INFRA_PHOTO_CLASSROOM, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. III, Instructional area evidence (new site)"}
+  CLOSURE:
+    label: Closure of Institution / Programme
+    items:
+      - {docType: PREVIOUS_EOA_LETTER, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, Existing approval"}
+      - {docType: AFFIDAVIT_UNDERTAKING, mandatory: true, clause: "APH 2024-27 (illustrative) — Appendix: Undertaking on student/staff protection"}
+      - {docType: UNIVERSITY_AFFILIATION, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, University NOC for closure"}
+      - {docType: STATE_GOVT_NOC, mandatory: true, clause: "APH 2024-27 (illustrative) — Ch. I, State Government NOC for closure"}
+      - {docType: AUDITED_FINANCIAL_STATEMENT, mandatory: false, clause: "APH 2024-27 (illustrative) — Settlement of dues"}

@@ -1,0 +1,64 @@
+name: Release checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npm audit --omit=dev --audit-level=high
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          cache-dependency-glob: backend/uv.lock
+      - run: uv sync --frozen
+      - run: uv run pytest
+      - run: uv export --frozen --no-dev --no-hashes --output-file requirements-audit.txt
+      - run: uvx pip-audit -r requirements-audit.txt
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t verisense:ci .
+      - run: docker run -d --name verisense-ci -p 7860:7860 verisense:ci
+      - name: Wait for readiness and read-only smoke
+        shell: bash
+        run: |
+          for attempt in {1..30}; do
+            if curl --fail http://127.0.0.1:7860/api/health/ready; then
+              python3 scripts/smoke.py --base-url http://127.0.0.1:7860
+              exit $?
+            fi
+            sleep 5
+          done
+          docker logs verisense-ci
+          exit 1
+      - if: always()
+        run: docker rm -f verisense-ci || true

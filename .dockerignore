@@ -1,0 +1,16 @@
+.git
+.local-tools
+.local-run
+**/node_modules
+**/.venv
+**/__pycache__
+**/.pytest_cache
+.pytest_tmp
+**/.env
+**/.env.*
+backend/data
+backend/storage
+frontend/dist
+docs/images
+**/*.ela.png
+*.log

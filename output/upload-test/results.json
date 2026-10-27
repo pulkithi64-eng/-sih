@@ -1,0 +1,323 @@
+{
+  "base": "http://127.0.0.1:8001",
+  "applicationId": 13,
+  "applicationNo": "VS/2027-28/EOA/WR/00013",
+  "uploads": [
+    {
+      "file": "01_correct_demo_affiliation.pdf",
+      "httpStatus": 201,
+      "documentId": 80,
+      "docType": "UNIVERSITY_AFFILIATION",
+      "verification": {
+        "status": "VERIFIED",
+        "source": "DigiLocker - Issued Documents (simulated)",
+        "sourceName": "DigiLocker - Issued Documents (simulated)",
+        "method": "QR_SIGNATURE",
+        "checkedAt": "2026-10-27T20:15:43",
+        "responseSummary": "Signed QR from 'Sahyadri Technological University (simulated)' (key univ-stu-2026); 5 field(s) compared with printed text",
+        "comparisons": [
+          {
+            "field": "academicYear",
+            "submitted": "2027-28",
+            "source": "2027-28",
+            "match": true
+          },
+          {
+            "field": "institutionName",
+            "submitted": "Pragati Institute of Advanced Technology",
+            "source": "Pragati Institute of Advanced Technology",
+            "match": true
+          },
+          {
+            "field": "issueDate",
+            "submitted": "2026-08-08",
+            "source": "2026-08-08",
+            "match": true
+          },
+          {
+            "field": "referenceNo",
+            "submitted": "STU/AFF/2026/2240",
+            "source": "STU/AFF/2026/2240",
+            "match": true
+          },
+          {
+            "field": "totalIntake",
+            "submitted": 300,
+            "source": 300,
+            "match": true
+          },
+          {
+            "field": "institutionName",
+            "submitted": "Pragati Institute of Advanced Technology",
+            "source": "Pragati Institute of Advanced Technology",
+            "match": true
+          },
+          {
+            "field": "university",
+            "submitted": "Sahyadri Technological University",
+            "source": "Sahyadri Technological University",
+            "match": true
+          },
+          {
+            "field": "academicYear",
+            "submitted": "2027-28",
+            "source": "2027-28",
+            "match": true
+          },
+          {
+            "field": "totalIntake",
+            "submitted": 300,
+            "source": 300,
+            "match": true
+          }
+        ],
+        "reason": "Issuer signature valid (Sahyadri Technological University (simulated), key univ-stu-2026) and 5 signed field(s) match the printed document; record also confirmed at source",
+        "latencyMs": 0.6,
+        "transport": "inprocess",
+        "trustLevel": "SIMULATED",
+        "qr": {
+          "valid": true,
+          "issuer": "Sahyadri Technological University (simulated)",
+          "keyId": "univ-stu-2026",
+          "claims": {
+            "academicYear": "2027-28",
+            "docType": "UNIVERSITY_AFFILIATION",
+            "institutionName": "Pragati Institute of Advanced Technology",
+            "issueDate": "2026-08-08",
+            "referenceNo": "STU/AFF/2026/2240",
+            "totalIntake": 300
+          }
+        },
+        "sourceId": "digilocker"
+      },
+      "extractedFields": {
+        "referenceNo": {
+          "value": "STU/AFF/2026/2240",
+          "confidence": 0.9,
+          "sourceText": "Letter No.: STU/AFF/2026/2240  Date: 08/08/2026",
+          "page": 1
+        },
+        "issuer": {
+          "value": "Sahyadri Technological University",
+          "confidence": 0.6,
+          "sourceText": "Sahyadri Technological University",
+          "page": 1
+        },
+        "institutionName": {
+          "value": "Pragati Institute of Advanced Technology",
+          "confidence": 0.88,
+          "sourceText": "Name of the Institution:  Pragati Institute of Advanced Technology",
+          "page": 1
+        },
+        "academicYear": {
+          "value": "2027-28",
+          "confidence": 0.85,
+          "sourceText": "Academic Year:  2027-28",
+          "page": 1
+        },
+        "totalIntake": {
+          "value": 300,
+          "confidence": 0.82,
+          "sourceText": "Total Intake:  300",
+          "page": 1
+        },
+        "university": {
+          "value": "Sahyadri Technological University",
+          "confidence": 0.7,
+          "sourceText": "Sahyadri Technological University",
+          "page": 1
+        },
+        "affiliationType": {
+          "value": "Continuation (Permanent)",
+          "confidence": 0.8,
+          "sourceText": "Nature of Affiliation:  Continuation (Permanent)",
+          "page": 1
+        },
+        "issueDate": {
+          "value": "2026-08-08",
+          "confidence": 0.8,
+          "sourceText": "Letter No.: STU/AFF/2026/2240  Date: 08/08/2026",
+          "page": 1
+        },
+        "_derivedExpiry": {
+          "value": "2027-08-08",
+          "confidence": 1,
+          "page": null,
+          "sourceText": "derived: issue date + 12 months (doc-type validity)"
+        }
+      },
+      "pipelineErrors": [],
+      "expected": "VERIFIED",
+      "pass": true
+    },
+    {
+      "file": "02_imaginary_mismatch_affiliation.pdf",
+      "httpStatus": 201,
+      "documentId": 81,
+      "docType": "UNIVERSITY_AFFILIATION",
+      "verification": {
+        "status": "MISMATCH_DETECTED",
+        "source": "DigiLocker - Issued Documents (simulated)",
+        "sourceName": "DigiLocker - Issued Documents (simulated)",
+        "method": "DIGILOCKER",
+        "checkedAt": "2026-10-27T20:15:43",
+        "responseSummary": "DigiLocker issuer network (simulated): record STU/AFF/2026/2240 status VALID",
+        "comparisons": [
+          {
+            "field": "institutionName",
+            "submitted": "Imaginary Horizon Institute of Technology",
+            "source": "Pragati Institute of Advanced Technology",
+            "match": false
+          },
+          {
+            "field": "university",
+            "submitted": "Imaginary Meridian University",
+            "source": "Sahyadri Technological University",
+            "match": false
+          },
+          {
+            "field": "academicYear",
+            "submitted": "2027-28",
+            "source": "2027-28",
+            "match": true
+          },
+          {
+            "field": "totalIntake",
+            "submitted": 9999,
+            "source": 300,
+            "match": false
+          }
+        ],
+        "reason": "Submitted document differs from the issuing authority's record (institutionName: submitted 'Imaginary Horizon Institute of Technology' vs source 'Pragati Institute of Advanced Technology'; university: submitted 'Imaginary Meridian University' vs source 'Sahyadri Technological University'; totalIntake: submitted '9999' vs source '300')",
+        "latencyMs": 0.7,
+        "transport": "inprocess",
+        "trustLevel": "SIMULATED",
+        "sourceId": "digilocker"
+      },
+      "extractedFields": {
+        "referenceNo": {
+          "value": "STU/AFF/2026/2240",
+          "confidence": 0.9,
+          "sourceText": "Letter No.: STU/AFF/2026/2240",
+          "page": 1
+        },
+        "issuer": {
+          "value": "Imaginary Meridian University",
+          "confidence": 0.6,
+          "sourceText": "Imaginary Meridian University",
+          "page": 1
+        },
+        "institutionName": {
+          "value": "Imaginary Horizon Institute of Technology",
+          "confidence": 0.88,
+          "sourceText": "Name of the Institution:  Imaginary Horizon Institute of Technology",
+          "page": 1
+        },
+        "academicYear": {
+          "value": "2027-28",
+          "confidence": 0.85,
+          "sourceText": "Academic Year:  2027-28",
+          "page": 1
+        },
+        "totalIntake": {
+          "value": 9999,
+          "confidence": 0.82,
+          "sourceText": "Total Intake:  9999",
+          "page": 1
+        },
+        "university": {
+          "value": "Imaginary Meridian University",
+          "confidence": 0.7,
+          "sourceText": "Imaginary Meridian University",
+          "page": 1
+        },
+        "affiliationType": {
+          "value": "Continuation (Permanent)",
+          "confidence": 0.8,
+          "sourceText": "Nature of Affiliation:  Continuation (Permanent)",
+          "page": 1
+        },
+        "issueDate": {
+          "value": "2026-08-08",
+          "confidence": 0.8,
+          "sourceText": "Date: 08/08/2026",
+          "page": 1
+        },
+        "_derivedExpiry": {
+          "value": "2027-08-08",
+          "confidence": 1,
+          "page": null,
+          "sourceText": "derived: issue date + 12 months (doc-type validity)"
+        }
+      },
+      "pipelineErrors": [],
+      "expected": "MISMATCH_DETECTED",
+      "pass": true
+    }
+  ],
+  "pageErrors": [],
+  "selfCheck": {
+    "httpStatus": 200,
+    "status": "DRAFT",
+    "summary": {
+      "documents": 2,
+      "findingsOpen": 17,
+      "critical": 10,
+      "major": 7,
+      "minor": 0,
+      "info": 0,
+      "verified": 1,
+      "pending": 0,
+      "mismatches": 1,
+      "complianceScore": 57,
+      "riskScore": 100,
+      "riskBand": "HIGH",
+      "rulesPassed": 8,
+      "rulesFailed": 9,
+      "rulesSkipped": 13
+    },
+    "verifications": [
+      {
+        "documentId": 80,
+        "docType": "UNIVERSITY_AFFILIATION",
+        "docTypeLabel": "University Affiliation Letter",
+        "fileName": "01_correct_demo_affiliation.pdf",
+        "status": "VERIFIED",
+        "source": "DigiLocker - Issued Documents (simulated)",
+        "method": "QR_SIGNATURE",
+        "checkedAt": "2026-10-27T20:15:43",
+        "reason": "Issuer signature valid (Sahyadri Technological University (simulated), key univ-stu-2026) and 5 signed field(s) match the printed document; record also confirmed at source"
+      },
+      {
+        "documentId": 81,
+        "docType": "UNIVERSITY_AFFILIATION",
+        "docTypeLabel": "University Affiliation Letter",
+        "fileName": "02_imaginary_mismatch_affiliation.pdf",
+        "status": "MISMATCH_DETECTED",
+        "source": "DigiLocker - Issued Documents (simulated)",
+        "method": "DIGILOCKER",
+        "checkedAt": "2026-10-27T20:15:43",
+        "reason": "Submitted document differs from the issuing authority's record (institutionName: submitted 'Imaginary Horizon Institute of Technology' vs source 'Pragati Institute of Advanced Technology'; university: submitted 'Imaginary Meridian University' vs source 'Sahyadri Technological University'; totalIntake: submitted '9999' vs source '300')"
+      }
+    ]
+  },
+  "detailsUrl": "http://127.0.0.1:8001/portal/applications/13?tab=documents",
+  "pass": true,
+  "review": [
+    {
+      "documentId": 80,
+      "file": "01_correct_demo_affiliation.pdf",
+      "download": "PASS",
+      "anonymousAccessDenied": true,
+      "securityViolations": []
+    },
+    {
+      "documentId": 81,
+      "file": "02_imaginary_mismatch_affiliation.pdf",
+      "download": "PASS",
+      "anonymousAccessDenied": true,
+      "securityViolations": []
+    }
+  ],
+  "reviewConsoleErrors": []
+}
