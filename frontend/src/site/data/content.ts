@@ -6,9 +6,9 @@ export const docUrl = (file: string) => `${REPO_URL}/blob/main/docs/${file}`;
 export const NAV = [
   { to: "/how-it-works", label: "How it works" },
   { to: "/architecture", label: "Architecture" },
-  { to: "/compliance", label: "PS mapping" },
-  { to: "/evaluation", label: "Evaluation" },
-  { to: "/docs", label: "Docs" },
+  { to: "/compliance", label: "Rules & limitations" },
+  { to: "/evaluation", label: "Benchmarks" },
+  { to: "/help", label: "Help" },
 ] as const;
 
 export type VerificationStateId =

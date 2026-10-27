@@ -6,16 +6,18 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const base = process.env.VERISENSE_URL ?? 'http://127.0.0.1:5186';
-const images = fileURLToPath(new URL('../../docs/images/', import.meta.url));
+const images = process.env.VERISENSE_SMOKE_OUTPUT ?? fileURLToPath(new URL('../../docs/images/', import.meta.url));
 const evaluation = JSON.parse(await readFile(new URL('../src/site/data/evaluation.generated.json', import.meta.url), 'utf8'));
 await mkdir(images, { recursive: true });
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
 const page = await context.newPage();
+page.setDefaultTimeout(15000);
 const errors = [], failedResponses = [], checks = [];
 page.on('pageerror', error => errors.push(error.message));
 page.on('response', response => { if (response.url().startsWith(base) && response.status() >= 400) failedResponses.push(`${response.status()} ${response.url()}`); });
 async function visit(route) {
+  console.log(`Visit ${route}`);
   await page.goto(base + route);
   await expect(page.locator('h1, h2').first()).toBeVisible();
   await expect(page.locator('body')).not.toContainText('Something went wrong');
@@ -33,7 +35,7 @@ async function login(username) {
   await expect(page.locator('h1').first()).toBeVisible();
 }
 try {
-  for (const route of ['/', '/how-it-works', '/architecture', '/compliance', '/evaluation', '/docs']) {
+  for (const route of ['/', '/how-it-works', '/architecture', '/compliance', '/evaluation', '/help']) {
     await visit(route);
     if (route === '/') await shot('landing');
     if (route === '/evaluation') {
@@ -48,7 +50,7 @@ try {
   await shot('evaluation-mobile');
   await page.setViewportSize({ width: 1440, height: 1000 });
   await login('officer.wro');
-  await expect(page.getByRole('heading', { name: /dashboard/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Review queue', exact: true })).toBeVisible();
   await shot('dashboard');
   for (const route of ['/portal/applications', '/portal/sources', '/portal/rules', '/portal/alerts', '/portal/audit']) await visit(route);
   // Log in through UI as admin for all-region scenario checks.
@@ -59,12 +61,15 @@ try {
   const response = await context.request.get(base + '/api/applications', { headers: { Authorization: `Bearer ${accessToken}` } });
   const apps = await response.json();
   const list = Array.isArray(apps) ? apps : apps.items;
-  if (!list || list.length !== 12) throw new Error(`Expected 12 demo applications, got ${list?.length}`);
-  for (const app of list) {
+  if (!list || list.length < 12) throw new Error(`Expected 12 demo applications, got ${list?.length}`);
+  for (const app of list.filter(item => Number(item.id) <= 12)) {
     await visit(`/portal/applications/${app.id}`);
     await expect(page.getByRole('tab', { name: 'Overview', exact: true })).toBeVisible();
     for (const tab of ['Documents', 'Findings', 'Verification', 'Infrastructure', 'Audit trail', 'Report']) {
-      await page.getByRole('tab', { name: new RegExp('^' + tab) }).click();
+      if (['Verification', 'Infrastructure', 'Audit trail'].includes(tab)) {
+        await page.getByRole('button', { name: 'More details', exact: true }).click();
+        await page.getByRole('menuitem', { name: tab, exact: true }).click();
+      } else await page.getByRole('tab', { name: new RegExp('^' + tab) }).click();
       await expect(page.getByRole('tabpanel')).toBeVisible();
       await expect(page.getByRole('tabpanel')).not.toContainText('No documents uploaded');
     }
@@ -94,7 +99,7 @@ try {
   await visit('/portal/audit');
   await shot('audit');
   if (errors.length || failedResponses.length) throw new Error(JSON.stringify({ errors, failedResponses }));
-  console.log(JSON.stringify({ passed: true, routes: checks.length, applications: list.length, tabsPerApplication: 7, consoleErrors: errors, failedResponses }, null, 2));
+  console.log(JSON.stringify({ passed: true, routes: checks.length, applications: list.filter(item => Number(item.id) <= 12).length, totalVisibleApplications: list.length, tabsPerApplication: 7, consoleErrors: errors, failedResponses }, null, 2));
 } finally {
   await writeFile(path.join(images, 'ui-checks.json'), JSON.stringify({ checks, errors, failedResponses }, null, 2));
   await browser.close();

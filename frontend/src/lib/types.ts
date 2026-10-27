@@ -327,6 +327,7 @@ export interface Verification {
 }
 
 export interface DocumentT {
+  pipelineErrors?: { stage: string; error: string }[];
   id: Id;
   applicationId: Id;
   docType: string;

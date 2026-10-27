@@ -1,15 +1,16 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 import "./site.css";
 import { SiteHeader } from "./components/SiteHeader";
 import { SiteFooter } from "./components/SiteFooter";
 import { Container } from "./components/Section";
-import Landing from "./pages/Landing";
-import HowItWorks from "./pages/HowItWorks";
-import Architecture from "./pages/Architecture";
-import Compliance from "./pages/Compliance";
-import Evaluation from "./pages/Evaluation";
-import DocsHub from "./pages/DocsHub";
+import { ContentBoundary } from "@/components/common/ContentBoundary";
+const Landing = lazy(() => import("./pages/Landing"));
+const HowItWorks = lazy(() => import("./pages/HowItWorks"));
+const Architecture = lazy(() => import("./pages/Architecture"));
+const Compliance = lazy(() => import("./pages/Compliance"));
+const Evaluation = lazy(() => import("./pages/Evaluation"));
+const DocsHub = lazy(() => import("./pages/DocsHub"));
 
 const TITLES: Record<string, string> = {
   "/": "AICTE VeriSense — AI-assisted application scrutiny",
@@ -17,7 +18,7 @@ const TITLES: Record<string, string> = {
   "/architecture": "Architecture · AICTE VeriSense",
   "/compliance": "Problem statement mapping · AICTE VeriSense",
   "/evaluation": "Evaluation · AICTE VeriSense",
-  "/docs": "Documentation · AICTE VeriSense",
+  "/help": "Documentation · AICTE VeriSense",
 };
 
 function ScrollManager() {
@@ -55,15 +56,18 @@ export default function SiteApp() {
       <ScrollManager />
       <SiteHeader />
       <main id="main" className="flex-1">
+        <ContentBoundary><Suspense fallback={<div role="status" className="mx-auto min-h-[60vh] max-w-6xl px-6 py-16 text-slate-600">Loading page…</div>}>
         <Routes>
           <Route index element={<Landing />} />
           <Route path="how-it-works" element={<HowItWorks />} />
           <Route path="architecture" element={<Architecture />} />
           <Route path="compliance" element={<Compliance />} />
           <Route path="evaluation" element={<Evaluation />} />
+          <Route path="help" element={<DocsHub />} />
           <Route path="docs" element={<DocsHub />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense></ContentBoundary>
       </main>
       <SiteFooter />
     </div>

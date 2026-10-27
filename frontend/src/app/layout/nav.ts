@@ -20,25 +20,37 @@ export interface NavItem {
 }
 
 const STAFF: Role[] = ["SCRUTINY_OFFICER", "REGIONAL_DIRECTOR", "ADMIN"];
+const REVIEWERS: Role[] = ["SCRUTINY_OFFICER", "REGIONAL_DIRECTOR"];
 
 export const NAV_SECTIONS: { title: string; items: NavItem[] }[] = [
   {
-    title: "Scrutiny",
+    title: "Workspace",
     items: [
-      { to: "/portal/dashboard", label: "Dashboard", icon: LayoutDashboard, roles: STAFF },
-      { to: "/portal/applications", label: "Applications", icon: FileStack, roles: STAFF },
-      { to: "/portal/institutions", label: "Institutions", icon: Building2, roles: [...STAFF, "INSTITUTION"] },
       { to: "/portal/my-applications", label: "My applications", icon: FileStack, roles: ["INSTITUTION"] },
-      { to: "/portal/applications/new", label: "New application", icon: FilePlus2, roles: ["INSTITUTION"] },
+      { to: "/portal/applications", label: "Review queue", icon: FileStack, roles: ["SCRUTINY_OFFICER"] },
+      { to: "/portal/applications?status=RECOMMENDED", label: "Decision queue", icon: FileStack, roles: ["REGIONAL_DIRECTOR"] },
       { to: "/portal/alerts", label: "Alerts", icon: Bell, roles: [...STAFF, "INSTITUTION"], badge: "alerts" },
+      { to: "/portal/institutions", label: "My institution", icon: Building2, roles: ["INSTITUTION"] },
     ],
   },
   {
-    title: "Configuration",
+    title: "Administration",
     items: [
-      { to: "/portal/rules", label: "Rules & checklists", icon: SlidersHorizontal, roles: STAFF },
-      { to: "/portal/sources", label: "Verification sources", icon: RadioTower, roles: STAFF },
-      { to: "/portal/audit", label: "Audit log", icon: ScrollText, roles: STAFF },
+      { to: "/portal/rules", label: "Rules & checklists", icon: SlidersHorizontal, roles: ["ADMIN"] },
+      { to: "/portal/sources", label: "Verification sources", icon: RadioTower, roles: ["ADMIN"] },
+      { to: "/portal/institutions", label: "Institutions", icon: Building2, roles: ["ADMIN"] },
+      { to: "/portal/audit", label: "Audit log", icon: ScrollText, roles: ["ADMIN"] },
+      { to: "/portal/applications", label: "Applications", icon: FileStack, roles: ["ADMIN"] },
+    ],
+  },
+  {
+    title: "Reference",
+    items: [
+      { to: "/portal/dashboard", label: "Overview", icon: LayoutDashboard, roles: STAFF },
+      { to: "/portal/institutions", label: "Institutions", icon: Building2, roles: REVIEWERS },
+      { to: "/portal/rules", label: "Rules & checklists", icon: SlidersHorizontal, roles: REVIEWERS },
+      { to: "/portal/sources", label: "Verification sources", icon: RadioTower, roles: REVIEWERS },
+      { to: "/portal/audit", label: "Audit log", icon: ScrollText, roles: REVIEWERS },
     ],
   },
 ];

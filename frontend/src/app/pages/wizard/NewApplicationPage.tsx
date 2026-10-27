@@ -58,7 +58,8 @@ export default function NewApplicationPage() {
   const { id } = useParams();
   const nav = useNavigate();
   const loc = useLocation();
-  const initialStep = (loc.state as { step?: StepId } | null)?.step;
+  const requestedStep = new URLSearchParams(loc.search).get("step") ?? (loc.state as { step?: StepId } | null)?.step;
+  const initialStep = ["respond", "details", "documents"].includes(requestedStep ?? "") ? requestedStep as StepId : undefined;
   const editing = !!id;
   const appQ = useApplication(id);
   const meta = useMeta();
@@ -73,11 +74,12 @@ export default function NewApplicationPage() {
   const [saving, setSaving] = useState(false);
   const [report, setReport] = useState<ValidationReport | null>(null);
   const [checking, setChecking] = useState(false);
+  const [checkError, setCheckError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [loadedId, setLoadedId] = useState<string | null>(null);
 
   const app = appQ.data;
-  const rectification = app?.status === "RECTIFICATION_REQUESTED";
+  const rectification = app?.status === "RECTIFICATION_REQUESTED" || app?.status === "DEFICIENCIES_FLAGGED";
 
   useEffect(() => {
     if (app && loadedId !== String(app.id)) {
@@ -85,9 +87,10 @@ export default function NewApplicationPage() {
       setCategory(app.category);
       setAy(app.academicYear);
       setForm(formFromData(app.formData));
-      if (app.status === "RECTIFICATION_REQUESTED" && !initialStep) setStep("respond");
+      if (initialStep) setStep(initialStep);
+      else if (["RECTIFICATION_REQUESTED", "DEFICIENCIES_FLAGGED"].includes(app.status)) setStep("respond");
     }
-  }, [app, loadedId]);
+  }, [app, loadedId, initialStep]);
 
   const steps: { id: StepId; label: string }[] = useMemo(
     () =>
@@ -95,7 +98,7 @@ export default function NewApplicationPage() {
         rectification ? { id: "respond" as const, label: "Respond to findings" } : !editing ? { id: "category" as const, label: "Category" } : null,
         { id: "details" as const, label: "Application details" },
         { id: "documents" as const, label: "Documents" },
-        { id: "check" as const, label: rectification ? "Self-check & resubmit" : "Self-check & submit" },
+        { id: "check" as const, label: rectification ? "Review & resubmit" : "Check & submit" },
       ].filter(Boolean) as { id: StepId; label: string }[],
     [rectification, editing],
   );
@@ -109,7 +112,7 @@ export default function NewApplicationPage() {
 
   if (editing && appQ.isLoading) return <PageSkeleton />;
   if (editing && (appQ.isError || !app)) return <ErrorState error={appQ.error ?? "Application not found"} />;
-  if (editing && app && app.status !== "DRAFT" && app.status !== "RECTIFICATION_REQUESTED")
+  if (editing && app && !["DRAFT", "RECTIFICATION_REQUESTED", "DEFICIENCIES_FLAGGED"].includes(app.status))
     return (
       <EmptyState
         title="This application can no longer be edited"
@@ -146,12 +149,15 @@ export default function NewApplicationPage() {
 
   async function runCheck() {
     if (!app) return;
+    if (rectification) return;
     setChecking(true);
+    setCheckError(null);
     try {
       const r = await api.validate(app.id);
       setReport(r);
       inv(app.id);
     } catch (e) {
+      setCheckError(errorMessage(e));
       toast.error("Self-check failed", { description: errorMessage(e) });
     } finally {
       setChecking(false);
@@ -164,7 +170,7 @@ export default function NewApplicationPage() {
     try {
       await api.submit(app.id);
       inv(app.id);
-      toast.success(rectification ? "Application resubmitted" : "Application submitted", { description: "It is now with AICTE for scrutiny." });
+      toast.success(rectification ? "Application resubmitted" : "Application submitted", { description: "It is now in the review queue." });
       nav(`/portal/applications/${app.id}`);
     } catch (e) {
       toast.error("Submission failed", { description: errorMessage(e) });
@@ -190,7 +196,7 @@ export default function NewApplicationPage() {
   return (
     <div>
       <PageHeader
-        title={app ? (rectification ? "Respond to rectification request" : "Continue application") : "New application"}
+        title={step === "documents" ? "Upload documents" : step === "respond" ? "Correct your application" : app ? "Application details" : "New application"}
         description={
           app ? (
             <>
@@ -216,7 +222,7 @@ export default function NewApplicationPage() {
                 disabled={!reachable}
                 onClick={() => {
                   setStep(s.id);
-                  if (s.id === "check" && !report) runCheck();
+                  if (s.id === "check" && !report && !rectification) runCheck();
                 }}
                 aria-current={active ? "step" : undefined}
                 className={cn(
@@ -304,7 +310,7 @@ export default function NewApplicationPage() {
 
       {step === "documents" && app && <StepDocuments app={app} checklist={liveChecklist} />}
 
-      {step === "check" && app && <CheckStep report={report} checking={checking} onRerun={runCheck} app={app} />}
+      {step === "check" && app && (rectification ? <Panel title="Review your corrections"><p className="text-sm text-muted-foreground">{app.documents.length} documents are attached. Check your responses and corrected files before resubmitting. The application will be checked again when you resubmit; a reviewer must confirm that findings are resolved.</p><Button className="mt-4" size="sm" variant="outline" onClick={() => setStep("respond")}>Review responses</Button></Panel> : checkError ? <ErrorState error={checkError} onRetry={runCheck} /> : <CheckStep report={report} checking={checking} onRerun={runCheck} app={app} />)}
 
       {/* Footer nav */}
       <div className="sticky bottom-0 z-10 -mx-4 mt-6 flex items-center justify-between gap-3 border-t bg-background/95 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
@@ -314,13 +320,13 @@ export default function NewApplicationPage() {
         {step !== "check" ? (
           <Button onClick={next} disabled={saving || (step === "category" && !category)}>
             {saving && <Loader2 className="mr-1.5 h-4 w-4 animate-spin" />}
-            {step === "details" ? (app ? "Save & continue" : "Create draft & continue") : step === "documents" ? "Run self-check" : "Continue"}
+            {step === "details" ? (app ? "Save & continue" : "Create draft & continue") : step === "documents" ? "Check documents" : "Continue"}
             <ArrowRight className="ml-1.5 h-4 w-4" />
           </Button>
         ) : (
-          <Button onClick={submit} disabled={submitting || checking}>
+          <Button onClick={submit} disabled={submitting || checking || (!rectification && (!!checkError || !report))}>
             {submitting ? <Loader2 className="mr-1.5 h-4 w-4 animate-spin" /> : <Send className="mr-1.5 h-4 w-4" />}
-            {rectification ? "Resubmit to AICTE" : "Submit to AICTE"}
+            {rectification ? "Resubmit for review" : "Submit for review"}
           </Button>
         )}
       </div>

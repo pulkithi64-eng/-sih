@@ -172,5 +172,7 @@ export const isInstitution = (r?: Role) => r === "INSTITUTION";
 
 export function homePathFor(role?: Role) {
   if (role === "INSTITUTION") return "/portal/my-applications";
-  return "/portal/dashboard";
+  if (role === "REGIONAL_DIRECTOR") return "/portal/applications?status=RECOMMENDED";
+  if (role === "ADMIN") return "/portal/rules";
+  return "/portal/applications";
 }

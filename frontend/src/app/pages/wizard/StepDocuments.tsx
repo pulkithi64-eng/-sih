@@ -20,12 +20,9 @@ interface UploadJob {
   state: "uploading" | "done" | "error";
   doc?: DocumentT;
   error?: string;
-  stage: number;
 }
 
-const STAGES = ["Uploading", "Reading text (OCR)", "Classifying", "Extracting fields", "Forensic checks", "Verifying with issuer"];
-
-function Dropzone({ onFiles, compact, label }: { onFiles: (f: File[]) => void; compact?: boolean; label?: string }) {
+function Dropzone({ onFiles, compact, label, inputLabel = "Upload other documents" }: { onFiles: (f: File[]) => void; compact?: boolean; label?: string; inputLabel?: string }) {
   const ref = useRef<HTMLInputElement>(null);
   const [over, setOver] = useState(false);
   return (
@@ -54,10 +51,11 @@ function Dropzone({ onFiles, compact, label }: { onFiles: (f: File[]) => void; c
           browse
         </button>
       </p>
-      {!compact && <p className="text-xs text-muted-foreground">PDF, JPG or PNG · up to 20 MB each</p>}
+      {!compact && <p className="text-xs text-muted-foreground">PDF, JPG or PNG · up to 25 MB each</p>}
       <input
         ref={ref}
         type="file"
+        aria-label={inputLabel}
         className="sr-only"
         multiple={!compact}
         accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/png,image/jpeg"
@@ -92,18 +90,17 @@ export default function StepDocuments({ app, checklist }: { app: ApplicationDeta
   async function upload(files: File[], docType?: string) {
     for (const file of files) {
       const key = `${Date.now()}-${Math.random()}`;
-      const job: UploadJob = { key, file, docType, state: "uploading", stage: 0 };
+      const job: UploadJob = { key, file, docType, state: "uploading" };
       setJobs((j) => [job, ...j]);
-      const timer = setInterval(() => setJobs((js) => js.map((x) => (x.key === key && x.stage < STAGES.length - 1 ? { ...x, stage: x.stage + 1 } : x))), 700);
       try {
+        if (!/\.(pdf|png|jpe?g)$/i.test(file.name)) throw new Error("Choose a PDF, JPG or PNG file.");
+        if (file.size > 25 * 1024 * 1024) throw new Error("This file is too large. The limit is 25 MB.");
         const doc = await api.uploadDocument(app.id, file, docType);
         setJobs((js) => js.map((x) => (x.key === key ? { ...x, state: "done", doc } : x)));
         inv(app.id);
       } catch (e) {
         setJobs((js) => js.map((x) => (x.key === key ? { ...x, state: "error", error: errorMessage(e) } : x)));
         toast.error(`Upload failed: ${file.name}`, { description: errorMessage(e) });
-      } finally {
-        clearInterval(timer);
       }
     }
   }
@@ -156,7 +153,7 @@ export default function StepDocuments({ app, checklist }: { app: ApplicationDeta
                       ))}
                     </div>
                     <div className="w-full sm:w-56">
-                      <Dropzone compact label={have.length ? "Replace or add:" : "Drop file or"} onFiles={(f) => upload(f.slice(0, 1), c.docType)} />
+                      <Dropzone compact inputLabel={`Upload ${c.label || humanize(c.docType)}`} label={have.length ? "Add another file:" : "Drop file or"} onFiles={(f) => upload(f.slice(0, 1), c.docType)} />
                     </div>
                   </div>
                 </li>
@@ -177,13 +174,13 @@ export default function StepDocuments({ app, checklist }: { app: ApplicationDeta
         </Panel>
       </div>
 
-      <Panel title="Live processing results" description="Each file is analysed as soon as it is uploaded" actions={<AdvisoryTag />} className="xl:sticky xl:top-20 xl:self-start">
+      <Panel title="Upload results" description="Results appear after each document has been checked." actions={<AdvisoryTag />} className="xl:sticky xl:top-20 xl:self-start">
         {jobs.length === 0 ? (
           <p className="py-6 text-center text-sm text-muted-foreground">Upload a document to see classification, verification and integrity checks.</p>
         ) : (
           <ul className="max-h-[70vh] space-y-3 overflow-y-auto pr-1">
             {jobs.map((j) => (
-              <JobCard key={j.key} job={j} docTypeLabel={(id) => meta.data?.docTypes?.find((t) => t.id === id)?.label ?? humanize(id)} />
+              <JobCard key={j.key} job={j} onRetry={() => { setJobs((jobs) => jobs.filter((item) => item.key !== j.key)); upload([j.file], j.docType); }} docTypeLabel={(id) => meta.data?.docTypes?.find((t) => t.id === id)?.label ?? humanize(id)} />
             ))}
           </ul>
         )}
@@ -206,7 +203,7 @@ function DocLine({ d, onRemove }: { d: DocumentT; onRemove: () => void }) {
   );
 }
 
-function JobCard({ job, docTypeLabel }: { job: UploadJob; docTypeLabel: (id: string) => string }) {
+function JobCard({ job, docTypeLabel, onRetry }: { job: UploadJob; docTypeLabel: (id: string) => string; onRetry: () => void }) {
   const d = job.doc;
   return (
     <li className="rounded-md border p-3">
@@ -224,16 +221,9 @@ function JobCard({ job, docTypeLabel }: { job: UploadJob; docTypeLabel: (id: str
         </div>
       </div>
       {job.state === "uploading" && (
-        <ol className="mt-2 space-y-0.5 pl-6 text-xs">
-          {STAGES.map((s, i) => (
-            <li key={s} className={cn(i < job.stage ? "text-green-700" : i === job.stage ? "font-medium text-foreground" : "text-muted-foreground/60")}>
-              {i < job.stage ? "✓ " : i === job.stage ? "› " : "  "}
-              {s}
-            </li>
-          ))}
-        </ol>
+        <p role="status" className="mt-2 pl-6 text-xs text-muted-foreground">Uploading and checking this document. Please keep this page open.</p>
       )}
-      {job.state === "error" && <p className="mt-2 pl-6 text-xs text-red-700">{job.error}</p>}
+      {job.state === "error" && <div className="mt-2 pl-6"><p role="alert" className="text-xs text-red-700">{job.error}</p><Button size="sm" variant="outline" className="mt-2" onClick={onRetry}>Retry upload</Button></div>}
       {d && (
         <div className="mt-2 space-y-2 pl-6">
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">

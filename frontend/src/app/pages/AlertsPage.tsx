@@ -55,7 +55,7 @@ export default function AlertsPage() {
         {q.isLoading ? (
           <ul className="divide-y" aria-busy="true" aria-label="Loading alerts">
             {Array.from({ length: 6 }, (_, index) => (
-              <li key={index} className="min-h-36 space-y-3 px-4 py-3 sm:min-h-28">
+              <li key={`loading-${index}`} className="min-h-48 space-y-3 px-4 py-3 sm:min-h-40">
                 <Skeleton className="h-5 w-40" />
                 <Skeleton className="h-4 w-full" />
                 <Skeleton className="h-4 w-3/4" />
@@ -70,7 +70,7 @@ export default function AlertsPage() {
         ) : (
           <ul className="divide-y">
             {shown.map((a) => (
-              <li key={a.id} className={cn("flex min-h-36 items-start gap-3 px-4 py-3 sm:min-h-28", !a.read && "bg-navy-50/40")}>
+              <li key={a.id} className={cn("flex min-h-48 items-start gap-3 px-4 py-3 sm:min-h-40", !a.read && "bg-navy-50/40")}>
                 <span className={cn("mt-1.5 h-2 w-2 shrink-0 rounded-full", severityDot(a.severity))} aria-hidden />
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-center gap-2">

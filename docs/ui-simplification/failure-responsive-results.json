@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "checks": [
+    "List server failure and Retry recover",
+    "Empty list shows honest guidance and create action",
+    "Deferred chunk failure shows recovery without removing navigation",
+    "Mobile navigation opens and closes with Escape",
+    "Landing, login and document evidence fit 320/375/768/1440 widths"
+  ]
+}

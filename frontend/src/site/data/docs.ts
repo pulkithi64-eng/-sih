@@ -18,10 +18,10 @@ export const ROLE_GUIDES: RoleGuide[] = [
     intro: "The institution's nodal officer prepares the application, uploads documents and responds to deficiencies.",
     steps: [
       { t: "Create an application", b: "Open New application, choose the category and fill in the application details: programmes and intake, faculty and students, land and building, fee and accreditation. The required documents for that category appear immediately." },
-      { t: "Upload documents", b: "Upload each file against a required document, or under Other documents and let VeriSense detect the type. Live processing results show the detected type, extracted fields and verification state within seconds." },
-      { t: "Run self-check", b: "Validate the draft before submitting to see missing, expired or inconsistent items while they can still be fixed." },
-      { t: "Submit to AICTE", b: "Submission runs full validation, assigns a scrutiny officer and moves the application into the regional queue." },
-      { t: "Respond to findings", b: "When AICTE requests rectification, upload corrected documents and use Mark rectified (or Acknowledge) on each listed finding with a note." },
+      { t: "Upload documents", b: "Upload each file against a required document, or under Other documents and let VeriSense detect the type. Upload results show the detected type, extracted fields and verification state after processing finishes." },
+      { t: "Check documents", b: "Validate the draft before submitting to see missing, expired or inconsistent items while they can still be fixed." },
+      { t: "Submit for review", b: "Submission runs full validation, assigns a scrutiny officer and moves the application into the regional queue." },
+      { t: "Respond to findings", b: "When the reviewer requests corrections, upload corrected documents and use Mark rectified (or Acknowledge) on each listed finding with a note." },
     ],
   },
   {
@@ -29,10 +29,10 @@ export const ROLE_GUIDES: RoleGuide[] = [
     role: "Scrutiny officer",
     intro: "The scrutiny officer works through the region's queue, verifies findings against evidence and recommends an outcome.",
     steps: [
-      { t: "Prioritise from the dashboard", b: "The queue shows each application's compliance score, risk band and open critical findings. Alerts highlight new critical issues and source failures." },
-      { t: "Review the application", b: "Work through the tabs: Overview (checklist and institutional records), Documents (viewer, extracted fields, forensics and ELA), Verification, Infrastructure, Report and Audit trail." },
+      { t: "Prioritise from the review queue", b: "The queue shows each application's compliance score, risk band and open critical findings. Alerts highlight new critical issues and source failures." },
+      { t: "Review the application", b: "Work through the tabs: Overview (checklist and institutional records), Documents (viewer, extracted fields, forensics and ELA), Findings and Report. Open More details for Verification, Infrastructure and Audit trail." },
       { t: "Work the findings", b: "For each finding, check the cited evidence, then Acknowledge, Dismiss (a reason is required) or Escalate. Re-run source verification where a source was unavailable." },
-      { t: "Request rectification", b: "Select the findings the institution must address and send a rectification request with instructions; Add observation records any other remark in the audit trail." },
+      { t: "Request rectification", b: "Open More actions, then Request corrections. Select the findings and add instructions. Add review note records other remarks in the audit trail." },
       { t: "Record recommendation", b: "Recommend an outcome to the Regional Director with a note. Approval cannot be recommended while a critical finding is still open. Download the report PDF for the file." },
     ],
   },
@@ -58,7 +58,7 @@ export const ROLE_GUIDES: RoleGuide[] = [
 ];
 
 export const DEMO_SCRIPT = [
-  { time: "0:00-0:45", title: "Context", user: "website", body: "Landing page: the problem, five modules and the human-in-the-loop principle. Show the PS mapping page briefly." },
+  { time: "0:00-0:45", title: "Context", user: "website", body: "Landing page: the three-step journey, simulated evidence and human review. Show Rules & limitations briefly." },
   { time: "0:45-2:00", title: "Institution uploads and pre-checks", user: "inst.piat", body: "Open the PIAT Extension of Approval application, show the checklist, upload a document and watch it get classified and read. Run the pre-check." },
   { time: "2:00-3:45", title: "Officer reviews evidence", user: "officer.wro", body: "From the dashboard open the PIAT application: expired Fire NOC with the cited page, faculty-ratio finding against records, verification states with source and timestamp." },
   { time: "3:45-5:00", title: "Forgery indicators", user: "officer.wro", body: "Open the Apex application: ELA heatmap and metadata on the land document, duplicate faculty across institutions, mismatch between QR payload and printed values." },

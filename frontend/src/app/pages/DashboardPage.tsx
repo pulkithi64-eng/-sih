@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { lazy, Suspense, useState } from "react";
 import {
   AlertTriangle,
   ArrowRight,
@@ -24,7 +25,8 @@ import { CATEGORY_SHORT, categoryLabel, REGION_LABEL, SEVERITY_ORDER, VERIFICATI
 import type { Application } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { useAuth } from "../auth";
-import { HBarChart, StackedDistribution } from "../components/charts";
+const HBarChart = lazy(() => import("../components/charts").then(module => ({ default: module.HBarChart })));
+const StackedDistribution = lazy(() => import("../components/charts").then(module => ({ default: module.StackedDistribution })));
 import { Panel } from "../components/Panel";
 import { PageSkeleton, TableSkeleton } from "../components/Skeletons";
 
@@ -49,6 +51,7 @@ function fmtDuration(sec: number | null | undefined) {
 }
 
 export default function DashboardPage() {
+  const [metricsOpen, setMetricsOpen] = useState(false);
   const { user } = useAuth();
   const dash = useDashboard();
   const apps = useApplications({});
@@ -91,8 +94,8 @@ export default function DashboardPage() {
     <div>
       <PageHeader
         eyebrow={user?.region ? REGION_LABEL[user.region] ?? user.region : "All regions"}
-        title="Scrutiny dashboard"
-        description="Validation status of approval applications in your jurisdiction, with items that need an official's attention."
+        title="Review overview"
+        description="A summary of applications in your region. Open the review queue to work on a case."
         actions={
           <Button asChild variant="outline" size="sm">
             <Link to="/portal/applications">
@@ -118,10 +121,12 @@ export default function DashboardPage() {
         <KpiCard label="Avg. validation time" value={fmtDuration(d.avgValidationSeconds)} icon={Timer} hint="Per application run" />
       </div>
 
-      <div className="mt-6 grid gap-4 lg:grid-cols-2">
+      <details className="mt-6 rounded-lg border bg-card p-4" onToggle={(event) => setMetricsOpen(event.currentTarget.open)}>
+        <summary className="cursor-pointer text-sm font-medium">Detailed metrics and distributions</summary>
+      {metricsOpen && <Suspense fallback={<PageSkeleton />}><div className="mt-4 grid gap-4 lg:grid-cols-2">
         <Panel
           title="Document verification status"
-          description="All submitted documents, by official verification state"
+          description="Documents grouped by their recorded verification outcome"
           actions={<span className="text-xs text-muted-foreground">{verData.reduce((s, x) => s + x.value, 0)} documents</span>}
         >
           <StackedDistribution data={verData} />
@@ -149,6 +154,8 @@ export default function DashboardPage() {
         </Panel>
       </div>
 
+      </Suspense>}
+      </details>
       <div className="mt-6 grid gap-4 xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
         <Panel
           title="Needs official intervention"
@@ -158,6 +165,8 @@ export default function DashboardPage() {
         >
           {apps.isLoading ? (
             <TableSkeleton rows={5} cols={5} />
+          ) : apps.isError ? (
+            <ErrorState error={apps.error} onRetry={() => apps.refetch()} />
           ) : queue.length === 0 ? (
             <EmptyState compact title="Nothing waiting" description="No applications currently need intervention." />
           ) : (
@@ -216,6 +225,8 @@ export default function DashboardPage() {
         >
           {alerts.isLoading ? (
             <TableSkeleton rows={4} cols={1} />
+          ) : alerts.isError ? (
+            <ErrorState error={alerts.error} onRetry={() => alerts.refetch()} />
           ) : recentAlerts.length === 0 ? (
             <EmptyState compact title="No alerts" />
           ) : (

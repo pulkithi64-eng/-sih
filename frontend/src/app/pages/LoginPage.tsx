@@ -22,7 +22,7 @@ const DEMO_USERS = [
 
 const POINTS = [
   { icon: ScrollText, title: "Checklist & rule validation", text: "Category-specific checklists and configurable, versioned rules with clause references." },
-  { icon: Fingerprint, title: "Document authentication", text: "Signed-QR checks, issuing-authority lookups and forensic signals for tampering." },
+  { icon: Fingerprint, title: "Document evidence", text: "Signed-QR checks, simulated issuer lookups and preliminary integrity indicators." },
   { icon: ShieldCheck, title: "Explainable, auditable", text: "Every flag carries evidence; every action lands in a hash-chained audit trail." },
 ];
 
@@ -55,21 +55,13 @@ export default function LoginPage() {
     <div className="grid min-h-screen lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
       {/* Brand panel */}
       <aside className="relative hidden flex-col justify-between overflow-hidden bg-navy p-10 text-white lg:flex">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
         <div className="relative">
           <Logo inverted withTagline />
         </div>
         <div className="relative max-w-md">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-saffron">Scrutiny decision support</p>
           <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-tight">
-            Faster, evidence-backed scrutiny of approval applications.
+              Documents, evidence and clear next steps.
           </h1>
           <ul className="mt-8 space-y-5">
             {POINTS.map((p) => (
@@ -101,7 +93,7 @@ export default function LoginPage() {
         <div className="flex flex-1 items-center justify-center px-4 pb-10 sm:px-6">
           <div className="w-full max-w-md">
             <h2 className="text-2xl font-semibold tracking-tight">Sign in to the portal</h2>
-            <p className="mt-1 text-sm text-muted-foreground">Use your departmental credentials, or pick a demo account below.</p>
+            <p className="mt-1 text-sm text-muted-foreground">Sign in to manage applications and review documents.</p>
 
             <form
               className="mt-6 space-y-4"
@@ -136,7 +128,9 @@ export default function LoginPage() {
               </Button>
             </form>
 
-            <div className="mt-8">
+            <details className="mt-6 rounded-lg border bg-card p-4">
+              <summary className="cursor-pointer text-sm font-medium">Try a demo account</summary>
+              <div className="mt-4">
               <div className="flex items-center justify-between">
                 <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Demo accounts</p>
                 <p className="text-xs text-muted-foreground">
@@ -171,7 +165,8 @@ export default function LoginPage() {
                   </button>
                 ))}
               </div>
-            </div>
+              </div>
+            </details>
 
             <div className="mt-8 rounded-md border bg-card px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
               <UserRound className="mr-1 inline h-3.5 w-3.5 align-[-2px]" aria-hidden />

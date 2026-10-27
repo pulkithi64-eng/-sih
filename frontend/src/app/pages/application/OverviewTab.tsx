@@ -98,7 +98,7 @@ export default function OverviewTab({ app, onOpenDocument }: { app: ApplicationD
   const required = checklist.filter((c) => c.mandatory && c.status !== "NOT_REQUIRED").length;
   const requiredMissing = checklist.filter((c) => c.mandatory && (c.status === "MISSING" || c.status === "EXPIRED" || c.status === "INVALID")).length;
   const topFindings = [...(app.findings ?? [])]
-    .filter((f) => f.status === "OPEN" || f.status === "ESCALATED")
+    .filter((f) => ["OPEN", "ACKNOWLEDGED", "ESCALATED"].includes(f.status))
     .sort((a, b) => SEVERITY_ORDER.indexOf(a.severity) - SEVERITY_ORDER.indexOf(b.severity))
     .slice(0, 4);
   const docsById = new Map((app.documents ?? []).map((d) => [String(d.id), d]));
@@ -109,6 +109,7 @@ export default function OverviewTab({ app, onOpenDocument }: { app: ApplicationD
     <div className="grid gap-4 xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
       <div className="space-y-4">
         <Panel title="Validation summary" actions={<AdvisoryTag />}>
+          {!app.lastValidatedAt && <p className="mb-3 text-sm text-muted-foreground">This draft has not been checked yet. Upload the checklist documents, then run the document check.</p>}
           <p className="text-sm leading-relaxed text-foreground/90">
             {checklist.length > 0 ? (
               <>
@@ -232,8 +233,8 @@ export default function OverviewTab({ app, onOpenDocument }: { app: ApplicationD
 
       <div className="space-y-4">
         <Panel
-          title="Declared vs AICTE record"
-          description="Values declared in this application compared with data already held by AICTE"
+          title="Declared vs demo records"
+          description="Compare supplied values with the simulated institutional records."
           flush
         >
           {!app.records ? (
@@ -273,6 +274,7 @@ export default function OverviewTab({ app, onOpenDocument }: { app: ApplicationD
           )}
         </Panel>
 
+        <details className="rounded-lg border bg-card p-4"><summary className="cursor-pointer text-sm font-medium">Institution records and application data</summary><div className="mt-4 space-y-4">
         {app.records && <RecordsSnapshot r={app.records} />}
 
         <Panel title="Institution profile">
@@ -296,6 +298,7 @@ export default function OverviewTab({ app, onOpenDocument }: { app: ApplicationD
         </Panel>
 
         <DeclaredData formData={app.formData ?? {}} />
+        </div></details>
       </div>
     </div>
   );

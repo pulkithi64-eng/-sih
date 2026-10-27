@@ -41,7 +41,7 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link to="/docs#demo" className="text-slate-700 hover:text-[#0B2E59]">
+                <Link to="/help#demo" className="text-slate-700 hover:text-[#0B2E59]">
                   Demo script
                 </Link>
               </li>

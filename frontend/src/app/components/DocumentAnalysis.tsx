@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { CheckCircle2, ChevronDown, Fingerprint, Loader2, RefreshCw, ScanText, ShieldCheck, Tags, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AdvisoryTag } from "@/components/common/AdvisoryNote";
@@ -9,6 +9,7 @@ import { confPct, fmtBytes, fmtDate, fmtDateTime, fmtValue, shortHash } from "@/
 import { humanize, METHOD_LABEL, VERIFICATION_DESCRIPTION } from "@/lib/labels";
 import type { DocumentT } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { verificationNextStep } from "@/lib/journey";
 
 function Section({
   icon: Icon,
@@ -24,6 +25,7 @@ function Section({
   defaultOpen?: boolean;
 }) {
   const [open, setOpen] = useState(defaultOpen);
+  const contentId = useId();
   return (
     <section className="border-b last:border-0">
       <div className="flex items-center gap-2 px-4 py-2.5">
@@ -32,6 +34,7 @@ function Section({
           onClick={() => setOpen((o) => !o)}
           className="flex min-w-0 flex-1 items-center gap-2 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           aria-expanded={open}
+          aria-controls={contentId}
         >
           <Icon className="h-4 w-4 shrink-0 text-navy" aria-hidden />
           <h3 className="truncate text-sm font-semibold">{title}</h3>
@@ -39,7 +42,7 @@ function Section({
         </button>
         {right}
       </div>
-      {open && <div className="px-4 pb-4">{children}</div>}
+      {open && <div id={contentId} className="px-4 pb-4">{children}</div>}
     </section>
   );
 }
@@ -72,6 +75,10 @@ export function VerificationCard({ doc, onReverify, reverifying }: { doc: Docume
           </Button>
         )}
       </div>
+      <p className="mt-2 text-sm">{verificationNextStep(v.status)}</p>
+      <p className="mt-2 text-xs text-muted-foreground"><span className="font-medium">Source: </span>{v.source || "No issuer source available"}</p>
+      <details className="mt-3" open={v.status === "MISMATCH_DETECTED"}>
+      <summary className="cursor-pointer text-xs font-medium text-primary-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Verification evidence</summary>
       <p className="mt-2 text-xs text-muted-foreground">{VERIFICATION_DESCRIPTION[v.status]}</p>
       <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
         <div>
@@ -127,6 +134,7 @@ export function VerificationCard({ doc, onReverify, reverifying }: { doc: Docume
           </table>
         </div>
       )}
+      </details>
     </div>
   );
 }
@@ -210,9 +218,7 @@ export function ExtractedFieldsTable({ doc }: { doc: DocumentT }) {
                 </td>
                 <td className="px-2.5 py-1.5">
                   <span className="break-words">{fmtValue(fv.value)}</span>
-                  {fv.sourceText && fv.sourceText !== String(fv.value) && (
-                    <span className="mt-0.5 line-clamp-2 block text-2xs italic text-muted-foreground">“{fv.sourceText}”</span>
-                  )}
+                  {fv.sourceText && fv.sourceText !== String(fv.value) && <details className="mt-1 text-2xs text-muted-foreground"><summary className="cursor-pointer">Source text</summary><p className="mt-1 whitespace-pre-wrap break-words">{fv.sourceText}</p></details>}
                 </td>
                 <td className="whitespace-nowrap px-2.5 py-1.5">{fv.confidence ? <ConfidenceMeter value={fv.confidence} /> : "—"}</td>
               </tr>
@@ -243,6 +249,7 @@ function OcrPreview({ doc }: { doc: DocumentT }) {
           </span>
         ) : null}
       </div>
+      {full && text.isError && <div role="alert" className="mb-2 text-sm text-destructive">Could not load recognised text. <button type="button" className="underline" onClick={() => text.refetch()}>Retry</button></div>}
       <pre className="mono max-h-64 overflow-auto whitespace-pre-wrap rounded-md border bg-slate-50 p-2.5 text-[11px] leading-relaxed text-foreground/90">
         {full && text.isLoading ? "Loading full text…" : body || "No text recognised."}
       </pre>
@@ -275,9 +282,6 @@ export default function DocumentAnalysis({
             {fmtBytes(doc.sizeBytes)} · uploaded {fmtDate(doc.uploadedAt)}
             {doc.issuer ? ` · ${doc.issuer}` : ""}
           </p>
-          <p className="mono mt-0.5 text-2xs text-muted-foreground" title={doc.sha256}>
-            SHA-256 {shortHash(doc.sha256, 16)}
-          </p>
         </div>
         <AdvisoryTag />
       </div>
@@ -286,7 +290,9 @@ export default function DocumentAnalysis({
         <VerificationCard doc={doc} onReverify={onReverify} reverifying={reverifying} />
       </Section>
 
-      <Section icon={Tags} title="Classification" right={<ConfidenceMeter value={cls.confidence} />}>
+      {doc.pipelineErrors?.length > 0 && <p role="alert" className="border-b bg-amber-50 p-3 text-sm text-amber-900">Some checks could not finish. A reviewer should inspect this document. Details remain in the processing summary.</p>}
+      <Section icon={Tags} title="Classification & dates" defaultOpen={false} right={<ConfidenceMeter value={cls.confidence} />}>
+        <p className="mono mb-3 break-all text-xs text-muted-foreground">SHA-256 {doc.sha256}</p>
         <p className="text-sm">
           Predicted <span className="font-medium">{humanize(cls.docType)}</span>
           {disagrees && (
@@ -314,15 +320,16 @@ export default function DocumentAnalysis({
         </dl>
       </Section>
 
-      <Section icon={ScanText} title="Extracted fields">
+      <Section icon={ScanText} title="Document fields">
         <ExtractedFieldsTable doc={doc} />
       </Section>
 
-      <Section icon={Fingerprint} title="Forensics">
+      <Section icon={Fingerprint} title="Integrity indicators" defaultOpen={(doc.forensics?.flags?.length ?? 0) > 0}>
+        <p className="mb-3 text-xs text-muted-foreground">These are preliminary indicators, not proof of forgery. Confirm them against the original.</p>
         <ForensicsCard doc={doc} />
       </Section>
 
-      <Section icon={ScanText} title="OCR text" defaultOpen={false}>
+      <Section icon={ScanText} title="Recognised text" defaultOpen={false}>
         <OcrPreview doc={doc} />
       </Section>
     </div>

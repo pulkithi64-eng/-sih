@@ -102,9 +102,9 @@ function SidebarBody({ collapsed }: { collapsed: boolean }) {
         {NAV_SECTIONS.map((sec) => {
           const items = sec.items.filter((i) => user && i.roles.includes(user.role));
           if (!items.length) return null;
-          return (
+          const section = (
             <div key={sec.title} className="mb-5">
-              {!collapsed && (
+              {!collapsed && sec.title !== "Reference" && (
                 <p className="mb-1.5 px-5 text-2xs font-semibold uppercase tracking-wider text-sidebar-foreground/50">{sec.title}</p>
               )}
               <ul className="space-y-0.5 px-2.5">
@@ -155,6 +155,12 @@ function SidebarBody({ collapsed }: { collapsed: boolean }) {
               </ul>
             </div>
           );
+          return sec.title === "Reference" && !collapsed ? (
+            <details key={sec.title} className="mb-5">
+              <summary className="mx-3 mb-2 cursor-pointer rounded px-2 py-2 text-xs text-sidebar-foreground/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sidebar-ring">Reference & audit</summary>
+              {section}
+            </details>
+          ) : section;
         })}
       </nav>
       {!collapsed && (
@@ -189,7 +195,7 @@ function Breadcrumbs() {
           </Link>
         </li>
         {crumbs.map((c) => (
-          <li key={c.to} className="inline-flex items-center gap-1">
+          <li key={c.to} className="inline-flex min-w-0 items-center gap-1 break-all">
             <ChevronRight className="h-3 w-3" aria-hidden />
             {c.isLast ? (
               <span aria-current="page" className="font-medium text-foreground">

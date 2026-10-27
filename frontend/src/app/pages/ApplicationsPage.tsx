@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowDown, ArrowUp, ArrowUpDown, FilePlus2, FileStack, Search, X } from "lucide-react";
+import { ArrowDown, ArrowUp, ArrowUpDown, ArrowRight, FilePlus2, FileStack, Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -15,6 +15,7 @@ import { fmtDate } from "@/lib/format";
 import { CATEGORY_LABEL, CATEGORY_SHORT, categoryLabel, REGION_LABEL } from "@/lib/labels";
 import type { Application, ApplicationStatus } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { applicationStage, institutionNextAction } from "@/lib/journey";
 import { isInstitution, useAuth } from "../auth";
 import { TableSkeleton } from "../components/Skeletons";
 
@@ -104,11 +105,11 @@ export default function ApplicationsPage({ mine = false }: { mine?: boolean }) {
   return (
     <div>
       <PageHeader
-        title={mine ? "My applications" : "Applications"}
+        title={inst ? "My applications" : user?.role === "REGIONAL_DIRECTOR" ? "Decision queue" : user?.role === "SCRUTINY_OFFICER" ? "Review queue" : "Applications"}
         description={
           inst
-            ? "Approval applications submitted by your institution, with their validation status and open findings."
-            : "Applications in your jurisdiction. Sort by risk or findings to prioritise scrutiny."
+            ? "Create an application, upload its documents and follow the review."
+            : user?.role === "REGIONAL_DIRECTOR" ? "Review recommendations and record a reasoned final decision." : "Review the important findings and evidence for applications in your region."
         }
         actions={
           inst && (
@@ -120,6 +121,13 @@ export default function ApplicationsPage({ mine = false }: { mine?: boolean }) {
           )
         }
       />
+
+      {inst && <div className="mb-5 rounded-lg border bg-card px-4 py-3 text-sm text-muted-foreground">
+        <p className="font-medium text-foreground">How to submit an application</p>
+        <ol className="mt-2 flex flex-wrap gap-x-6 gap-y-2" aria-label="Application steps">
+          <li>1. Create application</li><li>2. Upload documents</li><li>3. Check and correct</li><li>4. Submit for review</li>
+        </ol>
+      </div>}
 
       <div className="card-surface">
         <div className="flex flex-wrap items-center gap-2 border-b p-3">
@@ -144,12 +152,13 @@ export default function ApplicationsPage({ mine = false }: { mine?: boolean }) {
             options={STATUSES.map((s) => ({ value: s, label: getStatusDef(s, "application").label }))} />
           <FilterSelect label="Category" value={filters.category} onChange={(v) => setFilter("category", v)}
             options={categories.map((c) => ({ value: c.id, label: c.label }))} />
-          {!inst && (
+          {user?.role === "ADMIN" && (
             <FilterSelect label="Region" value={filters.region} onChange={(v) => setFilter("region", v)}
               options={Object.entries(REGION_LABEL).map(([k, v]) => ({ value: k, label: `${k} · ${v}` }))} />
           )}
-          <FilterSelect label="Risk band" value={filters.riskBand} onChange={(v) => setFilter("riskBand", v)}
+          {!inst && <FilterSelect label="Risk band" value={filters.riskBand} onChange={(v) => setFilter("riskBand", v)}
             options={["HIGH", "MEDIUM", "LOW"].map((r) => ({ value: r, label: r.charAt(0) + r.slice(1).toLowerCase() }))} />
+          }
           {hasFilters && (
             <Button
               variant="ghost"
@@ -181,6 +190,32 @@ export default function ApplicationsPage({ mine = false }: { mine?: boolean }) {
               ) : undefined
             }
           />
+        ) : inst ? (
+          <ul className="divide-y" aria-label="My applications">
+            {rows.map((application) => {
+              const next = institutionNextAction(application);
+              const stage = applicationStage(application);
+              return <li key={application.id} className="p-4 sm:p-5">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-center gap-2"><StatusBadge status={application.status} kind="application" /><span className="text-xs text-muted-foreground">AY {application.academicYear}</span></div>
+                    <h2 className="mt-2 text-base font-semibold">{categoryLabel(application.category)}</h2>
+                    <Link to={`/portal/applications/${application.id}`} className="mono mt-1 inline-block break-all text-xs text-primary-600 hover:underline">{application.applicationNo}</Link>
+                    <p className="mt-2 max-w-xl text-sm text-muted-foreground">{next.description}</p>
+                  </div>
+                  <Button asChild size="sm" className="shrink-0 self-start"><Link to={next.to}>{next.label}<ArrowRight className="ml-2 h-4 w-4" /></Link></Button>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-xs text-muted-foreground">
+                  <span>{application.counts?.documents ?? 0} documents uploaded</span>
+                  <span>{application.counts?.findingsOpen ?? 0} unresolved findings</span>
+                  <span>Updated {fmtDate(application.updatedAt)}</span>
+                </div>
+                <ol className="mt-3 grid grid-cols-5 gap-1 text-[10px] sm:text-xs" aria-label="Application progress">
+                  {["Details", "Documents", "Review", "Decision", "Complete"].map((label, index) => <li key={label} aria-current={index === stage ? "step" : undefined} className={cn("border-t-2 pt-2", index <= stage ? "border-primary text-foreground" : "border-border text-muted-foreground")}>{index + 1}. {label}</li>)}
+                </ol>
+              </li>;
+            })}
+          </ul>
         ) : (
           <>
             <Table>
@@ -189,9 +224,9 @@ export default function ApplicationsPage({ mine = false }: { mine?: boolean }) {
                   {header("applicationNo", "Application")}
                   {header("institution", "Institution", "hidden min-w-[220px] md:table-cell")}
                   {header("status", "Status")}
-                  {header("complianceScore", "Compliance", "w-36")}
+                  {header("complianceScore", "Compliance", "hidden w-36 xl:table-cell")}
                   {header("riskScore", "Risk")}
-                  {header("critical", "Crit / Major", "text-right")}
+                  {header("critical", "Critical / Major", "hidden text-right sm:table-cell")}
                   <TableHead className="hidden w-32 xl:table-cell">Verified docs</TableHead>
                   {header("updatedAt", "Updated", "hidden lg:table-cell")}
                 </TableRow>
@@ -225,7 +260,7 @@ export default function ApplicationsPage({ mine = false }: { mine?: boolean }) {
                     <TableCell>
                       <StatusBadge status={a.status} kind="application" />
                     </TableCell>
-                    <TableCell>
+                    <TableCell className="hidden xl:table-cell">
                       {a.status === "DRAFT" && !a.lastValidatedAt ? (
                         <span className="text-xs text-muted-foreground">Not validated</span>
                       ) : (
@@ -235,7 +270,7 @@ export default function ApplicationsPage({ mine = false }: { mine?: boolean }) {
                     <TableCell>
                       <RiskBandPill band={a.riskBand} score={a.riskScore} />
                     </TableCell>
-                    <TableCell className="tabular text-right">
+                    <TableCell className="tabular hidden text-right sm:table-cell">
                       <span className={cn("font-semibold", (a.counts?.critical ?? 0) > 0 ? "text-red-700" : "text-muted-foreground")}>
                         {a.counts?.critical ?? 0}
                       </span>

@@ -65,7 +65,7 @@ try {
   }
   await page.screenshot({ path: path.join(out, 'both-upload-results.png'), fullPage: true });
   const validationPromise = page.waitForResponse(response => response.url().endsWith(`/api/applications/${application.id}/validate`) && response.request().method() === 'POST', { timeout: 60000 });
-  await page.getByRole('button', { name: 'Run self-check', exact: true }).click();
+  await page.getByRole('button', { name: 'Check documents', exact: true }).click();
   const validation = await validationPromise;
   expect(validation.status()).toBe(200);
   const report = await validation.json();

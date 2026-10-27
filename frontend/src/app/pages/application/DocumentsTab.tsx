@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { ChevronLeft, ChevronRight, FileImage, FileText, FolderOpen } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { FileImage, FileText, FolderOpen } from "lucide-react";
 import { EmptyState } from "@/components/common/EmptyState";
 import { StatusBadge, getStatusDef, TONE_DOT } from "@/components/common/StatusBadge";
 import { useVerifyDocument } from "@/lib/hooks";
@@ -67,11 +65,11 @@ export default function DocumentsTab({ app }: { app: ApplicationDetail }) {
   });
 
   return (
-    <div className="grid gap-4 lg:grid-cols-[260px_minmax(0,1fr)]">
+    <div className="space-y-4">
       {/* Document list (laptop & desktop screens) */}
-      <nav aria-label="Documents" className="card-surface hidden max-h-[calc(100vh-160px)] overflow-y-auto lg:block">
+      <nav aria-label="Documents" className="card-surface max-h-48 overflow-y-auto">
         <p className="border-b px-3 py-2 text-xs font-semibold text-muted-foreground">{docs.length} documents</p>
-        <ul>
+        <ul className="grid sm:grid-cols-2 xl:grid-cols-3">
           {docs.map((d) => {
             const def = getStatusDef(d.verification?.status ?? "VERIFICATION_PENDING", "verification");
             const n = findingsByDoc.get(String(d.id)) ?? 0;
@@ -92,7 +90,8 @@ export default function DocumentsTab({ app }: { app: ApplicationDetail }) {
                     <FileText className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
                   )}
                   <span className="min-w-0 flex-1">
-                    <span className="block truncate text-sm font-medium">{d.docTypeLabel || humanize(d.docType)}</span>
+                    <span className="block truncate text-sm font-medium" title={d.fileName}>{d.fileName}</span>
+                    <span className="block truncate text-xs text-muted-foreground">{d.docTypeLabel || humanize(d.docType)}</span>
                     <span className="mt-0.5 flex items-center gap-1.5 text-2xs text-muted-foreground">
                       <span className={cn("h-1.5 w-1.5 rounded-full", TONE_DOT[def.tone])} aria-hidden />
                       {def.label}
@@ -107,35 +106,6 @@ export default function DocumentsTab({ app }: { app: ApplicationDetail }) {
       </nav>
 
       <div className="min-w-0 space-y-3">
-        {/* Compact picker (mobile & tablet screens) */}
-        <div className="flex items-center gap-2 lg:hidden">
-          <Button variant="outline" size="icon" className="h-9 w-9 shrink-0" disabled={idx <= 0} onClick={() => select(docs[idx - 1])} aria-label="Previous document">
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-          <Select value={String(doc?.id)} onValueChange={(v) => select(docs.find((d) => String(d.id) === v)!)}>
-            <SelectTrigger className="h-9 min-w-0 flex-1" aria-label="Select document">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {docs.map((d, i) => (
-                <SelectItem key={d.id} value={String(d.id)}>
-                  {i + 1}. {d.docTypeLabel || humanize(d.docType)} — {getStatusDef(d.verification?.status ?? "", "verification").label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-          <Button
-            variant="outline"
-            size="icon"
-            className="h-9 w-9 shrink-0"
-            disabled={idx >= docs.length - 1}
-            onClick={() => select(docs[idx + 1])}
-            aria-label="Next document"
-          >
-            <ChevronRight className="h-4 w-4" />
-          </Button>
-        </div>
-
         {doc && (
           <>
             <div className="flex flex-wrap items-center gap-2">
@@ -148,7 +118,7 @@ export default function DocumentsTab({ app }: { app: ApplicationDetail }) {
               <DocumentAnalysis
                 key={`a-${doc.id}`}
                 doc={doc}
-                onReverify={officer ? () => verify.mutate(doc.id) : undefined}
+                onReverify={officer && app.status !== "DECIDED" ? () => verify.mutate(doc.id) : undefined}
                 reverifying={verify.isPending}
               />
             </div>

@@ -1,0 +1,221 @@
+{
+  "conditions": "Cold cache, 150ms latency, 200kB/s download, 4x CPU slowdown; Edge; local server; two viewport sizes; one run each; not Lighthouse.",
+  "results": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "fcp": 1980,
+        "lcp": 2208,
+        "cls": 0,
+        "shifts": [],
+        "errors": [],
+        "lcpElement": "P",
+        "overflow": false,
+        "resources": [
+          {
+            "url": "http://127.0.0.1:8001/assets/inter-latin-Dx4kXJAl.woff2",
+            "bytes": 48549,
+            "start": 187.7000000178814,
+            "duration": 1075.5
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/index-BbEfc80Z.js",
+            "bytes": 96874,
+            "start": 189.10000002384186,
+            "duration": 1338.0999999940395
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/index-D2uEabxI.css",
+            "bytes": 16749,
+            "start": 189.40000000596046,
+            "duration": 578.8000000119209
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/PortalApp-BzkMK1-7.js",
+            "bytes": 48099,
+            "start": 208,
+            "duration": 1070.300000011921
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/button-CBR-JZeL.js",
+            "bytes": 3094,
+            "start": 208.5,
+            "duration": 263.80000001192093
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/shield-check-CNBXA77X.js",
+            "bytes": 1257,
+            "start": 209,
+            "duration": 215.30000001192093
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/AlertsPage-CP6ltSAc.js",
+            "bytes": 1754,
+            "start": 209.2000000178814,
+            "duration": 434.09999999403954
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/toggle-group-DZeqmnWW.js",
+            "bytes": 1827,
+            "start": 209.60000002384186,
+            "duration": 497.39999997615814
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/EmptyState-BEIY93jW.js",
+            "bytes": 1153,
+            "start": 210.30000001192093,
+            "duration": 634.0999999940395
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/PageHeader-BXLoI9s5.js",
+            "bytes": 972,
+            "start": 211,
+            "duration": 697
+          },
+          {
+            "url": "http://127.0.0.1:8001/favicon.svg",
+            "bytes": 721,
+            "start": 1614.6000000238419,
+            "duration": 178.7999999821186
+          },
+          {
+            "url": "http://127.0.0.1:8001/api/auth/me",
+            "bytes": 448,
+            "start": 1673.1000000238419,
+            "duration": 182.09999999403954
+          },
+          {
+            "url": "http://127.0.0.1:8001/api/auth/session",
+            "bytes": 529,
+            "start": 1674.300000011921,
+            "duration": 180.80000001192093
+          },
+          {
+            "url": "http://127.0.0.1:8001/api/alerts",
+            "bytes": 5337,
+            "start": 1916.4000000059605,
+            "duration": 203.5
+          },
+          {
+            "url": "http://127.0.0.1:8001/api/auth/session",
+            "bytes": 529,
+            "start": 1919.1000000238419,
+            "duration": 170.5
+          }
+        ]
+      },
+      "failed": []
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 900
+      },
+      "metrics": {
+        "fcp": 2004,
+        "lcp": 2196,
+        "cls": 0,
+        "shifts": [],
+        "errors": [],
+        "lcpElement": "P",
+        "overflow": false,
+        "resources": [
+          {
+            "url": "http://127.0.0.1:8001/assets/inter-latin-Dx4kXJAl.woff2",
+            "bytes": 48549,
+            "start": 193.69999998807907,
+            "duration": 1080.7000000178814
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/index-BbEfc80Z.js",
+            "bytes": 96874,
+            "start": 194.69999998807907,
+            "duration": 1345.300000011921
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/index-D2uEabxI.css",
+            "bytes": 16749,
+            "start": 194.90000000596046,
+            "duration": 579.6999999880791
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/PortalApp-BzkMK1-7.js",
+            "bytes": 48099,
+            "start": 211.40000000596046,
+            "duration": 1067.9000000059605
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/button-CBR-JZeL.js",
+            "bytes": 3094,
+            "start": 211.80000001192093,
+            "duration": 266.39999997615814
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/shield-check-CNBXA77X.js",
+            "bytes": 1257,
+            "start": 212.09999999403954,
+            "duration": 219.80000001192093
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/AlertsPage-CP6ltSAc.js",
+            "bytes": 1754,
+            "start": 212.59999999403954,
+            "duration": 436.2000000178814
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/toggle-group-DZeqmnWW.js",
+            "bytes": 1827,
+            "start": 213.40000000596046,
+            "duration": 498.5
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/EmptyState-BEIY93jW.js",
+            "bytes": 1153,
+            "start": 213.80000001192093,
+            "duration": 638.3999999761581
+          },
+          {
+            "url": "http://127.0.0.1:8001/assets/PageHeader-BXLoI9s5.js",
+            "bytes": 972,
+            "start": 214.40000000596046,
+            "duration": 700.4000000059605
+          },
+          {
+            "url": "http://127.0.0.1:8001/favicon.svg",
+            "bytes": 721,
+            "start": 1637.199999988079,
+            "duration": 169.40000000596046
+          },
+          {
+            "url": "http://127.0.0.1:8001/api/auth/me",
+            "bytes": 448,
+            "start": 1678.199999988079,
+            "duration": 175
+          },
+          {
+            "url": "http://127.0.0.1:8001/api/auth/session",
+            "bytes": 529,
+            "start": 1679.199999988079,
+            "duration": 174.10000002384186
+          },
+          {
+            "url": "http://127.0.0.1:8001/api/alerts",
+            "bytes": 5337,
+            "start": 1918.300000011921,
+            "duration": 185.19999998807907
+          },
+          {
+            "url": "http://127.0.0.1:8001/api/auth/session",
+            "bytes": 529,
+            "start": 1921.5999999940395,
+            "duration": 167.09999999403954
+          }
+        ]
+      },
+      "failed": []
+    }
+  ]
+}

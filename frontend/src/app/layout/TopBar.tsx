@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Bell,
   CheckCheck,
@@ -35,6 +35,8 @@ import { useAuth } from "../auth";
 export default function TopBar({ onOpenMenu }: { onOpenMenu: () => void }) {
   const { user, logout, maskPii, toggleMaskPii, sessionExpiring, remainingMinutes, extendSession } = useAuth();
   const nav = useNavigate();
+  const location = useLocation();
+  const hasPageSearch = ["/portal/my-applications", "/portal/applications", "/portal/institutions"].includes(location.pathname);
   return (
     <header className="sticky top-0 z-30 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/85">
       <div className="mx-auto flex h-14 max-w-[1440px] items-center gap-3 px-4 sm:px-6 lg:px-8">
@@ -44,7 +46,7 @@ export default function TopBar({ onOpenMenu }: { onOpenMenu: () => void }) {
         <Link to="/portal" className="lg:hidden" aria-label="VeriSense home">
           <LogoMark className="h-7 w-7" />
         </Link>
-        <GlobalSearch />
+        {hasPageSearch ? <span className="hidden text-sm font-medium text-muted-foreground sm:block">{roleLabel(user?.role)} workspace</span> : <GlobalSearch />}
         <div className="ml-auto flex items-center gap-2">
           {/* Session timeout warning */}
           {sessionExpiring && (
@@ -116,9 +118,6 @@ export default function TopBar({ onOpenMenu }: { onOpenMenu: () => void }) {
                 </div>
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem disabled>
-                <UserRound className="mr-2 h-4 w-4" /> Profile (prototype)
-              </DropdownMenuItem>
               <DropdownMenuItem
                 onSelect={() => {
                   logout();
@@ -178,7 +177,7 @@ function GlobalSearch() {
       <PopoverAnchor asChild>
         <form
           role="search"
-          className="relative w-full max-w-md"
+          className="relative min-w-0 w-full max-w-md"
           onSubmit={(e) => {
             e.preventDefault();
             if (results[active]) go(results[active].id);

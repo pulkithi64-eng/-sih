@@ -26,7 +26,7 @@ export function SiteHeader() {
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
-          {NAV.map((n) => (
+          {NAV.filter((item) => !["/architecture", "/help"].includes(item.to)).map((n) => (
             <NavLink
               key={n.to}
               to={n.to}
@@ -45,6 +45,7 @@ export function SiteHeader() {
               )}
             </NavLink>
           ))}
+          <details className="relative text-sm"><summary className="cursor-pointer rounded px-3 py-2 font-medium text-slate-600">More</summary><div className="absolute right-0 top-full mt-2 w-48 rounded-md border bg-white p-2 shadow-sm">{NAV.filter((item) => ["/architecture", "/help"].includes(item.to)).map((item) => <Link key={item.to} to={item.to} className="block rounded px-3 py-2 text-slate-700 hover:bg-slate-50">{item.label}</Link>)}</div></details>
         </nav>
 
         <div className="flex items-center gap-2">
@@ -53,7 +54,7 @@ export function SiteHeader() {
             className="hidden items-center gap-2 rounded-md bg-[#0B2E59] px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#1D4E89] sm:inline-flex"
           >
             <LogIn className="h-4 w-4" aria-hidden />
-            Login to Portal
+            Sign in
           </Link>
           <button
             type="button"
@@ -97,7 +98,7 @@ export function SiteHeader() {
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-md bg-[#0B2E59] px-4 py-3 text-sm font-medium text-white"
               >
                 <LogIn className="h-4 w-4" aria-hidden />
-                Login to Portal
+                Sign in
               </Link>
             </nav>
           </Container>

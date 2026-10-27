@@ -26,12 +26,12 @@ const initialRoutePreloads: Plugin = {
         if (root) visit(root.fileName);
         return [...files].map((file) => "/" + file);
       };
-      const modules = Object.fromEntries(["SiteApp", "PortalApp", "AlertsPage", "DashboardPage", "ApplicationsPage", "ApplicationDetailPage", "InstitutionsPage"].map((name) => [name, filesFor(name)]));
+      const modules = Object.fromEntries(["SiteApp", "Landing", "HowItWorks", "Architecture", "Compliance", "Evaluation", "DocsHub", "PortalApp", "AlertsPage", "DashboardPage", "ApplicationsPage", "ApplicationDetailPage", "OverviewTab", "InstitutionsPage"].map((name) => [name, filesFor(name)]));
       return [{
         tag: "script",
         injectTo: "head-prepend",
         attrs: { "data-route-preloads": true },
-        children: `(function(){var m=${JSON.stringify(modules)},p=location.pathname,n=p.indexOf('/portal')===0?['PortalApp']:['SiteApp'];if(p==='/portal/alerts')n.push('AlertsPage');else if(p==='/portal/dashboard')n.push('DashboardPage');else if(/^\\/portal\\/(applications|my-applications)$/.test(p))n.push('ApplicationsPage');else if(/^\\/portal\\/applications\\/\\d+$/.test(p))n.push('ApplicationDetailPage');else if(p==='/portal/institutions')n.push('InstitutionsPage');var s=new Set();n.forEach(function(k){(m[k]||[]).forEach(function(h){if(s.has(h))return;s.add(h);var l=document.createElement('link');l.rel='modulepreload';l.href=h;l.crossOrigin='anonymous';document.head.appendChild(l);});});})();`,
+        children: `(function(){var m=${JSON.stringify(modules)},p=location.pathname,n=p.indexOf('/portal')===0?['PortalApp']:['SiteApp'];if(p==='/portal/alerts')n.push('AlertsPage');else if(p==='/portal/dashboard')n.push('DashboardPage');else if(/^\\/portal\\/(applications|my-applications)$/.test(p))n.push('ApplicationsPage');else if(/^\\/portal\\/applications\\/\\d+$/.test(p))n.push('ApplicationDetailPage');else if(p==='/portal/institutions')n.push('InstitutionsPage');if(p.indexOf("/portal")!==0){var r={"/":"Landing","/how-it-works":"HowItWorks","/architecture":"Architecture","/compliance":"Compliance","/evaluation":"Evaluation","/help":"DocsHub","/docs":"DocsHub"};if(r[p])n.push(r[p]);}else if(/^\\/portal\\/applications\\/\\d+$/.test(p))n.push("OverviewTab");var s=new Set();n.forEach(function(k){(m[k]||[]).forEach(function(h){if(s.has(h))return;s.add(h);var l=document.createElement('link');l.rel='modulepreload';l.href=h;l.crossOrigin='anonymous';document.head.appendChild(l);});});})();`,
       }];
     },
   },

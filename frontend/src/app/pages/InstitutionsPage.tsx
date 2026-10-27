@@ -99,8 +99,8 @@ export default function InstitutionsPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Institution Management"
-        description="Monitor registered technical institutions, approved programs, faculty capacity, and application risk history."
+        title={user?.role === "INSTITUTION" ? "My institution" : "Institutions"}
+        description={user?.role === "INSTITUTION" ? "Your institution's profile and recorded application information." : "Find an institution and review its recorded information."}
         eyebrow={
           <Badge variant="outline" className="font-mono text-xs">
             {insts.length} {insts.length === 1 ? "Institution" : "Institutions"}

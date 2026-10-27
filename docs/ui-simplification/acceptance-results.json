@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "applicationId": 14,
+  "checks": [
+    "Institution: UI login, category, create draft, direct upload step",
+    "Correct PDF VERIFIED; imaginary PDF MISMATCH_DETECTED through real upload UI",
+    "Upload service failure is visible and Retry upload succeeds",
+    "Check service failure exits loading state and Retry succeeds",
+    "Institution submits for review and downloads generated PDF report",
+    "Institution list has no page overflow at 320, 375, 768 and 1440 pixels",
+    "Officer review queue and request corrections with mandatory note",
+    "Correction and resubmission use permitted workflow without draft-only validate request",
+    "Officer approval blocked by critical findings; reasoned inspection recommendation recorded",
+    "Director decision queue, critical approval guard, reasoned final rejection of synthetic test case",
+    "Admin route restriction and backend 403; cross-region 404; anonymous document download 401"
+  ],
+  "pageErrors": []
+}

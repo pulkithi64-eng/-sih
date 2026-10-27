@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import {
   Building2,
@@ -25,6 +25,7 @@ import {
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { AdvisoryTag } from "@/components/common/AdvisoryNote";
 import { ErrorState } from "@/components/common/EmptyState";
 import { ScoreRing } from "@/components/common/ScoreBar";
@@ -36,24 +37,26 @@ import { fmtDate, fmtDateTime } from "@/lib/format";
 import { categoryLabel, DECISION_LABEL, REGION_LABEL } from "@/lib/labels";
 import type { ApplicationDetail } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { EDITABLE_STATUSES, institutionNextAction } from "@/lib/journey";
 import { canDecide, isInstitution, isOfficerPlus, isReviewer, useAuth } from "../../auth";
 import { useSetCrumb } from "../../layout/crumbs";
 import { PageSkeleton } from "../../components/Skeletons";
+import { ContentBoundary } from "@/components/common/ContentBoundary";
 import { DecisionDialog, ObservationDialog, RectificationDialog } from "./ActionDialogs";
-import OverviewTab from "./OverviewTab";
-import DocumentsTab from "./DocumentsTab";
-import FindingsTab from "./FindingsTab";
-import VerificationTab from "./VerificationTab";
-import InfraTab from "./InfraTab";
-import AuditTab from "./AuditTab";
-import ReportTab from "./ReportTab";
-import CrossVerificationTab from "./CrossVerificationTab";
-import SummaryTab from "./SummaryTab";
+const OverviewTab = lazy(() => import("./OverviewTab"));
+const DocumentsTab = lazy(() => import("./DocumentsTab"));
+const FindingsTab = lazy(() => import("./FindingsTab"));
+const VerificationTab = lazy(() => import("./VerificationTab"));
+const InfraTab = lazy(() => import("./InfraTab"));
+const AuditTab = lazy(() => import("./AuditTab"));
+const ReportTab = lazy(() => import("./ReportTab"));
+const CrossVerificationTab = lazy(() => import("./CrossVerificationTab"));
+const SummaryTab = lazy(() => import("./SummaryTab"));
 
 const TABS = [
   { id: "overview", label: "Overview", icon: ClipboardList },
-  { id: "summary", label: "Processing Summary", icon: FileCheck2 },
-  { id: "cross-verification", label: "Cross-Doc Verification", icon: Scale },
+  { id: "summary", label: "Processing summary", icon: FileCheck2 },
+  { id: "cross-verification", label: "Cross-record checks", icon: Scale },
   { id: "documents", label: "Documents", icon: FileText },
   { id: "findings", label: "Findings", icon: AlertTriangle },
   { id: "verification", label: "Verification", icon: ShieldCheck },
@@ -62,7 +65,7 @@ const TABS = [
   { id: "report", label: "Report", icon: ScrollText },
 ] as const;
 
-const EDITABLE = new Set(["DRAFT", "RECTIFICATION_REQUESTED"]);
+const PRIMARY_TABS = new Set(["overview", "documents", "findings", "report"]);
 
 export default function ApplicationDetailPage() {
   const { id } = useParams();
@@ -96,7 +99,7 @@ export default function ApplicationDetailPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const openFindings = (app.findings ?? []).filter((f) => f.status === "OPEN" || f.status === "ESCALATED").length;
+  const openFindings = (app.findings ?? []).filter((f) => ["OPEN", "ACKNOWLEDGED", "ESCALATED"].includes(f.status)).length;
   const infraCount = (app.documents ?? []).filter((d) => d.infra || d.docType.startsWith("INFRA_PHOTO")).length;
 
   return (
@@ -104,9 +107,9 @@ export default function ApplicationDetailPage() {
       <Header app={app} />
 
       <Tabs value={tab} onValueChange={setTab} className="mt-5">
-        <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+        <div className="-mx-4 flex items-start gap-2 overflow-x-auto px-4 sm:mx-0 sm:px-0">
           <TabsList className="h-auto w-max justify-start gap-1 rounded-none border-b bg-transparent p-0">
-            {TABS.map((t) => (
+            {TABS.filter((t) => PRIMARY_TABS.has(t.id) || t.id === tab).map((t) => (
               <TabsTrigger
                 key={t.id}
                 value={t.id}
@@ -131,8 +134,16 @@ export default function ApplicationDetailPage() {
               </TabsTrigger>
             ))}
           </TabsList>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild><Button size="sm" variant="ghost" className="shrink-0">More details</Button></DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>Evidence and history</DropdownMenuLabel>
+              {TABS.filter((item) => !PRIMARY_TABS.has(item.id)).map((item) => <DropdownMenuItem key={item.id} onSelect={() => setTab(item.id)}><item.icon className="mr-2 h-4 w-4" />{item.label}</DropdownMenuItem>)}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
         <div className="mt-5">
+          <ContentBoundary key={tab}><Suspense fallback={<PageSkeleton />}>
           <TabsContent value="overview" className="mt-0">
             <OverviewTab app={app} onOpenDocument={openDocument} />
           </TabsContent>
@@ -164,6 +175,7 @@ export default function ApplicationDetailPage() {
           <TabsContent value="report" className="mt-0">
             <ReportTab app={app} onOpenDocument={openDocument} />
           </TabsContent>
+          </Suspense></ContentBoundary>
         </div>
       </Tabs>
     </div>
@@ -175,161 +187,53 @@ function Header({ app }: { app: ApplicationDetail }) {
   const role = user?.role;
   const validate = useValidate(app.id);
   const [dlg, setDlg] = useState<null | "obs" | "rect" | "decide" | "recommend">(null);
-  const [pdfBusy, setPdfBusy] = useState(false);
-  const inst = app.institution;
   const decided = app.status === "DECIDED";
-  const counts = app.counts ?? ({} as ApplicationDetail["counts"]);
-
-  async function downloadPdf() {
-    setPdfBusy(true);
-    try {
-      await downloadBlob(`/applications/${app.id}/report.pdf`, `VeriSense_${app.applicationNo}_report.pdf`);
-    } catch (e) {
-      toast.error("Could not download report", { description: errorMessage(e) });
-    } finally {
-      setPdfBusy(false);
-    }
-  }
+  const canReview = !decided && app.status !== "DRAFT" && !!app.lastValidatedAt;
+  const next = institutionNextAction(app);
+  const unresolvedCritical = app.findings.filter((finding) => finding.severity === "CRITICAL" && !["RECTIFIED", "DISMISSED"].includes(finding.status)).length;
 
   return (
     <section className="card-surface overflow-hidden">
-      <div className="h-1 bg-navy" aria-hidden />
-      <div className="flex flex-col gap-5 p-5 xl:flex-row xl:items-start xl:justify-between">
-        <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="mono rounded bg-navy-50 px-1.5 py-0.5 text-xs font-medium text-navy">{app.applicationNo}</span>
-            <StatusBadge status={app.status} kind="application" />
-            <RiskBandPill band={app.riskBand} />
-          </div>
-          <h1 className="mt-2 text-xl font-semibold tracking-tight sm:text-2xl">{inst?.name}</h1>
-          <dl className="mt-2 flex flex-wrap gap-x-5 gap-y-1.5 text-sm text-muted-foreground">
-            <div className="flex items-center gap-1.5">
-              <Building2 className="h-4 w-4" aria-hidden />
-              <dt className="sr-only">Permanent ID</dt>
-              <dd>
-                Permanent ID <span className="mono text-foreground">{inst?.permanentId}</span>
-              </dd>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <ClipboardList className="h-4 w-4" aria-hidden />
-              <dt className="sr-only">Category</dt>
-              <dd className="text-foreground">{categoryLabel(app.category)}</dd>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CalendarDays className="h-4 w-4" aria-hidden />
-              <dt className="sr-only">Academic year</dt>
-              <dd>
-                AY <span className="text-foreground">{app.academicYear}</span>
-              </dd>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <MapPin className="h-4 w-4" aria-hidden />
-              <dt className="sr-only">Location</dt>
-              <dd>
-                {inst?.city}, {inst?.state} · {REGION_LABEL[app.region] ?? app.region}
-              </dd>
-            </div>
-          </dl>
-          <p className="mt-2 text-xs text-muted-foreground">
-            {app.submittedAt ? <>Submitted {fmtDate(app.submittedAt)} · </> : null}
-            Last validated {app.lastValidatedAt ? fmtDateTime(app.lastValidatedAt) : "never"}
-            {app.assignedOfficer ? <> · Assigned to {app.assignedOfficer}</> : null}
-          </p>
+      <div className="p-4 sm:p-5">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="mono break-all text-xs text-muted-foreground">{app.applicationNo}</span>
+          <StatusBadge status={app.status} kind="application" />
         </div>
-
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-          <ScoreRing value={app.complianceScore ?? 0} label={<>Compliance<br />score</>} />
-          <ScoreRing value={app.riskScore ?? 0} label={<>Risk<br />score</>} invert />
-          <div className="grid grid-cols-3 gap-2 text-center">
-            <Count n={counts.critical} label="Critical" tone="text-red-700" />
-            <Count n={counts.major} label="Major" tone="text-orange-700" />
-            <Count n={counts.minor} label="Minor" tone="text-amber-700" />
-          </div>
-          <AdvisoryTag className="self-start" />
-        </div>
+        <h1 className="mt-2 text-xl font-semibold tracking-tight sm:text-2xl">{app.institution?.name}</h1>
+        <p className="mt-1 text-sm text-muted-foreground">{categoryLabel(app.category)} · {app.academicYear}</p>
+        <dl className="mt-4 grid grid-cols-3 gap-3 border-y py-3 text-sm">
+          <div><dt className="text-xs text-muted-foreground">Compliance</dt><dd className="mt-1 font-semibold">{app.lastValidatedAt ? `${Math.round(app.complianceScore)} / 100` : "Not checked"}</dd></div>
+          <div><dt className="text-xs text-muted-foreground">Risk</dt><dd className="mt-1">{app.lastValidatedAt ? <RiskBandPill band={app.riskBand} /> : "Not checked"}</dd></div>
+          <div><dt className="text-xs text-muted-foreground">Unresolved findings</dt><dd className="mt-1 font-semibold">{app.counts?.findingsOpen ?? 0}</dd></div>
+        </dl>
+        {unresolvedCritical > 0 && <p className="mt-3 rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-800">{unresolvedCritical} unresolved critical finding{unresolvedCritical === 1 ? "" : "s"}. Approval is blocked until a reviewer confirms resolution or dismisses each with a reason. <Link className="font-semibold underline" to={`?tab=findings`}>Review findings</Link></p>}
+        {app.decision && <div className="mt-3 rounded-md border bg-muted/40 p-3 text-sm"><p className="font-semibold">{DECISION_LABEL[app.decision.action] ?? app.decision.action}</p><p className="mt-1">{app.decision.note}</p><p className="mt-1 text-xs text-muted-foreground">{app.decision.decidedBy} · {fmtDateTime(app.decision.decidedAt)}</p></div>}
+        <details className="mt-3 text-sm">
+          <summary className="cursor-pointer text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Application details</summary>
+          <dl className="mt-2 grid gap-2 text-xs text-muted-foreground sm:grid-cols-2"><div><dt className="inline font-medium">Permanent ID: </dt><dd className="inline">{app.institution?.permanentId}</dd></div><div><dt className="inline font-medium">Region: </dt><dd className="inline">{REGION_LABEL[app.region] ?? app.region}</dd></div><div><dt className="inline font-medium">Last checked: </dt><dd className="inline">{app.lastValidatedAt ? fmtDateTime(app.lastValidatedAt) : "Not checked"}</dd></div><div><dt className="inline font-medium">Assigned officer: </dt><dd className="inline">{app.assignedOfficer || "Not assigned"}</dd></div>{app.submittedAt && <div><dt className="inline font-medium">Submitted: </dt><dd className="inline">{fmtDate(app.submittedAt)}</dd></div>}</dl>
+        </details>
       </div>
-
-      {app.decision && (
-        <div className="border-t bg-navy-50/60 px-5 py-3 text-sm">
-          <span className="font-semibold text-navy">{DECISION_LABEL[app.decision.action] ?? app.decision.action}</span>
-          <span className="text-muted-foreground">
-            {" "}
-            · by {app.decision.decidedBy} on {fmtDateTime(app.decision.decidedAt)}
-          </span>
-          <p className="mt-1 text-foreground/90">“{app.decision.note}”</p>
-        </div>
-      )}
-
-      <div className="flex flex-wrap items-center gap-2 border-t bg-slate-50/70 px-5 py-3">
-        {isOfficerPlus(role) && (
-          <Button size="sm" variant="outline" onClick={() => validate.mutate()} disabled={validate.isPending || decided}>
-            {validate.isPending ? <Loader2 className="mr-1.5 h-4 w-4 animate-spin" /> : <RefreshCw className="mr-1.5 h-4 w-4" />}
-            Re-run validation
-          </Button>
-        )}
-        {isReviewer(role) && (
-          <>
-            <Button size="sm" variant="outline" onClick={() => setDlg("rect")} disabled={decided}>
-              <Undo2 className="mr-1.5 h-4 w-4" /> Request rectification
-            </Button>
-            <Button size="sm" variant="outline" onClick={() => setDlg("obs")}>
-              <MessageSquarePlus className="mr-1.5 h-4 w-4" /> Add observation
-            </Button>
-          </>
-        )}
-        {isInstitution(role) && EDITABLE.has(app.status) && (
-          <Button size="sm" asChild>
-            <Link to={`/portal/applications/${app.id}/edit`}>
-              {app.status === "DRAFT" ? <PenLine className="mr-1.5 h-4 w-4" /> : <Send className="mr-1.5 h-4 w-4" />}
-              {app.status === "DRAFT" ? "Continue application" : "Respond & resubmit"}
-            </Link>
-          </Button>
-        )}
-        <Button size="sm" variant="outline" asChild className="gap-1 text-xs">
-          <Link to={`/portal/applications/${app.id}?tab=summary`}>
-            <FileCheck2 className="h-3.5 w-3.5" />
-            <span>Summary Digest</span>
-          </Link>
-        </Button>
-        <Button size="sm" variant="ghost" onClick={downloadPdf} disabled={pdfBusy}>
-          {pdfBusy ? <Loader2 className="mr-1.5 h-4 w-4 animate-spin" /> : <FileDown className="mr-1.5 h-4 w-4" />}
-          Report PDF
-        </Button>
-        <div className="ml-auto flex gap-2">
-          {role === "SCRUTINY_OFFICER" && (
-            <Button size="sm" onClick={() => setDlg("recommend")} disabled={decided}>
-              <Gavel className="mr-1.5 h-4 w-4" /> Recommend
-            </Button>
-          )}
-          {canDecide(role) && (
-            <Button size="sm" onClick={() => setDlg("decide")} disabled={decided}>
-              <Gavel className="mr-1.5 h-4 w-4" /> Decide
-            </Button>
-          )}
-        </div>
+      <div className="flex flex-wrap items-center gap-2 border-t px-4 py-3 sm:px-5">
+        {isInstitution(role) && EDITABLE_STATUSES.has(app.status) && <Button asChild size="sm"><Link to={next.to}><FileText className="mr-2 h-4 w-4" />{next.label === "Continue application" ? "Upload documents" : next.label}</Link></Button>}
+        {role === "SCRUTINY_OFFICER" && !decided && <Button size="sm" onClick={() => setDlg("recommend")} disabled={!canReview}><Gavel className="mr-2 h-4 w-4" />Record recommendation</Button>}
+        {canDecide(role) && !decided && <Button size="sm" onClick={() => setDlg("decide")} disabled={!canReview}><Gavel className="mr-2 h-4 w-4" />Record decision</Button>}
+        {app.lastValidatedAt && <Button asChild size="sm" variant="outline"><Link to="?tab=report">View report</Link></Button>}
+        {(isReviewer(role) || isOfficerPlus(role) || (isInstitution(role) && EDITABLE_STATUSES.has(app.status))) && <DropdownMenu>
+          <DropdownMenuTrigger asChild><Button size="sm" variant="ghost">More actions</Button></DropdownMenuTrigger>
+          <DropdownMenuContent align="start">
+            {isInstitution(role) && EDITABLE_STATUSES.has(app.status) && <DropdownMenuItem asChild><Link to={`/portal/applications/${app.id}/edit?step=details`}>Edit application details</Link></DropdownMenuItem>}
+            {isReviewer(role) && <><DropdownMenuItem disabled={decided || app.status === "DRAFT"} onSelect={() => setDlg("rect")}>Request corrections</DropdownMenuItem><DropdownMenuItem onSelect={() => setDlg("obs")}>Add review note</DropdownMenuItem></>}
+            {isOfficerPlus(role) && <DropdownMenuItem disabled={validate.isPending || decided} onSelect={() => validate.mutate()}>{validate.isPending ? "Checking…" : "Run checks again"}</DropdownMenuItem>}
+          </DropdownMenuContent>
+        </DropdownMenu>}
+        {!canReview && isReviewer(role) && !decided && <span className="text-xs text-muted-foreground">A submitted, checked application is required before review.</span>}
+        <p className="w-full pt-1 text-xs text-muted-foreground">Decision support only. Issuer services and records in this prototype are simulated.</p>
       </div>
-
-      {isReviewer(role) && (
-        <>
-          <ObservationDialog app={app} open={dlg === "obs"} onOpenChange={(o) => setDlg(o ? "obs" : null)} />
-          <RectificationDialog app={app} open={dlg === "rect"} onOpenChange={(o) => setDlg(o ? "rect" : null)} />
-          <DecisionDialog
-            app={app}
-            mode={canDecide(role) ? "decide" : "recommend"}
-            open={dlg === "decide" || dlg === "recommend"}
-            onOpenChange={(o) => setDlg(o ? (canDecide(role) ? "decide" : "recommend") : null)}
-          />
-        </>
-      )}
+      {isReviewer(role) && <>
+        <ObservationDialog app={app} open={dlg === "obs"} onOpenChange={(open) => setDlg(open ? "obs" : null)} />
+        <RectificationDialog app={app} open={dlg === "rect"} onOpenChange={(open) => setDlg(open ? "rect" : null)} />
+        <DecisionDialog app={app} mode={canDecide(role) ? "decide" : "recommend"} open={dlg === "decide" || dlg === "recommend"} onOpenChange={(open) => setDlg(open ? (canDecide(role) ? "decide" : "recommend") : null)} />
+      </>}
     </section>
-  );
-}
-
-function Count({ n, label, tone }: { n?: number; label: string; tone: string }) {
-  return (
-    <div className="min-w-[56px] rounded-md border bg-card px-2 py-1.5">
-      <div className={cn("tabular text-lg font-semibold leading-none", (n ?? 0) > 0 ? tone : "text-muted-foreground")}>{n ?? 0}</div>
-      <div className="mt-1 text-2xs text-muted-foreground">{label}</div>
-    </div>
   );
 }
